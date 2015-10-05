@@ -6,7 +6,14 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+@class PraisePopAPI;
+
+@class PPMenuViewController;
+@class PPTimelineViewController;
+
 #import <UIKit/UIKit.h>
+
+#import <SWRevealViewController/SWRevealViewController.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -14,4 +21,3 @@
 
 
 @end
-

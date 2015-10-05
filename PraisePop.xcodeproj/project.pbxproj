@@ -7,25 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C242D3DCBED8A966C1A71FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE6B8620AE9FC6CD0E8F2B /* libPods.a */; };
 		F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF41BC1FB3000D96FA6 /* main.m */; };
-		F1BB6BF81BC1FB3000D96FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF71BC1FB3000D96FA6 /* AppDelegate.m */; };
-		F1BB6BFB1BC1FB3000D96FA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BFA1BC1FB3000D96FA6 /* ViewController.m */; };
-		F1BB6BFE1BC1FB3000D96FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFC1BC1FB3000D96FA6 /* Main.storyboard */; };
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
 		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
+		F1BB6C141BC2048700D96FA6 /* PPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C131BC2048700D96FA6 /* PPUser.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C171BC2049600D96FA6 /* PPOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C161BC2049600D96FA6 /* PPOrganization.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C1A1BC204A000D96FA6 /* PPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C191BC204A000D96FA6 /* PPPost.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C1D1BC204B900D96FA6 /* PPUpvote.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1C1BC204B900D96FA6 /* PPUpvote.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C2A1BC2210D00D96FA6 /* PPRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C351BC2230D00D96FA6 /* PPDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C391BC2237900D96FA6 /* PPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C381BC2237900D96FA6 /* PPMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C3B1BC2247700D96FA6 /* PraisePopAPI.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C3E1BC22CFA00D96FA6 /* PPPopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C491BC231A300D96FA6 /* PraisePop.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		498E7A44BF74D542F72DF98A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6AA9A446EC8A3CB650281E4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		96EE6B8620AE9FC6CD0E8F2B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF01BC1FB3000D96FA6 /* PraisePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PraisePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF41BC1FB3000D96FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F1BB6BF61BC1FB3000D96FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F1BB6BF71BC1FB3000D96FA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1BB6BF91BC1FB3000D96FA6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F1BB6BFA1BC1FB3000D96FA6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F1BB6BFD1BC1FB3000D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1BB6C021BC1FB3000D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1BB6C041BC1FB3000D96FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BB6C121BC2048700D96FA6 /* PPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUser.h; path = Models/PPUser.h; sourceTree = "<group>"; };
+		F1BB6C131BC2048700D96FA6 /* PPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUser.m; path = Models/PPUser.m; sourceTree = "<group>"; };
+		F1BB6C151BC2049600D96FA6 /* PPOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOrganization.h; path = Models/PPOrganization.h; sourceTree = "<group>"; };
+		F1BB6C161BC2049600D96FA6 /* PPOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOrganization.m; path = Models/PPOrganization.m; sourceTree = "<group>"; };
+		F1BB6C181BC204A000D96FA6 /* PPPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPost.h; path = Models/PPPost.h; sourceTree = "<group>"; };
+		F1BB6C191BC204A000D96FA6 /* PPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPost.m; path = Models/PPPost.m; sourceTree = "<group>"; };
+		F1BB6C1B1BC204B900D96FA6 /* PPUpvote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUpvote.h; path = Models/PPUpvote.h; sourceTree = "<group>"; };
+		F1BB6C1C1BC204B900D96FA6 /* PPUpvote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUpvote.m; path = Models/PPUpvote.m; sourceTree = "<group>"; };
+		F1BB6C1E1BC20EB300D96FA6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PraisePop/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PraisePop/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		F1BB6C211BC220AA00D96FA6 /* PPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMenuViewController.h; path = Classes/Controllers/PPMenuViewController.h; sourceTree = "<group>"; };
+		F1BB6C221BC220AA00D96FA6 /* PPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMenuViewController.m; path = Classes/Controllers/PPMenuViewController.m; sourceTree = "<group>"; };
+		F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOnboardingViewController.h; path = Classes/Controllers/PPOnboardingViewController.h; sourceTree = "<group>"; };
+		F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOnboardingViewController.m; path = Classes/Controllers/PPOnboardingViewController.m; sourceTree = "<group>"; };
+		F1BB6C281BC2210D00D96FA6 /* PPRulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPRulesViewController.h; path = Classes/Controllers/PPRulesViewController.h; sourceTree = "<group>"; };
+		F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPRulesViewController.m; path = Classes/Controllers/PPRulesViewController.m; sourceTree = "<group>"; };
+		F1BB6C2C1BC2214100D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1BB6C2E1BC2222A00D96FA6 /* PPTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPTimelineViewController.h; path = Classes/Controllers/PPTimelineViewController.h; sourceTree = "<group>"; };
+		F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPTimelineViewController.m; path = Classes/Controllers/PPTimelineViewController.m; sourceTree = "<group>"; };
+		F1BB6C311BC222ED00D96FA6 /* PPComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPComposeViewController.h; path = Classes/Controllers/PPComposeViewController.h; sourceTree = "<group>"; };
+		F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPComposeViewController.m; path = Classes/Controllers/PPComposeViewController.m; sourceTree = "<group>"; };
+		F1BB6C341BC2230D00D96FA6 /* PPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDetailViewController.h; path = Classes/Controllers/PPDetailViewController.h; sourceTree = "<group>"; };
+		F1BB6C351BC2230D00D96FA6 /* PPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDetailViewController.m; path = Classes/Controllers/PPDetailViewController.m; sourceTree = "<group>"; };
+		F1BB6C371BC2237900D96FA6 /* PPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMenuViewController.h; path = Classes/Controllers/PPMenuViewController.h; sourceTree = "<group>"; };
+		F1BB6C381BC2237900D96FA6 /* PPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMenuViewController.m; path = Classes/Controllers/PPMenuViewController.m; sourceTree = "<group>"; };
+		F1BB6C3A1BC2247700D96FA6 /* PraisePopAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraisePopAPI.h; sourceTree = "<group>"; };
+		F1BB6C3B1BC2247700D96FA6 /* PraisePopAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraisePopAPI.m; sourceTree = "<group>"; };
+		F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPPopCell.xib; path = Classes/Views/PPPopCell.xib; sourceTree = "<group>"; };
+		F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUnselectableTextView.h; path = Classes/Views/PPUnselectableTextView.h; sourceTree = "<group>"; };
+		F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUnselectableTextView.m; path = Classes/Views/PPUnselectableTextView.m; sourceTree = "<group>"; };
+		F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+PPExtensions.h"; path = "Classes/Categories/UIView+PPExtensions.h"; sourceTree = "<group>"; };
+		F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+PPExtensions.m"; path = "Classes/Categories/UIView+PPExtensions.m"; sourceTree = "<group>"; };
+		F1BB6C471BC2313200D96FA6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F1BB6C481BC231A300D96FA6 /* PraisePop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PraisePop.h; path = Classes/PraisePop.h; sourceTree = "<group>"; };
+		F1BB6C491BC231A300D96FA6 /* PraisePop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PraisePop.m; path = Classes/PraisePop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +81,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C242D3DCBED8A966C1A71FBD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B961FFD0BDCDA8B0084C513A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				498E7A44BF74D542F72DF98A /* Pods.debug.xcconfig */,
+				6AA9A446EC8A3CB650281E4C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F10012FD6ECEF5063EA9A7C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96EE6B8620AE9FC6CD0E8F2B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1BB6BE71BC1FB2F00D96FA6 = {
 			isa = PBXGroup;
 			children = (
 				F1BB6BF21BC1FB3000D96FA6 /* PraisePop */,
 				F1BB6BF11BC1FB3000D96FA6 /* Products */,
+				B961FFD0BDCDA8B0084C513A /* Pods */,
+				F10012FD6ECEF5063EA9A7C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +126,14 @@
 		F1BB6BF21BC1FB3000D96FA6 /* PraisePop */ = {
 			isa = PBXGroup;
 			children = (
-				F1BB6BF61BC1FB3000D96FA6 /* AppDelegate.h */,
-				F1BB6BF71BC1FB3000D96FA6 /* AppDelegate.m */,
-				F1BB6BF91BC1FB3000D96FA6 /* ViewController.h */,
-				F1BB6BFA1BC1FB3000D96FA6 /* ViewController.m */,
-				F1BB6BFC1BC1FB3000D96FA6 /* Main.storyboard */,
 				F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */,
 				F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */,
+				F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */,
 				F1BB6C041BC1FB3000D96FA6 /* Info.plist */,
+				F1BB6C1E1BC20EB300D96FA6 /* AppDelegate.h */,
+				F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */,
+				F1BB6C471BC2313200D96FA6 /* PrefixHeader.pch */,
+				F1BB6C4B1BC231AB00D96FA6 /* Classes */,
 				F1BB6BF31BC1FB3000D96FA6 /* Supporting Files */,
 			);
 			path = PraisePop;
@@ -79,6 +147,85 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F1BB6C0D1BC2047200D96FA6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C3A1BC2247700D96FA6 /* PraisePopAPI.h */,
+				F1BB6C3B1BC2247700D96FA6 /* PraisePopAPI.m */,
+				F1BB6C111BC2047700D96FA6 /* Models */,
+			);
+			name = API;
+			path = Classes/API;
+			sourceTree = "<group>";
+		};
+		F1BB6C111BC2047700D96FA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C121BC2048700D96FA6 /* PPUser.h */,
+				F1BB6C131BC2048700D96FA6 /* PPUser.m */,
+				F1BB6C151BC2049600D96FA6 /* PPOrganization.h */,
+				F1BB6C161BC2049600D96FA6 /* PPOrganization.m */,
+				F1BB6C181BC204A000D96FA6 /* PPPost.h */,
+				F1BB6C191BC204A000D96FA6 /* PPPost.m */,
+				F1BB6C1B1BC204B900D96FA6 /* PPUpvote.h */,
+				F1BB6C1C1BC204B900D96FA6 /* PPUpvote.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F1BB6C241BC220AD00D96FA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C371BC2237900D96FA6 /* PPMenuViewController.h */,
+				F1BB6C381BC2237900D96FA6 /* PPMenuViewController.m */,
+				F1BB6C341BC2230D00D96FA6 /* PPDetailViewController.h */,
+				F1BB6C351BC2230D00D96FA6 /* PPDetailViewController.m */,
+				F1BB6C311BC222ED00D96FA6 /* PPComposeViewController.h */,
+				F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */,
+				F1BB6C2E1BC2222A00D96FA6 /* PPTimelineViewController.h */,
+				F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */,
+				F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */,
+				F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */,
+				F1BB6C281BC2210D00D96FA6 /* PPRulesViewController.h */,
+				F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */,
+				F1BB6C211BC220AA00D96FA6 /* PPMenuViewController.h */,
+				F1BB6C221BC220AA00D96FA6 /* PPMenuViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F1BB6C421BC22D6600D96FA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */,
+				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
+				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F1BB6C461BC230FB00D96FA6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */,
+				F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		F1BB6C4B1BC231AB00D96FA6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6C481BC231A300D96FA6 /* PraisePop.h */,
+				F1BB6C491BC231A300D96FA6 /* PraisePop.m */,
+				F1BB6C461BC230FB00D96FA6 /* Categories */,
+				F1BB6C421BC22D6600D96FA6 /* Views */,
+				F1BB6C241BC220AD00D96FA6 /* Controllers */,
+				F1BB6C0D1BC2047200D96FA6 /* API */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1BB6C071BC1FB3000D96FA6 /* Build configuration list for PBXNativeTarget "PraisePop" */;
 			buildPhases = (
+				2188EAED239EFC586E4EE57E /* Check Pods Manifest.lock */,
 				F1BB6BEC1BC1FB2F00D96FA6 /* Sources */,
 				F1BB6BED1BC1FB2F00D96FA6 /* Frameworks */,
 				F1BB6BEE1BC1FB2F00D96FA6 /* Resources */,
+				C99BF6F04C762BAA0F5A4DA9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +254,7 @@
 		F1BB6BE81BC1FB2F00D96FA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PP;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = PraisePop;
 				TargetAttributes = {
@@ -136,42 +286,89 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
+				F1BB6C3E1BC22CFA00D96FA6 /* PPPopCell.xib in Resources */,
 				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
-				F1BB6BFE1BC1FB3000D96FA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2188EAED239EFC586E4EE57E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C99BF6F04C762BAA0F5A4DA9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1BB6BEC1BC1FB2F00D96FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1BB6BFB1BC1FB3000D96FA6 /* ViewController.m in Sources */,
-				F1BB6BF81BC1FB3000D96FA6 /* AppDelegate.m in Sources */,
+				F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */,
+				F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */,
+				F1BB6C2A1BC2210D00D96FA6 /* PPRulesViewController.m in Sources */,
+				F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */,
+				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
+				F1BB6C1D1BC204B900D96FA6 /* PPUpvote.m in Sources */,
+				F1BB6C171BC2049600D96FA6 /* PPOrganization.m in Sources */,
+				F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */,
+				F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */,
+				F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */,
+				F1BB6C141BC2048700D96FA6 /* PPUser.m in Sources */,
 				F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */,
+				F1BB6C1A1BC204A000D96FA6 /* PPPost.m in Sources */,
+				F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */,
+				F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */,
+				F1BB6C391BC2237900D96FA6 /* PPMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1BB6BFC1BC1FB3000D96FA6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1BB6BFD1BC1FB3000D96FA6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F1BB6C021BC1FB3000D96FA6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BB6C2C1BC2214100D96FA6 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,8 +456,10 @@
 		};
 		F1BB6C081BC1FB3000D96FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498E7A44BF74D542F72DF98A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.priasepop.PraisePop;
@@ -270,8 +469,10 @@
 		};
 		F1BB6C091BC1FB3000D96FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AA9A446EC8A3CB650281E4C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.priasepop.PraisePop;
@@ -298,6 +499,7 @@
 				F1BB6C091BC1FB3000D96FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
