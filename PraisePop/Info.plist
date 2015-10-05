@@ -45,5 +45,10 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Futura-Bold.ttf </string>
+		<string>Futura-Book.ttf</string>
+	</array>
 </dict>
 </plist>
