@@ -15,5 +15,8 @@
 #include "PraisePop.h"
 
 #include "UIView+PPExtensions.h"
+#include "UIViewController+PPExtensions.h"
+#include "UIColor+PPExtensions.h"
+#include "UIFont+PPExtensions.h"
 
 #endif /* PrefixHeader_pch */
