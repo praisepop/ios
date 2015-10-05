@@ -10,8 +10,10 @@
 
 @implementation PraisePop
 
-+ (UIColor *)redColor {
-    return [UIColor colorWithRed:0.92 green:0.26 blue:0.01 alpha:1];
++ (UIViewController *)controllerWithIdentifier:(NSString *)identifier {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    
+    return [storyboard instantiateViewControllerWithIdentifier:identifier];
 }
 
 @end

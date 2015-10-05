@@ -11,6 +11,6 @@
 
 @interface PraisePop : NSObject
 
-+ (UIColor *)redColor;
++ (UIViewController *)controllerWithIdentifier:(NSString *)identifier;
 
 @end
