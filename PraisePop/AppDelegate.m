@@ -46,7 +46,13 @@
 - (void)setupAppearances {
     self.window.tintColor = UIColor.whiteColor;
     
-    [[UINavigationBar appearance] setBarTintColor:PraisePop.redColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName : UIColor.whiteColor,
+                                                           NSFontAttributeName : [UIFont pp_fontWithName:FuturaBold size:23],
+                                                           NSKernAttributeName: @5
+                                                           }];
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColor.pp_redColor];
     [[UINavigationBar appearance] setTintColor:UIColor.whiteColor];
     [[UINavigationBar appearance] setTranslucent:NO];
 }
