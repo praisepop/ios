@@ -23,9 +23,21 @@ static NSString * const PraisePopAPIBaseURLString = @"http://localhost:8080/api/
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[PraisePopAPI alloc] initWithBaseURL:[NSURL URLWithString:PraisePopAPIBaseURLString]];
+        _sharedClient.responseSerializer.acceptableStatusCodes = [_sharedClient.acceptableStatusCodes copy];
     });
     
     return _sharedClient;
+}
+
+- (NSIndexSet *)acceptableStatusCodes {
+    NSMutableIndexSet *acceptedCodes = [[NSMutableIndexSet alloc]
+                                        initWithIndexSet:self.responseSerializer.acceptableStatusCodes];
+    
+    NSIndexSet *acceptable = [NSIndexSet.alloc initWithIndexesInRange:NSMakeRange(200, 600)];
+    
+    [acceptedCodes addIndexes:acceptable];
+    
+    return acceptedCodes;
 }
 
 - (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(NSDictionary *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
