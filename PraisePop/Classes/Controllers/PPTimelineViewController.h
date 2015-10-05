@@ -10,6 +10,10 @@
 
 #import <SWRevealViewController/SWRevealViewController.h>
 
+@class PPComposeViewController;
+
+@class PPPopTableViewCell;
+
 @interface PPTimelineViewController : UITableViewController
 
 @end

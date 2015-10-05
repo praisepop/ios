@@ -8,6 +8,12 @@
 
 #import "PPTimelineViewController.h"
 
+#import "PPComposeViewController.h"
+
+#import "PPPopTableViewCell.h"
+
+static NSString *kPPPopCellIdentifier = @"PPPopCell";
+
 @interface PPTimelineViewController ()
 
 @end
@@ -17,22 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initiateTitleView];
+    self.title = @"PRAISEPOP";
+    
     [self initiateReveal];
     [self initiateButtons];
-}
-
-- (void)initiateTitleView {
-    UIImage *navBarImage = [UIImage imageNamed:@"logo-nav-bar"];
-    UIImageView *titleImageView = [UIImageView.alloc initWithImage:navBarImage];
-    titleImageView.frame = CGRectMake(titleImageView.x, titleImageView.y, 172.5f, 20.5f);
-    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    self.navigationItem.titleView = titleImageView;
+    UINib *popCell = [UINib nibWithNibName:@"PPPopCell" bundle:NSBundle.mainBundle];
+    [self.tableView registerNib:popCell forCellReuseIdentifier:kPPPopCellIdentifier];
 }
 
 - (void)initiateReveal {
     SWRevealViewController *revealController = [self revealViewController];
+    
     revealController.rearViewRevealWidth = 276.0f;
     revealController.rearViewRevealOverdraw = 0.0f;
     revealController.rearViewRevealDisplacement = 276.0f;
@@ -55,7 +57,7 @@
 
 - (void)initiateButtons {
     UIBarButtonItem *composeButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"compose-nav-button"]
-                                                                        style:UIBarButtonItemStyleDone target:self action:nil];
+                                                                          style:UIBarButtonItemStyleDone target:self action:@selector(revealComposer:)];
     
     self.navigationItem.rightBarButtonItem = composeButtonItem;
 }
@@ -68,67 +70,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 15;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    PPPopTableViewCell *cell = (PPPopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
     
-    // Configure the cell...
+    
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)revealComposer:(id)sender {
+    PPComposeViewController *composer = (PPComposeViewController *)[PraisePop controllerWithIdentifier:@"PPComposeViewController"];
+    
+    [self.navigationController presentViewController:composer animated:YES completion:nil];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
