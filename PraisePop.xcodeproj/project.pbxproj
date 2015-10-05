@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C242D3DCBED8A966C1A71FBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE6B8620AE9FC6CD0E8F2B /* libPods.a */; };
+		F129EF401BC2A7A200C90C60 /* PPPopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF41BC1FB3000D96FA6 /* main.m */; };
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
 		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
@@ -28,12 +29,19 @@
 		F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C491BC231A300D96FA6 /* PraisePop.m */; settings = {ASSET_TAGS = (); }; };
+		F1E9B6741BC2EF81008DD309 /* UIColor+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B6731BC2EF81008DD309 /* UIColor+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		F1E9B6771BC2EFA1008DD309 /* UIFont+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B6761BC2EFA1008DD309 /* UIFont+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */; settings = {ASSET_TAGS = (); }; };
+		F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		498E7A44BF74D542F72DF98A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AA9A446EC8A3CB650281E4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		96EE6B8620AE9FC6CD0E8F2B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F129EF3E1BC2A7A200C90C60 /* PPPopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPopTableViewCell.h; path = Classes/Views/PPPopTableViewCell.h; sourceTree = "<group>"; };
+		F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPopTableViewCell.m; path = Classes/Views/PPPopTableViewCell.m; sourceTree = "<group>"; };
 		F1BB6BF01BC1FB3000D96FA6 /* PraisePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PraisePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF41BC1FB3000D96FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +82,14 @@
 		F1BB6C471BC2313200D96FA6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F1BB6C481BC231A300D96FA6 /* PraisePop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PraisePop.h; path = Classes/PraisePop.h; sourceTree = "<group>"; };
 		F1BB6C491BC231A300D96FA6 /* PraisePop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PraisePop.m; path = Classes/PraisePop.m; sourceTree = "<group>"; };
+		F1E9B6721BC2EF81008DD309 /* UIColor+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PPExtensions.h"; path = "Classes/Categories/UIColor+PPExtensions.h"; sourceTree = "<group>"; };
+		F1E9B6731BC2EF81008DD309 /* UIColor+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PPExtensions.m"; path = "Classes/Categories/UIColor+PPExtensions.m"; sourceTree = "<group>"; };
+		F1E9B6751BC2EFA1008DD309 /* UIFont+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+PPExtensions.h"; path = "Classes/Categories/UIFont+PPExtensions.h"; sourceTree = "<group>"; };
+		F1E9B6761BC2EFA1008DD309 /* UIFont+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+PPExtensions.m"; path = "Classes/Categories/UIFont+PPExtensions.m"; sourceTree = "<group>"; };
+		F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Bold.ttf"; sourceTree = "<group>"; };
+		F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Book.ttf"; sourceTree = "<group>"; };
+		F1E9B67D1BC3073D008DD309 /* UIViewController+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PPExtensions.h"; path = "Classes/Controllers/UIViewController+PPExtensions.h"; sourceTree = "<group>"; };
+		F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PPExtensions.m"; path = "Classes/Controllers/UIViewController+PPExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +142,7 @@
 		F1BB6BF21BC1FB3000D96FA6 /* PraisePop */ = {
 			isa = PBXGroup;
 			children = (
+				F1E9B6781BC301B5008DD309 /* Fonts */,
 				F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */,
 				F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */,
 				F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */,
@@ -200,6 +217,8 @@
 				F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */,
 				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
+				F129EF3E1BC2A7A200C90C60 /* PPPopTableViewCell.h */,
+				F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +226,12 @@
 		F1BB6C461BC230FB00D96FA6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F1E9B6721BC2EF81008DD309 /* UIColor+PPExtensions.h */,
+				F1E9B6731BC2EF81008DD309 /* UIColor+PPExtensions.m */,
+				F1E9B6751BC2EFA1008DD309 /* UIFont+PPExtensions.h */,
+				F1E9B6761BC2EFA1008DD309 /* UIFont+PPExtensions.m */,
+				F1E9B67D1BC3073D008DD309 /* UIViewController+PPExtensions.h */,
+				F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */,
 				F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */,
 				F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */,
 			);
@@ -224,6 +249,15 @@
 				F1BB6C0D1BC2047200D96FA6 /* API */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		F1E9B6781BC301B5008DD309 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */,
+				F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */,
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
 				F1BB6C3E1BC22CFA00D96FA6 /* PPPopCell.xib in Resources */,
 				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
+				F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,13 +375,17 @@
 				F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */,
 				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
 				F1BB6C1D1BC204B900D96FA6 /* PPUpvote.m in Sources */,
+				F1E9B6771BC2EFA1008DD309 /* UIFont+PPExtensions.m in Sources */,
 				F1BB6C171BC2049600D96FA6 /* PPOrganization.m in Sources */,
+				F1E9B6741BC2EF81008DD309 /* UIColor+PPExtensions.m in Sources */,
 				F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */,
 				F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */,
 				F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */,
 				F1BB6C141BC2048700D96FA6 /* PPUser.m in Sources */,
 				F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */,
+				F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */,
 				F1BB6C1A1BC204A000D96FA6 /* PPPost.m in Sources */,
+				F129EF401BC2A7A200C90C60 /* PPPopTableViewCell.m in Sources */,
 				F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */,
 				F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */,
 				F1BB6C391BC2237900D96FA6 /* PPMenuViewController.m in Sources */,
@@ -461,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.priasepop.PraisePop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,6 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.priasepop.PraisePop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
