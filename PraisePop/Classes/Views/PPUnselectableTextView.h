@@ -10,4 +10,6 @@
 
 @interface PPUnselectableTextView : UITextView
 
++ (NSDictionary *)attributes;
+
 @end
