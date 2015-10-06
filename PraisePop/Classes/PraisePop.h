@@ -11,6 +11,8 @@
 
 @interface PraisePop : NSObject
 
++ (NSDateFormatter *)dateFormatter;
+
 + (UIViewController *)controllerWithIdentifier:(NSString *)identifier;
 
 @end
