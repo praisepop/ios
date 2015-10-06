@@ -31,4 +31,13 @@
 //    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewController:sender];
+}
+
+- (void)dismissViewController:(id)sender {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

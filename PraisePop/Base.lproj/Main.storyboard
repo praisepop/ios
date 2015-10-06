@@ -103,6 +103,9 @@
                                             <color key="titleColor" red="0.6588235294" green="0.66666666669999997" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="AeZ-P4-6nr" eventType="touchUpInside" id="brf-sW-Umj"/>
+                                        </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-Yx-LdD">
                                         <rect key="frame" x="0.0" y="39" width="375" height="1"/>
