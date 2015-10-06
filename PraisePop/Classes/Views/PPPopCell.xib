@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLC-ST-Lv0">
-                        <rect key="frame" x="17" y="97" width="34.5" height="15"/>
+                        <rect key="frame" x="17" y="97" width="32" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="I4j-hw-3zA"/>
                         </constraints>
@@ -42,8 +42,8 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Something" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w4-dv-H7z" customClass="PPUnselectableTextView">
-                        <rect key="frame" x="17" y="49" width="290" height="36.5"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="TESTTTTTT" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w4-dv-H7z" customClass="PPUnselectableTextView">
+                        <rect key="frame" x="17" y="49" width="290" height="35"/>
                         <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -75,6 +75,9 @@
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="textView" destination="9w4-dv-H7z" id="Sfl-1T-lhi"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
