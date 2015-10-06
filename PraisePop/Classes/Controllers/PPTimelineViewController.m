@@ -13,9 +13,9 @@
 #import "PPPopTableViewCell.h"
 
 static NSString *kPPPopCellIdentifier = @"PPPopCell";
+static CGFloat kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController ()
-
 @end
 
 @implementation PPTimelineViewController
@@ -78,13 +78,29 @@ static NSString *kPPPopCellIdentifier = @"PPPopCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    if ([self heightForTextViewAtIndexPath:indexPath] <= 35) {
+        return 120;
+    }
+    else {
+        return [self heightForTextViewAtIndexPath:indexPath] + 85;
+    }
+}
+
+- (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *body = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac sem ut nisi blandit porta. Etiam tincidunt euismod sapien, a tincidunt leo egestas at. Aenean id tincidunt mi, sed viverra urna. Donec bibendum justo nec dui rhoncus, id auctor risus consequat. Vestibulum mattis pharetra mauris eu posuere. Praesent sagittis rhoncus.!";
+    
+    NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
+    CGFloat width = self.view.width * kPPPopCellTextViewRatio;
+    
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:nil];
+    
+    return rect.size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PPPopTableViewCell *cell = (PPPopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
     
-    
+    cell.textView.text = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac sem ut nisi blandit porta. Etiam tincidunt euismod sapien, a tincidunt leo egestas at. Aenean id tincidunt mi, sed viverra urna. Donec bibendum justo nec dui rhoncus, id auctor risus consequat. Vestibulum mattis pharetra mauris eu posuere. Praesent sagittis rhoncus.";
     
     return cell;
 }
@@ -92,7 +108,9 @@ static NSString *kPPPopCellIdentifier = @"PPPopCell";
 - (void)revealComposer:(id)sender {
     PPComposeViewController *composer = (PPComposeViewController *)[PraisePop controllerWithIdentifier:@"PPComposeViewController"];
     
-    [self.navigationController presentViewController:composer animated:YES completion:nil];
+    [self.navigationController presentViewController:composer animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    }];
 }
 
 @end
