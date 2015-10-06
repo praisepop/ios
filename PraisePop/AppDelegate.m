@@ -70,7 +70,14 @@
 #pragma mark - SWRevealViewDelegate
 
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position {
+    UITableViewController *controller = (UITableViewController *)revealController.frontViewController.childViewControllers[0];
     
+    if (position == FrontViewPositionRight) {
+        controller.tableView.userInteractionEnabled = NO;
+    }
+    else {
+        controller.tableView.userInteractionEnabled = YES;
+    }
 }
 
 @end
