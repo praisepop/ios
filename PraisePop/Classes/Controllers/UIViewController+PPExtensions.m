@@ -33,29 +33,6 @@
     //    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
-- (void)addReveal {
-    SWRevealViewController *revealController = [self revealViewController];
-    
-    revealController.rearViewRevealWidth = 276.0f;
-    revealController.rearViewRevealOverdraw = 0.0f;
-    revealController.rearViewRevealDisplacement = 276.0f;
-    
-    revealController.frontViewShadowRadius = 0.0f;
-    revealController.frontViewShadowColor = UIColor.clearColor;
-    revealController.frontViewShadowOffset = CGSizeZero;
-    
-    revealController.toggleAnimationDuration = 0.21f;
-    
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-    
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings-nav-button"]
-                                                                         style:UIBarButtonItemStyleDone
-                                                                        target:revealController action:@selector(revealToggle:)];
-    
-    self.navigationItem.leftBarButtonItem = revealButtonItem;
-}
-
 - (IBAction)dismiss:(id)sender {
     [self dismissViewController:sender];
 }
