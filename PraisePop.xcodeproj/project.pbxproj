@@ -23,7 +23,6 @@
 		F1BB6C1D1BC204B900D96FA6 /* PPUpvote.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1C1BC204B900D96FA6 /* PPUpvote.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F1BB6C2A1BC2210D00D96FA6 /* PPRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -73,8 +72,6 @@
 		F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PraisePop/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOnboardingViewController.h; path = Classes/Controllers/PPOnboardingViewController.h; sourceTree = "<group>"; };
 		F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOnboardingViewController.m; path = Classes/Controllers/PPOnboardingViewController.m; sourceTree = "<group>"; };
-		F1BB6C281BC2210D00D96FA6 /* PPRulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPRulesViewController.h; path = Classes/Controllers/PPRulesViewController.h; sourceTree = "<group>"; };
-		F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPRulesViewController.m; path = Classes/Controllers/PPRulesViewController.m; sourceTree = "<group>"; };
 		F1BB6C2C1BC2214100D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1BB6C2E1BC2222A00D96FA6 /* PPTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPTimelineViewController.h; path = Classes/Controllers/PPTimelineViewController.h; sourceTree = "<group>"; };
 		F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPTimelineViewController.m; path = Classes/Controllers/PPTimelineViewController.m; sourceTree = "<group>"; };
@@ -134,6 +131,8 @@
 		F133D6D21BC5632400E86958 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				F133D6E31BC5B0A600E86958 /* PP3DGlassesRefreshableController.h */,
+				F133D6E11BC5960800E86958 /* PP3DGlassesRefreshableController.m */,
 				F1BB6C2E1BC2222A00D96FA6 /* PPTimelineViewController.h */,
 				F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */,
 				F1BB6C341BC2230D00D96FA6 /* PPDetailViewController.h */,
@@ -147,8 +146,6 @@
 			children = (
 				F133D6CC1BC557D800E86958 /* PPMoreViewController.h */,
 				F133D6CD1BC557D800E86958 /* PPMoreViewController.m */,
-				F1BB6C281BC2210D00D96FA6 /* PPRulesViewController.h */,
-				F1BB6C291BC2210D00D96FA6 /* PPRulesViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -271,8 +268,6 @@
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
 				F129EF3E1BC2A7A200C90C60 /* PPPopTableViewCell.h */,
 				F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */,
-				F133D6E31BC5B0A600E86958 /* PP3DGlassesRefreshableController.h */,
-				F133D6E11BC5960800E86958 /* PP3DGlassesRefreshableController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -427,7 +422,6 @@
 			files = (
 				F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */,
 				F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */,
-				F1BB6C2A1BC2210D00D96FA6 /* PPRulesViewController.m in Sources */,
 				F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */,
 				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
 				F133D6E21BC5960800E86958 /* PP3DGlassesRefreshableController.m in Sources */,

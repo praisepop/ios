@@ -702,23 +702,23 @@
             </objects>
             <point key="canvasLocation" x="542.5" y="-374.5"/>
         </scene>
-        <!--Rules View Controller-->
+        <!--View Controller-->
         <scene sceneID="EJf-gy-rQb">
             <objects>
-                <viewController storyboardIdentifier="PPRulesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Myi-kN-f74" customClass="PPRulesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PPRulesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Myi-kN-f74" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewr-qK-1Og"/>
                         <viewControllerLayoutGuide type="bottom" id="xix-Y8-Ibs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9yw-ZB-8GR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="880"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-55-E7v">
-                                <rect key="frame" x="0.0" y="20" width="375" height="860"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="790"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-bc-Uby">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="790"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="juicerules" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-oJ-6gW">
                                                 <rect key="frame" x="110" y="16" width="155" height="295"/>
@@ -726,37 +726,37 @@
                                                     <constraint firstAttribute="width" secondItem="OTD-oJ-6gW" secondAttribute="height" multiplier="31:59" id="h5M-as-V8y"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="4. You will be held accountable for your pops. When we receive a report, we will trace your e-mail if deemed necessary." translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-Od-zXn" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="4. You will be held accountable for your pops. When we receive a report, we will trace your e-mail if deemed necessary." translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-Od-zXn" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="524" width="319" height="106.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="2. Don’t clutter feeds with spam." translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oh-Nmz" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="2. Don’t clutter feeds with spam." translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oh-Nmz" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="412" width="319" height="39"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="3. If you see offensive pops, do your part and report them." translatesAutoresizingMaskIntoConstraints="NO" id="a32-jq-yNV" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="3. If you see offensive pops, do your part and report them." translatesAutoresizingMaskIntoConstraints="NO" id="a32-jq-yNV" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="455" width="319" height="61.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="5. If your pops are frequently reported, you will be warned and then suspended." translatesAutoresizingMaskIntoConstraints="NO" id="upi-G9-DvY" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="5. If your pops are frequently reported, you will be warned and then suspended." translatesAutoresizingMaskIntoConstraints="NO" id="upi-G9-DvY" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="27" y="638" width="319" height="84"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="1. You will not pop anything offensive, hurtful, or annoying. Zero tolerance for bullying or harassment of any kind." translatesAutoresizingMaskIntoConstraints="NO" id="f2v-Vh-yOs" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="1. You will not pop anything offensive, hurtful, or annoying. Zero tolerance for bullying or harassment of any kind." translatesAutoresizingMaskIntoConstraints="NO" id="f2v-Vh-yOs" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="327" width="319" height="84"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="6. Let's get poppin'!" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-5R-G1n" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="6. Let's get poppin'!" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-5R-G1n" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="730" width="319" height="39"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
@@ -769,7 +769,7 @@
                                             <constraint firstItem="f2v-Vh-yOs" firstAttribute="top" secondItem="OTD-oJ-6gW" secondAttribute="bottom" constant="16" id="1go-tb-iuV"/>
                                             <constraint firstAttribute="trailing" secondItem="cJZ-Od-zXn" secondAttribute="trailing" constant="28" id="2hA-tS-erF"/>
                                             <constraint firstItem="OTD-oJ-6gW" firstAttribute="width" secondItem="Rc9-bc-Uby" secondAttribute="width" multiplier="155:816" constant="83.768382352941174" id="4V1-G9-oJ4"/>
-                                            <constraint firstAttribute="bottom" secondItem="l2J-5R-G1n" secondAttribute="bottom" constant="91" id="7dF-Uc-Y4B"/>
+                                            <constraint firstAttribute="bottom" secondItem="l2J-5R-G1n" secondAttribute="bottom" constant="21" id="7dF-Uc-Y4B"/>
                                             <constraint firstItem="0gX-oh-Nmz" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="97W-HW-7mr"/>
                                             <constraint firstItem="a32-jq-yNV" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="CYQ-VK-85c"/>
                                             <constraint firstAttribute="trailing" secondItem="0gX-oh-Nmz" secondAttribute="trailing" constant="28" id="Dn3-mZ-F2C"/>
@@ -809,7 +809,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cCD-fd-ATF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="880"/>
+                    <size key="freeformSize" width="375" height="810"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKX-zT-A7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
