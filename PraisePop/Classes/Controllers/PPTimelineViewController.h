@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-#import <SWRevealViewController/SWRevealViewController.h>
+@class PPMenuControllerCache;
 
 @class PPComposeViewController;
+@class PPMenuViewController;
 
 @class PPPopTableViewCell;
+
+@class PPPost;
 
 @interface PPTimelineViewController : UITableViewController
 
