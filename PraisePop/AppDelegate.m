@@ -24,14 +24,15 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = UIColor.whiteColor;
     
     PPTimelineViewController *frontViewController = PPTimelineViewController.new;
     PPMenuViewController *rearViewController = (PPMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PPMenuViewController"];
     
     UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     
-    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearViewController frontViewController:frontNavigationController];
+    SWRevealViewController *revealController = [SWRevealViewController.alloc initWithRearViewController:rearViewController frontViewController:frontNavigationController];
     revealController.delegate = self;
     
     self.window.rootViewController = revealController;
@@ -48,8 +49,7 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName : UIColor.whiteColor,
-                                                           NSFontAttributeName : [UIFont pp_fontWithName:FuturaBold size:23],
-                                                           NSKernAttributeName: @5
+                                                           NSFontAttributeName : [UIFont pp_fontWithName:FuturaBold size:23]
                                                            }];
     
     [[UINavigationBar appearance] setBarTintColor:UIColor.pp_redColor];
