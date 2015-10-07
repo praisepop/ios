@@ -56,4 +56,10 @@
     self.navigationItem.leftBarButtonItem = revealButtonItem;
 }
 
+- (UIViewController *)pp_controllerWithIdentifier:(NSString *)identifier {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    
+    return [storyboard instantiateViewControllerWithIdentifier:identifier];
+}
+
 @end
