@@ -36,6 +36,15 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:kPPMoreCellIdentifier];
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPMoreCacheKey];
+    
+    self.tableView.tableFooterView = self.footerView;
+    UIEdgeInsets inset = UIEdgeInsetsZero;
+    inset.bottom -= self.tableView.tableFooterView.frame.size.height;
+    self.tableView.contentInset = inset;
+}
+
+- (UIView *)footerView {
+    return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -72,6 +81,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     
     cell.textLabel.text = self.contents[key][indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont pp_fontWithName:FuturaMedium size:16];
     
     return cell;
 }
@@ -87,6 +97,9 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
                      @"Like us on Facebook",
                      @"Follow us on Instagram",
                      @"View on the App Store"
+                     ],
+             @"Help Us": @[
+                     @"Provide Feedback"
                      ],
              @"Important Stuff": @[
                      @"Rules",
