@@ -12,4 +12,6 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
+@property (strong, nonatomic) NSString *body;
+
 @end

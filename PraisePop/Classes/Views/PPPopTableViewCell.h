@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class PPPost;
+
+#import "PPUnselectableTextView.h"
+
 @interface PPPopTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) PPPost *post;
 
 @end

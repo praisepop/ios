@@ -43,7 +43,7 @@
                         </state>
                     </button>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="TESTTTTTT" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w4-dv-H7z" customClass="PPUnselectableTextView">
-                        <rect key="frame" x="17" y="49" width="290" height="35"/>
+                        <rect key="frame" x="17" y="56" width="290" height="35"/>
                         <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -59,7 +59,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9w4-dv-H7z" firstAttribute="top" secondItem="GAS-km-9g5" secondAttribute="bottom" constant="8" id="0tK-Lj-0yb"/>
+                    <constraint firstItem="9w4-dv-H7z" firstAttribute="top" secondItem="GAS-km-9g5" secondAttribute="bottom" constant="15" id="0tK-Lj-0yb"/>
                     <constraint firstItem="XFi-sM-U3u" firstAttribute="centerX" secondItem="ikW-C9-Fzf" secondAttribute="centerX" id="3Yf-pK-6eh"/>
                     <constraint firstItem="9w4-dv-H7z" firstAttribute="leading" secondItem="GAS-km-9g5" secondAttribute="leading" id="9uK-ZX-PeU"/>
                     <constraint firstItem="KLC-ST-Lv0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9w4-dv-H7z" secondAttribute="bottom" constant="6" id="Bc8-Zt-GmI"/>

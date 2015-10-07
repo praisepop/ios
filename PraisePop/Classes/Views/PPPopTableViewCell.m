@@ -8,16 +8,23 @@
 
 #import "PPPopTableViewCell.h"
 
+#import "PPPost.h"
+
+@interface PPPopTableViewCell ()
+
+@property (strong, nonatomic) IBOutlet PPUnselectableTextView *textView;
+
+
+@end
+
 @implementation PPPopTableViewCell
 
 - (void)awakeFromNib {
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setPost:(PPPost *)post {
+    self.textView.text = post.body;
 }
 
 @end
