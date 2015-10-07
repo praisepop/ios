@@ -16,6 +16,7 @@
 
 #include "UIView+PPExtensions.h"
 #include "UIViewController+PPExtensions.h"
+#include "UITableViewController+PPExtensions.h"
 #include "UIColor+PPExtensions.h"
 #include "UIFont+PPExtensions.h"
 

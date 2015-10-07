@@ -1,14 +1,14 @@
 //
-//  UIViewController+PPExtensions.m
+//  UITableViewController+PPExtensions.m
 //  PraisePop
 //
-//  Created by Rudd Fawcett on 10/5/15.
+//  Created by Rudd Fawcett on 10/7/15.
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "UIViewController+PPExtensions.h"
+#import "UITableViewController+PPExtensions.h"
 
-@implementation UIViewController (PPExtensions)
+@implementation UITableViewController (PPExtensions)
 
 - (void)pp_setTitle:(NSString *)title {
     title = [title uppercaseString];
@@ -54,15 +54,6 @@
                                                                         target:revealController action:@selector(revealToggle:)];
     
     self.navigationItem.leftBarButtonItem = revealButtonItem;
-}
-
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewController:sender];
-}
-
-- (void)dismissViewController:(id)sender {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

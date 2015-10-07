@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import <SWRevealViewController/SWRevealViewController.h>
+
 @interface UIViewController (PPExtensions)
+
+- (void)pp_setTitle:(NSString *)title;
 
 @end

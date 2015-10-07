@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, PPFont) {
-    FuturaBold,
-    FuturaBook
+    FuturaMedium,
+    FuturaBook,
+    FuturaBold
 };
 
 @interface UIFont (PPExtensions)

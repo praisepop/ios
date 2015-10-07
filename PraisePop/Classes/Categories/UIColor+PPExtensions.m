@@ -14,4 +14,8 @@
     return [UIColor colorWithRed:0.92 green:0.26 blue:0.01 alpha:1];
 }
 
++ (UIColor *)pp_offWhiteColor {
+    return [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+}
+
 @end

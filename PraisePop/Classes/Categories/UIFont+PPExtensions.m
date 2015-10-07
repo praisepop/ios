@@ -20,6 +20,9 @@
         case FuturaBook:
             fontName = @"Futura-Book";
             break;
+        default:
+            fontName = @"Futura-Medium";
+            break;
     }
     
     return [UIFont fontWithName:fontName size:size];

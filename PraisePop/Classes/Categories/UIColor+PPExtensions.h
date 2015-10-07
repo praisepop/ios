@@ -12,4 +12,6 @@
 
 + (UIColor *)pp_redColor;
 
++ (UIColor *)pp_offWhiteColor;
+
 @end
