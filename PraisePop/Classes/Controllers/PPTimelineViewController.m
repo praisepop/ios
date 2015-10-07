@@ -21,6 +21,7 @@ NSString * const kPPPopCellIdentifier = @"PPPopCell";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController ()
+
 @end
 
 @implementation PPTimelineViewController
@@ -37,6 +38,12 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [self.tableView registerNib:popCell forCellReuseIdentifier:kPPPopCellIdentifier];
     
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
+}
+
+- (void)willBeginRefreshing {
+}
+
+- (void)refresh {
 }
 
 - (void)initiateButtons {

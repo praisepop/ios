@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PP3DGlassesRefreshableController.h"
+
 @class PPMenuControllerCache;
 
 @class PPComposeViewController;
@@ -17,6 +19,7 @@
 
 @class PPPost;
 
-@interface PPTimelineViewController : UITableViewController
+@interface PPTimelineViewController : PP3DGlassesRefreshableController
+
 
 @end

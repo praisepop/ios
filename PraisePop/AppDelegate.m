@@ -55,6 +55,8 @@
     [[UINavigationBar appearance] setBarTintColor:UIColor.pp_redColor];
     [[UINavigationBar appearance] setTintColor:UIColor.whiteColor];
     [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setShadowImage:UIImage.new];
+    [[UINavigationBar appearance] setBackgroundImage:UIImage.new forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)APITests {
