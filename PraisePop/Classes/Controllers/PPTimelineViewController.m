@@ -41,9 +41,11 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (void)willBeginRefreshing {
+    // TODO: Add stuff that needs to happen before refreshing here...
 }
 
 - (void)refresh {
+    // TODO: Add stuff that will happen during refreshing here...
 }
 
 - (void)initiateButtons {

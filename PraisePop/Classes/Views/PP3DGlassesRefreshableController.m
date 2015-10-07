@@ -56,7 +56,7 @@
     if ([self respondsToSelector:@selector(willBeginRefreshing)]) {
         [self performSelector:@selector(willBeginRefreshing)];
     }
-    double delayInSeconds = 3.0;
+    double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if ([self respondsToSelector:@selector(refresh)]) {
