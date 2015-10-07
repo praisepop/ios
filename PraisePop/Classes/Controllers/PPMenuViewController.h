@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PPMenuControllerCache.h"
+
+#import <SWRevealViewController/SWRevealViewController.h>
+
+@class PPTimelineViewController;
+@class PPMoreViewController;
+
 @interface PPMenuViewController : UIViewController
 
 @end

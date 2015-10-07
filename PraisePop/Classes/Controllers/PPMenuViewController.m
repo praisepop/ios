@@ -8,30 +8,49 @@
 
 #import "PPMenuViewController.h"
 
+#import "PPTimelineViewController.h"
+#import "PPMoreViewController.h"
+
+NSString * const kPPTimelineCacheKey = @"PPTimelineViewController";
+NSString * const kPPMoreCacheKey = @"PPMoreViewController";
+
 @interface PPMenuViewController ()
 
 @end
 
 @implementation PPMenuViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)buttonTouch:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    // Tagging for buttons for sanity...
+    // Feed == 0
+    // More == 1
+    // etc. when added.
+    
+    if (button.tag == 0) {
+        [self pushFrontViewController:kPPTimelineCacheKey];
+    }
+    else {
+        [self pushFrontViewController:kPPMoreCacheKey];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)pushFrontViewController:(NSString *)identifier {    
+    SWRevealViewController *revealController = self.revealViewController;
+    
+    UINavigationController *navigationController = (UINavigationController *)revealController.frontViewController;
+    
+    if ([[PPMenuControllerCache sharedCache] cache][identifier]) {
+        id controller = [[PPMenuControllerCache sharedCache] cache][identifier];
+        [navigationController setViewControllers:@[ controller ]];
+    }
+    else {
+        id controller = [[NSClassFromString(identifier) alloc] init];
+        [navigationController setViewControllers:@[ controller ]];
+    }
+    
+    [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
