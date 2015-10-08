@@ -726,86 +726,68 @@
                                                     <constraint firstAttribute="width" secondItem="OTD-oJ-6gW" secondAttribute="height" multiplier="31:59" id="h5M-as-V8y"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="4. You will be held accountable for your pops. When we receive a report, we will trace your e-mail if deemed necessary." translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-Od-zXn" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="28" y="524" width="319" height="106.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2v-Vh-yOs" customClass="PPUnselectableTextView">
+                                                <rect key="frame" x="28" y="327" width="319" height="423"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="2. Don’t clutter feeds with spam." translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oh-Nmz" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="28" y="412" width="319" height="39"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="3. If you see offensive pops, do your part and report them." translatesAutoresizingMaskIntoConstraints="NO" id="a32-jq-yNV" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="28" y="455" width="319" height="61.5"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="5. If your pops are frequently reported, you will be warned and then suspended." translatesAutoresizingMaskIntoConstraints="NO" id="upi-G9-DvY" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="27" y="638" width="319" height="84"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="1. You will not pop anything offensive, hurtful, or annoying. Zero tolerance for bullying or harassment of any kind." translatesAutoresizingMaskIntoConstraints="NO" id="f2v-Vh-yOs" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="28" y="327" width="319" height="84"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="6. Let's get poppin'!" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-5R-G1n" customClass="PPUnselectableTextView">
-                                                <rect key="frame" x="28" y="730" width="319" height="39"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <string key="text">1. You will not pop anything offensive, hurtful, or annoying.  Zero tolerance for bullying or harassment of any kind.
+
+2. Don’t clutter feeds with spam.
+
+3. If you see offensive pops, do your part and report them.
+
+4. You will be held accountable for your pops.  When we receive a report, we will trace your email if deemed necessary.
+
+5. If your pops are frequently reported, you will be warned and suspended.
+
+6. Let's get poppin'!</string>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="a32-jq-yNV" firstAttribute="top" secondItem="0gX-oh-Nmz" secondAttribute="bottom" constant="4" id="0oZ-Bx-GUM"/>
                                             <constraint firstItem="f2v-Vh-yOs" firstAttribute="top" secondItem="OTD-oJ-6gW" secondAttribute="bottom" constant="16" id="1go-tb-iuV"/>
-                                            <constraint firstAttribute="trailing" secondItem="cJZ-Od-zXn" secondAttribute="trailing" constant="28" id="2hA-tS-erF"/>
                                             <constraint firstItem="OTD-oJ-6gW" firstAttribute="width" secondItem="Rc9-bc-Uby" secondAttribute="width" multiplier="155:816" constant="83.768382352941174" id="4V1-G9-oJ4"/>
-                                            <constraint firstAttribute="bottom" secondItem="l2J-5R-G1n" secondAttribute="bottom" constant="21" id="7dF-Uc-Y4B"/>
-                                            <constraint firstItem="0gX-oh-Nmz" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="97W-HW-7mr"/>
-                                            <constraint firstItem="a32-jq-yNV" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="CYQ-VK-85c"/>
-                                            <constraint firstAttribute="trailing" secondItem="0gX-oh-Nmz" secondAttribute="trailing" constant="28" id="Dn3-mZ-F2C"/>
-                                            <constraint firstItem="upi-G9-DvY" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="27" id="E01-9H-NFG"/>
-                                            <constraint firstItem="0gX-oh-Nmz" firstAttribute="top" secondItem="f2v-Vh-yOs" secondAttribute="bottom" constant="1" id="F1a-Hq-2q7"/>
-                                            <constraint firstItem="cJZ-Od-zXn" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="JZP-R4-fqG"/>
                                             <constraint firstItem="OTD-oJ-6gW" firstAttribute="top" secondItem="Rc9-bc-Uby" secondAttribute="top" constant="16" id="KB1-nK-xuu"/>
-                                            <constraint firstItem="cJZ-Od-zXn" firstAttribute="top" secondItem="a32-jq-yNV" secondAttribute="bottom" constant="8" id="N8S-va-ETH"/>
                                             <constraint firstItem="f2v-Vh-yOs" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="PmU-kn-EOf"/>
                                             <constraint firstAttribute="trailing" secondItem="f2v-Vh-yOs" secondAttribute="trailing" constant="28" id="T0v-DA-DwB"/>
                                             <constraint firstItem="OTD-oJ-6gW" firstAttribute="centerX" secondItem="Rc9-bc-Uby" secondAttribute="centerX" id="Yyy-U0-VeW"/>
-                                            <constraint firstAttribute="trailing" secondItem="l2J-5R-G1n" secondAttribute="trailing" constant="28" id="avM-iQ-qS8"/>
-                                            <constraint firstItem="l2J-5R-G1n" firstAttribute="leading" secondItem="Rc9-bc-Uby" secondAttribute="leading" constant="28" id="d2r-Fv-jZW"/>
-                                            <constraint firstAttribute="trailing" secondItem="a32-jq-yNV" secondAttribute="trailing" constant="28" id="eWF-95-DJ2"/>
-                                            <constraint firstAttribute="trailing" secondItem="upi-G9-DvY" secondAttribute="trailing" constant="29" id="gdb-RC-hec"/>
-                                            <constraint firstItem="l2J-5R-G1n" firstAttribute="top" secondItem="upi-G9-DvY" secondAttribute="bottom" constant="8" id="gqB-sE-u0O"/>
-                                            <constraint firstItem="upi-G9-DvY" firstAttribute="top" secondItem="cJZ-Od-zXn" secondAttribute="bottom" constant="8" id="pND-bE-du6"/>
+                                            <constraint firstAttribute="bottom" secondItem="f2v-Vh-yOs" secondAttribute="bottom" constant="40" id="kRh-Qe-QVP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Rc9-bc-Uby" secondAttribute="trailing" id="O0r-Um-Cga"/>
+                                    <constraint firstItem="Rc9-bc-Uby" firstAttribute="centerY" secondItem="GkT-55-E7v" secondAttribute="centerY" id="S9K-3G-gPQ"/>
                                     <constraint firstItem="Rc9-bc-Uby" firstAttribute="top" secondItem="GkT-55-E7v" secondAttribute="top" id="Uql-w5-0Wo"/>
                                     <constraint firstAttribute="bottom" secondItem="Rc9-bc-Uby" secondAttribute="bottom" id="k9D-HS-ELW"/>
                                     <constraint firstItem="Rc9-bc-Uby" firstAttribute="leading" secondItem="GkT-55-E7v" secondAttribute="leading" id="ywN-B7-erm"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="S9K-3G-gPQ"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xix-Y8-Ibs" firstAttribute="top" secondItem="GkT-55-E7v" secondAttribute="bottom" id="7RD-Yo-GCX"/>
+                            <constraint firstItem="GkT-55-E7v" firstAttribute="centerY" secondItem="9yw-ZB-8GR" secondAttribute="centerY" id="7Rw-co-lQl"/>
                             <constraint firstItem="GkT-55-E7v" firstAttribute="top" secondItem="ewr-qK-1Og" secondAttribute="bottom" id="B8a-Ea-Rp2"/>
+                            <constraint firstItem="GkT-55-E7v" firstAttribute="top" secondItem="ewr-qK-1Og" secondAttribute="bottom" id="JrU-Vf-aB5"/>
+                            <constraint firstItem="GkT-55-E7v" firstAttribute="bottom" secondItem="xix-Y8-Ibs" secondAttribute="top" id="XXL-gO-oFX"/>
                             <constraint firstAttribute="trailing" secondItem="GkT-55-E7v" secondAttribute="trailing" id="fIT-qS-CUZ"/>
                             <constraint firstItem="GkT-55-E7v" firstAttribute="leading" secondItem="9yw-ZB-8GR" secondAttribute="leading" id="l9K-Jj-VgW"/>
                             <constraint firstAttribute="width" secondItem="Rc9-bc-Uby" secondAttribute="width" id="tg3-PT-DH0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Rw-co-lQl"/>
+                                <exclude reference="B8a-Ea-Rp2"/>
+                                <exclude reference="7RD-Yo-GCX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="cCD-fd-ATF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
