@@ -12,6 +12,7 @@
 
 - (void)layoutSubviews {
     self.editable = NO;
+    self.userInteractionEnabled = NO;
     self.textContainer.lineFragmentPadding = 0;
     self.textContainerInset = UIEdgeInsetsZero;
 }
