@@ -20,7 +20,7 @@
 NSString * const kPPPopCellIdentifier = @"PPPopCell";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
-@interface PPTimelineViewController ()
+@interface PPTimelineViewController () <PPPopDelegate>
 
 @end
 
@@ -46,6 +46,10 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)refresh {
     // TODO: Add stuff that will happen during refreshing here...
+}
+
+- (IBAction)pop:(id)sender {
+    
 }
 
 - (void)initiateButtons {
@@ -80,7 +84,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *body = @"Your voice gave me chills!!";
+    NSString *body = @"SOME REALLY FUKCING LONG STRING TO TEST THIS SHIT OUT FAM YA FEEL?";
     
     NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
     CGFloat width = self.view.width * kPPPopCellTextViewRatio;
@@ -95,11 +99,17 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     
     
     PPPost *post = PPPost.new;
-    post.body = @"Your voice gave me chills!!";
+    post.body = @"SOME REALLY FUKCING LONG STRING TO TEST THIS SHIT OUT FAM YA FEEL?";
     
     cell.post = post;
+    cell.delegate = self;
+    cell.indexPath = indexPath;
     
     return cell;
+}
+
+- (void)didUpvotePop:(PPPost *)pop atIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"upvote");
 }
 
 - (void)revealComposer:(id)sender {

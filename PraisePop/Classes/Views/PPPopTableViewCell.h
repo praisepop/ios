@@ -12,7 +12,21 @@
 
 #import "PPUnselectableTextView.h"
 
+@class PPPopTableViewCell;
+
+@protocol PPPopDelegate <NSObject>
+
+@optional
+
+- (void)didUpvotePop:(PPPost *)pop atIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 @interface PPPopTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id<PPPopDelegate> delegate;
+
+@property (assign, nonatomic) NSIndexPath *indexPath;
 
 @property (strong, nonatomic) PPPost *post;
 
