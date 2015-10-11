@@ -30,4 +30,6 @@
 
 @property (strong, nonatomic) PPPost *post;
 
+@property (nonatomic) BOOL upvoted;
+
 @end
