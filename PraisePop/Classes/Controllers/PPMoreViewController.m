@@ -87,7 +87,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[self pp_controllerWithIdentifier:@"PPRulesViewController"] animated:YES];
+    [self.navigationController pushViewController:[UIStoryboard pp_controllerWithIdentifier:@"PPRulesViewController"] animated:YES];
 }
 
 - (NSDictionary *)contents {
