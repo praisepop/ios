@@ -84,7 +84,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *body = @"Testing out dynamic cell resizing with very long strings... It seems to work?!";
+    NSString *body = indexPath.row % 2 == 0 ? @"Testing out dynamic cell resizing with very long strings... It seems to work?!" : @"I'm like hey what's up hello!  This is a test.  This is a test. This is a test. This is a test. This is a test. This is a test.  This is a test.";
     
     NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
     CGFloat width = self.view.width * kPPPopCellTextViewRatio;
@@ -101,7 +101,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     }
     
     PPPost *post = PPPost.new;
-    post.body = @"Testing out dynamic cell resizing with very long strings... It seems to work?!";
+    post.body = indexPath.row % 2 == 0 ? @"Testing out dynamic cell resizing with very long strings... It seems to work?!" : @"I'm like hey what's up hello!  This is a test.  This is a test. This is a test. This is a test. This is a test. This is a test.  This is a test.";
     
     cell.post = post;
     cell.delegate = self;
