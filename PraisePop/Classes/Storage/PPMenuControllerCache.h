@@ -17,6 +17,8 @@ extern NSString * const kPPMoreCacheKey;
 
 - (void)addControllerToCache:(UIViewController *)controller withKey:(NSString *)key;
 
+- (void)removeControllerFromCache:(NSString *)key;
+
 @property (strong, nonatomic) NSMutableDictionary *cache;
 
 @end

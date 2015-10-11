@@ -25,4 +25,8 @@
     [self.cache setObject:controller forKey:key];
 }
 
+- (void)removeControllerFromCache:(NSString *)key {
+    [self.cache removeObjectForKey:key];
+}
+
 @end
