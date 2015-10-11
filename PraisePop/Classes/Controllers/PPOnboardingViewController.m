@@ -8,6 +8,9 @@
 
 #import "PPOnboardingViewController.h"
 
+#import "PPLogInViewController.h"
+#import "PPSignUpViewController.h"
+
 @interface PPOnboardingViewController ()
 
 @end
@@ -22,6 +25,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonTapped:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    // login tag == 0
+    // sign in tag == 1
+    
+    if (button.tag == 0) {
+        PPLogInViewController *loginController = (PPLogInViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPLogInViewController"];
+        [self.navigationController pushViewController:loginController animated:YES];
+    }
+    else {
+        PPSignUpViewController *signupController = (PPSignUpViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPSignUpViewController"];
+        [self.navigationController pushViewController:signupController animated:YES];
+    }
 }
 
 /*

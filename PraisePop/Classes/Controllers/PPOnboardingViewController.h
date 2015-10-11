@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class PPSignUpViewController;
+@class PPLogInViewController;
+
 @interface PPOnboardingViewController : UIViewController
 
 @end
