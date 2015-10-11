@@ -19,5 +19,6 @@
 #include "UITableViewController+PPExtensions.h"
 #include "UIColor+PPExtensions.h"
 #include "UIFont+PPExtensions.h"
+#include "UIStoryboard+PPExtensions.h"
 
 #endif /* PrefixHeader_pch */

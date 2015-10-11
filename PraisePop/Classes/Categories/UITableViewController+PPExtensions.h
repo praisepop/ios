@@ -14,6 +14,4 @@
 
 - (void)pp_setTitle:(NSString *)title;
 
-- (UIViewController *)pp_controllerWithIdentifier:(NSString *)identifier;
-
 @end
