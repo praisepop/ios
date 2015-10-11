@@ -14,6 +14,9 @@
 		F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D71BC564E200E86958 /* UITableViewController+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6DB1BC5667D00E86958 /* PPMenuControllerCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6DA1BC5667D00E86958 /* PPMenuControllerCache.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6E21BC5960800E86958 /* PP3DGlassesRefreshableController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6E11BC5960800E86958 /* PP3DGlassesRefreshableController.m */; settings = {ASSET_TAGS = (); }; };
+		F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F13D46AA1BCA1D1900072729 /* PPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A91BCA1D1900072729 /* PPLogInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF41BC1FB3000D96FA6 /* main.m */; };
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
 		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
@@ -55,6 +58,12 @@
 		F133D6DA1BC5667D00E86958 /* PPMenuControllerCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMenuControllerCache.m; path = Classes/Storage/PPMenuControllerCache.m; sourceTree = "<group>"; };
 		F133D6E11BC5960800E86958 /* PP3DGlassesRefreshableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PP3DGlassesRefreshableController.m; path = Classes/Views/PP3DGlassesRefreshableController.m; sourceTree = "<group>"; };
 		F133D6E31BC5B0A600E86958 /* PP3DGlassesRefreshableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PP3DGlassesRefreshableController.h; path = Classes/Views/PP3DGlassesRefreshableController.h; sourceTree = "<group>"; };
+		F13D46A51BCA1D0000072729 /* PPSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPSignUpViewController.h; path = Classes/Controllers/PPSignUpViewController.h; sourceTree = "<group>"; };
+		F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSignUpViewController.m; path = Classes/Controllers/PPSignUpViewController.m; sourceTree = "<group>"; };
+		F13D46A81BCA1D1900072729 /* PPLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPLogInViewController.h; path = Classes/Controllers/PPLogInViewController.h; sourceTree = "<group>"; };
+		F13D46A91BCA1D1900072729 /* PPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLogInViewController.m; path = Classes/Controllers/PPLogInViewController.m; sourceTree = "<group>"; };
+		F13E52551BCA193C005555ED /* UIStoryboard+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+PPExtensions.h"; path = "Classes/Categories/UIStoryboard+PPExtensions.h"; sourceTree = "<group>"; };
+		F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+PPExtensions.m"; path = "Classes/Categories/UIStoryboard+PPExtensions.m"; sourceTree = "<group>"; };
 		F1BB6BF01BC1FB3000D96FA6 /* PraisePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PraisePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF41BC1FB3000D96FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,8 +162,12 @@
 		F133D6D41BC5633400E86958 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				F13D46A51BCA1D0000072729 /* PPSignUpViewController.h */,
+				F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */,
 				F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */,
 				F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */,
+				F13D46A81BCA1D1900072729 /* PPLogInViewController.h */,
+				F13D46A91BCA1D1900072729 /* PPLogInViewController.m */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -283,6 +296,8 @@
 				F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */,
 				F133D6D61BC564E200E86958 /* UITableViewController+PPExtensions.h */,
 				F133D6D71BC564E200E86958 /* UITableViewController+PPExtensions.m */,
+				F13E52551BCA193C005555ED /* UIStoryboard+PPExtensions.h */,
+				F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */,
 				F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */,
 				F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */,
 			);
@@ -420,15 +435,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13D46AA1BCA1D1900072729 /* PPLogInViewController.m in Sources */,
 				F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */,
 				F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */,
 				F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */,
 				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
 				F133D6E21BC5960800E86958 /* PP3DGlassesRefreshableController.m in Sources */,
+				F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */,
 				F1BB6C1D1BC204B900D96FA6 /* PPUpvote.m in Sources */,
 				F133D6D11BC55D5E00E86958 /* PPMenuViewController.m in Sources */,
 				F1E9B6771BC2EFA1008DD309 /* UIFont+PPExtensions.m in Sources */,
 				F133D6CE1BC557D800E86958 /* PPMoreViewController.m in Sources */,
+				F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */,
 				F1BB6C171BC2049600D96FA6 /* PPOrganization.m in Sources */,
 				F1E9B6741BC2EF81008DD309 /* UIColor+PPExtensions.m in Sources */,
 				F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */,
