@@ -10,6 +10,7 @@
 
 @class PPMenuViewController;
 @class PPTimelineViewController;
+@class PPOnboardingViewController;
 
 #import <UIKit/UIKit.h>
 

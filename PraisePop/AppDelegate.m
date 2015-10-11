@@ -10,8 +10,11 @@
 
 #import "PPMenuViewController.h"
 #import "PPTimelineViewController.h"
+#import "PPOnboardingViewController.h"
 
 #import "AppDelegate.h"
+
+#define IS_LOGGED_IN 0
 
 @interface AppDelegate () <SWRevealViewControllerDelegate>
 
@@ -22,17 +25,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupAppearances];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    
     self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
     
-    PPTimelineViewController *frontViewController = PPTimelineViewController.new;
-    PPMenuViewController *rearViewController = (PPMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PPMenuViewController"];
+    PPMenuViewController *rearViewController = (PPMenuViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPMenuViewController"];
     
-    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    id frontViewController;
     
-    SWRevealViewController *revealController = [SWRevealViewController.alloc initWithRearViewController:rearViewController frontViewController:frontNavigationController];
+    if (IS_LOGGED_IN) {
+        frontViewController = (PPOnboardingViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPTimelineViewController"];
+        
+        frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    }
+    else {
+        frontViewController = (UINavigationController *)[UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingNavigationController"];
+    }
+    
+    SWRevealViewController *revealController = [SWRevealViewController.alloc initWithRearViewController:rearViewController frontViewController:frontViewController];
+    
     revealController.delegate = self;
     
     self.window.rootViewController = revealController;
@@ -72,13 +82,31 @@
 #pragma mark - SWRevealViewDelegate
 
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position {
-    UITableViewController *controller = (UITableViewController *)revealController.frontViewController.childViewControllers[0];
+    if (revealController.frontViewController.childViewControllers.count == 0) {
+        return;
+    }
+    
+    id controller = revealController.frontViewController.childViewControllers[0];
     
     if (position == FrontViewPositionRight) {
-        controller.tableView.userInteractionEnabled = NO;
+        if ([controller isKindOfClass:UITableViewController.class]) {
+            ((UITableViewController *)controller).tableView.userInteractionEnabled = NO;
+        }
+        else {
+            if ([controller isMemberOfClass:UIViewController.class]) {
+                ((UIViewController *)controller).view.userInteractionEnabled = NO;
+            }
+        }
     }
     else {
-        controller.tableView.userInteractionEnabled = YES;
+        if ([controller isKindOfClass:UITableViewController.class]) {
+            ((UITableViewController *)controller).tableView.userInteractionEnabled = YES;
+        }
+        else {
+            if ([controller isMemberOfClass:UIViewController.class]) {
+                ((UIViewController *)controller).view.userInteractionEnabled = YES;
+            }
+        }
     }
 }
 
