@@ -35,6 +35,7 @@
 
 - (void)addReveal {
     SWRevealViewController *revealController = [self revealViewController];
+    revealController.view.backgroundColor = UIColor.whiteColor;
     
     revealController.rearViewRevealWidth = 276.0f;
     revealController.rearViewRevealOverdraw = 0.0f;
