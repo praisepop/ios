@@ -14,7 +14,7 @@
 
 #import "AppDelegate.h"
 
-#define IS_LOGGED_IN 0
+#define IS_LOGGED_IN 1
 
 @interface AppDelegate () <SWRevealViewControllerDelegate>
 
@@ -33,7 +33,7 @@
     id frontViewController;
     
     if (IS_LOGGED_IN) {
-        frontViewController = (PPOnboardingViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPTimelineViewController"];
+        frontViewController = PPTimelineViewController.new;
         
         frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     }
