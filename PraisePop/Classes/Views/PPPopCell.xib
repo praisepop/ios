@@ -38,7 +38,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFi-sM-U3u">
                         <rect key="frame" x="327" y="88" width="24" height="22"/>
-                        <state key="normal" image="otherbutton">
+                        <state key="normal" image="pop-more-button">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -85,7 +85,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="otherbutton" width="22" height="5"/>
         <image name="pop-kernel" width="39" height="37"/>
+        <image name="pop-more-button" width="750" height="2"/>
     </resources>
 </document>
