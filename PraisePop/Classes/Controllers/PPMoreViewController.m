@@ -81,7 +81,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     
     cell.textLabel.text = self.contents[key][indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont pp_fontWithName:FuturaMedium size:16];
+    cell.textLabel.font = [UIFont systemFontOfSize:16];
     
     return cell;
 }
