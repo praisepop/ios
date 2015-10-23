@@ -67,6 +67,10 @@
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setShadowImage:UIImage.new];
     [[UINavigationBar appearance] setBackgroundImage:UIImage.new forBarMetrics:UIBarMetricsDefault];
+    
+    [[UIToolbar appearance] setTintColor:UIColor.pp_redColor];
+    [[UIToolbar appearance] setTranslucent:NO];
+    
 }
 
 - (void)APITests {

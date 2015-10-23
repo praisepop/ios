@@ -87,7 +87,52 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[UIStoryboard pp_controllerWithIdentifier:@"PPRulesViewController"] animated:YES];
+    if (indexPath.section == PPMenuViewControllerSectionLoveUs) {
+        if (indexPath.row == 0) {
+        }
+        else if (indexPath.row == 1) {
+            [self openURL:nil actual:@"https://www.facebook.com/praisepopbywoco"];
+        }
+        else if (indexPath.row == 2) {
+            [self openURL:nil actual:@"https://twitter.com/trypraisepop"];
+        }
+        else {
+            [self openURL:nil actual:nil];
+        }
+    }
+    else if (indexPath.section == PPMenuViewControllerSectionHelpUs) {
+        // TODO: How to handle feedback?
+    }
+    else if (indexPath.section == PPMenuViewControllerSectionImportant) {
+        if (indexPath.row == 0) {
+            [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
+        }
+        else if (indexPath.row == 1) {
+            [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
+        }
+        else {
+            // TODO: What is our contact method?
+        }
+    }
+    else {
+        if (indexPath.row == 0) {
+            
+        }
+        else {
+            
+        }
+    }
+}
+
+- (void)openURL:(NSString *)try actual:(NSString *)actual {
+    NSURL *URL = [NSURL URLWithString:actual];
+    if ([UIApplication.sharedApplication canOpenURL:[NSURL URLWithString:try]]) {
+        [UIApplication.sharedApplication openURL:URL];
+    }
+    else {
+        SVWebViewController *webViewController = [SVWebViewController.alloc initWithURL:URL];
+        [self.navigationController pushViewController:webViewController animated:YES];
+    }
 }
 
 - (NSDictionary *)contents {
@@ -95,7 +140,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
              @"Love Us": @[
                      @"Share PraisePop",
                      @"Like us on Facebook",
-                     @"Follow us on Instagram",
+                     @"Follow us on Twitter",
                      @"View on the App Store"
                      ],
              @"Help Us": @[
