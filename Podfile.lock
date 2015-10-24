@@ -20,18 +20,36 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
+  - Overcoat (3.2.0):
+    - Overcoat/NSURLConnection (= 3.2.0)
+    - Overcoat/NSURLSession (= 3.2.0)
+  - Overcoat/Core (3.2.0):
+    - AFNetworking/Serialization
+    - Mantle
+  - Overcoat/NSURLConnection (3.2.0):
+    - AFNetworking/NSURLConnection
+    - Overcoat/Core
+  - Overcoat/NSURLSession (3.2.0):
+    - AFNetworking/NSURLSession
+    - Overcoat/Core
   - SSKeychain (1.2.3)
   - SVWebViewController (1.0)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Overcoat (~> 3.0)
   - SSKeychain (~> 1.2)
   - SVWebViewController (~> 1.0)
   - SWRevealViewController (~> 2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
+  Overcoat: 16f4a7b17c5189bc270466eef03a7b1c01ebfbd4
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
