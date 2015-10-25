@@ -56,7 +56,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     return acceptedCodes;
 }
 
-- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : password
@@ -78,7 +78,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-- (void)posts:(void (^)(BOOL, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganizationID];
 
     NSDictionary *paramters = @{
@@ -105,7 +105,26 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-
+- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
+    
+    NSLog(@"%@", path);
+    
+    NSDictionary *parameters = @{
+                                 @"token" : PraisePop.userToken
+                                 };
+    
+    [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO);
+        }
+        else {
+            success(YES);
+        }
+    } failure:failure];
+}
 
 - (NSString *)token {
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];

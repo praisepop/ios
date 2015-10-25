@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 
 @class PAAuthentication;
+@class PPPost;
 
 @interface PraisePopAPI : AFHTTPRequestOperationManager
 
@@ -21,6 +22,8 @@
 
 - (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
-- (void)posts:(void (^)(BOOL, NSArray *posts))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+- (void)posts:(void (^)(BOOL result, NSArray *posts))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+
+- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 @end
