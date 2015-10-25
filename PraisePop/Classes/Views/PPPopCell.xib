@@ -79,13 +79,15 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="addresseeLabel" destination="GAS-km-9g5" id="Vs3-AY-qVw"/>
                 <outlet property="textView" destination="9w4-dv-H7z" id="Sfl-1T-lhi"/>
+                <outlet property="timeAgoLabel" destination="KLC-ST-Lv0" id="qnA-52-kQM"/>
                 <outlet property="upvoteButton" destination="ikW-C9-Fzf" id="fmg-tp-wdv"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="pop-kernel" width="39" height="37"/>
-        <image name="pop-more-button" width="750" height="2"/>
+        <image name="pop-more-button" width="22" height="5"/>
     </resources>
 </document>
