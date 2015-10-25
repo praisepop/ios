@@ -12,7 +12,6 @@
 		F103FBC71BDB1BDD00C1C2A7 /* PPReaction.m in Sources */ = {isa = PBXBuildFile; fileRef = F103FBC31BDB1BDD00C1C2A7 /* PPReaction.m */; settings = {ASSET_TAGS = (); }; };
 		F103FBC81BDB1BDD00C1C2A7 /* PPOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = F103FBC51BDB1BDD00C1C2A7 /* PPOrganization.m */; settings = {ASSET_TAGS = (); }; };
 		F103FBCB1BDB1C0C00C1C2A7 /* PPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = F103FBCA1BDB1C0C00C1C2A7 /* PPPost.m */; settings = {ASSET_TAGS = (); }; };
-		F129EF401BC2A7A200C90C60 /* PPPopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6CE1BC557D800E86958 /* PPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6CD1BC557D800E86958 /* PPMoreViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6D11BC55D5E00E86958 /* PPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D01BC55D5E00E86958 /* PPMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D71BC564E200E86958 /* UITableViewController+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
@@ -23,6 +22,8 @@
 		F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F491BDB474900E43843 /* PPPostAddressee.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F481BDB474900E43843 /* PPPostAddressee.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F4C1BDB48A800E43843 /* PPAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4B1BDB48A800E43843 /* PPAuthentication.m */; settings = {ASSET_TAGS = (); }; };
+		F1AC2F4F1BDD779D00E43843 /* PPPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF41BC1FB3000D96FA6 /* main.m */; };
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
 		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
@@ -33,7 +34,6 @@
 		F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C351BC2230D00D96FA6 /* PPDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C3B1BC2247700D96FA6 /* PraisePopAPI.m */; settings = {ASSET_TAGS = (); }; };
-		F1BB6C3E1BC22CFA00D96FA6 /* PPPopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C491BC231A300D96FA6 /* PraisePop.m */; settings = {ASSET_TAGS = (); }; };
@@ -56,8 +56,6 @@
 		F103FBC51BDB1BDD00C1C2A7 /* PPOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOrganization.m; path = Models/PPOrganization.m; sourceTree = "<group>"; };
 		F103FBC91BDB1C0C00C1C2A7 /* PPPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPost.h; path = Models/PPPost.h; sourceTree = "<group>"; };
 		F103FBCA1BDB1C0C00C1C2A7 /* PPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPost.m; path = Models/PPPost.m; sourceTree = "<group>"; };
-		F129EF3E1BC2A7A200C90C60 /* PPPopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPopTableViewCell.h; path = Classes/Views/PPPopTableViewCell.h; sourceTree = "<group>"; };
-		F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPopTableViewCell.m; path = Classes/Views/PPPopTableViewCell.m; sourceTree = "<group>"; };
 		F133D6CC1BC557D800E86958 /* PPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMoreViewController.h; path = Classes/Controllers/PPMoreViewController.h; sourceTree = "<group>"; };
 		F133D6CD1BC557D800E86958 /* PPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMoreViewController.m; path = Classes/Controllers/PPMoreViewController.m; sourceTree = "<group>"; };
 		F133D6CF1BC55D5E00E86958 /* PPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMenuViewController.h; path = Classes/Controllers/PPMenuViewController.h; sourceTree = "<group>"; };
@@ -78,6 +76,9 @@
 		F1AC2F481BDB474900E43843 /* PPPostAddressee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPostAddressee.m; path = Models/PPPostAddressee.m; sourceTree = "<group>"; };
 		F1AC2F4A1BDB48A800E43843 /* PPAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPAuthentication.h; path = Models/PPAuthentication.h; sourceTree = "<group>"; };
 		F1AC2F4B1BDB48A800E43843 /* PPAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPAuthentication.m; path = Models/PPAuthentication.m; sourceTree = "<group>"; };
+		F1AC2F4D1BDD779D00E43843 /* PPPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPostTableViewCell.h; path = Classes/Views/PPPostTableViewCell.h; sourceTree = "<group>"; };
+		F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPostTableViewCell.m; path = Classes/Views/PPPostTableViewCell.m; sourceTree = "<group>"; };
+		F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPPostCell.xib; path = Classes/Views/PPPostCell.xib; sourceTree = "<group>"; };
 		F1BB6BF01BC1FB3000D96FA6 /* PraisePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PraisePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF41BC1FB3000D96FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		F1BB6C351BC2230D00D96FA6 /* PPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDetailViewController.m; path = Classes/Controllers/PPDetailViewController.m; sourceTree = "<group>"; };
 		F1BB6C3A1BC2247700D96FA6 /* PraisePopAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraisePopAPI.h; sourceTree = "<group>"; };
 		F1BB6C3B1BC2247700D96FA6 /* PraisePopAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraisePopAPI.m; sourceTree = "<group>"; };
-		F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPPopCell.xib; path = Classes/Views/PPPopCell.xib; sourceTree = "<group>"; };
 		F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUnselectableTextView.h; path = Classes/Views/PPUnselectableTextView.h; sourceTree = "<group>"; };
 		F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUnselectableTextView.m; path = Classes/Views/PPUnselectableTextView.m; sourceTree = "<group>"; };
 		F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+PPExtensions.h"; path = "Classes/Categories/UIView+PPExtensions.h"; sourceTree = "<group>"; };
@@ -286,11 +286,11 @@
 		F1BB6C421BC22D6600D96FA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F1BB6C3D1BC22CFA00D96FA6 /* PPPopCell.xib */,
+				F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */,
 				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
-				F129EF3E1BC2A7A200C90C60 /* PPPopTableViewCell.h */,
-				F129EF3F1BC2A7A200C90C60 /* PPPopTableViewCell.m */,
+				F1AC2F4D1BDD779D00E43843 /* PPPostTableViewCell.h */,
+				F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -398,8 +398,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */,
+				F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */,
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
-				F1BB6C3E1BC22CFA00D96FA6 /* PPPopCell.xib in Resources */,
 				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
 				F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */,
@@ -482,9 +482,9 @@
 				F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */,
 				F1BB6C4A1BC231A300D96FA6 /* PraisePop.m in Sources */,
 				F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */,
+				F1AC2F4F1BDD779D00E43843 /* PPPostTableViewCell.m in Sources */,
 				F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */,
 				F133D6DB1BC5667D00E86958 /* PPMenuControllerCache.m in Sources */,
-				F129EF401BC2A7A200C90C60 /* PPPopTableViewCell.m in Sources */,
 				F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */,
 				F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */,
 				F103FBC11BDB1BA100C1C2A7 /* PPUser.m in Sources */,

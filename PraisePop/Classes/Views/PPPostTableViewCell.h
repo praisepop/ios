@@ -1,5 +1,5 @@
 //
-//  PPPopTableViewCell.h
+//  PPPostTableViewCell.h
 //  PraisePop
 //
 //  Created by Rudd Fawcett on 10/5/15.
@@ -12,19 +12,19 @@
 
 #import "PPUnselectableTextView.h"
 
-@class PPPopTableViewCell;
+@class PPPostTableViewCell;
 
 @protocol PPPopDelegate <NSObject>
 
 @optional
 
-- (void)didUpvotePop:(PPPost *)pop atIndexPath:(NSIndexPath *)indexPath;
+- (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
-@interface PPPopTableViewCell : UITableViewCell
+@interface PPPostTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *addresseeLabel;
+@property (strong, nonatomic) IBOutlet UIButton *upvoteButton;
 @property (strong, nonatomic) IBOutlet UILabel *timeAgoLabel;
 
 @property (weak, nonatomic) id<PPPopDelegate> delegate;
@@ -32,7 +32,5 @@
 @property (assign, nonatomic) NSIndexPath *indexPath;
 
 @property (strong, nonatomic) PPPost *post;
-
-@property (nonatomic) BOOL upvoted;
 
 @end

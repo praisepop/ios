@@ -1,24 +1,24 @@
 //
-//  PPPopTableViewCell.m
+//  PPPostTableViewCell.m
 //  PraisePop
 //
 //  Created by Rudd Fawcett on 10/5/15.
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPPopTableViewCell.h"
+#import "PPPostTableViewCell.h"
 
 #import "PPPost.h"
 
-@interface PPPopTableViewCell ()
+@interface PPPostTableViewCell ()
 
-@property (strong, nonatomic) IBOutlet UIButton *upvoteButton;
+@property (strong, nonatomic) IBOutlet UILabel *addresseeLabel;
 @property (strong, nonatomic) IBOutlet PPUnselectableTextView *textView;
 
 
 @end
 
-@implementation PPPopTableViewCell
+@implementation PPPostTableViewCell
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -28,6 +28,10 @@
     self.textView.text = post.body;
     
     self.addresseeLabel.text = [NSString stringWithFormat:@"To %@", post.addressee.displayName];
+    
+    if (post.upvoted) {
+        [self.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)upvoteTapped:(id)sender {
@@ -41,8 +45,8 @@
     
     [button.imageView startAnimating];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didUpvotePop:atIndexPath:)]) {
-        [self.delegate didUpvotePop:self.post atIndexPath:self.indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didUpvotePost:atIndexPath:)]) {
+        [self.delegate didUpvotePost:self.post atIndexPath:self.indexPath];
     }
 }
 
