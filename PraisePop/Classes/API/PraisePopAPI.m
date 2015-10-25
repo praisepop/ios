@@ -94,30 +94,15 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(NO, nil);
         }
         else {
-            NSLog(@"%@", response);
+            NSMutableArray *posts = [@[] mutableCopy];
+            for (NSDictionary *aPost in response[@"data"]) {
+                PPPost *post = [MTLJSONAdapter modelOfClass:PPPost.class fromJSONDictionary:aPost error:nil];
+                [posts addObject:post];
+            }
+            
+            success(YES, posts);
         }
     } failure:failure];
-    
-//    NSDictionary *parameters = @{@"token":self.token};
-    
-//    NSString *organizationId = @"561096efb6bc350000000003"; // MY TEMP ID
-//    NSString *url = [NSString stringWithFormat:@"organization/%@/posts", organizationId];
-//
-//    [self POST:url parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        if (responseObject[@"data"]) {
-//            NSMutableArray *posts;
-//            
-//            for (NSDictionary *post in responseObject[@"data"]) {
-//                PPPost *aPost = [PPPost.alloc initWithAttributes:post];
-//                
-//                [posts addObject:aPost];
-//            }
-//            
-//            success(posts);
-//        }
-//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-//        NSLog(@"%@", error.localizedDescription);
-//    }];
 }
 
 
