@@ -22,6 +22,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController () <PPPopDelegate>
 
+@property (strong, nonatomic) NSArray *posts;
+
 @end
 
 @implementation PPTimelineViewController
@@ -40,12 +42,16 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
 }
 
+#pragma mark - PP3DGlassesRefreshableController REQUIRED METHODS
 - (void)willBeginRefreshing {
     // TODO: Add stuff that needs to happen before refreshing here...
 }
 
 - (void)refresh {
-    // TODO: Add stuff that will happen during refreshing here...
+    [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
+        self.posts = posts;
+        [self.tableView reloadData];
+    } failure:nil];
 }
 
 - (IBAction)pop:(id)sender {
@@ -71,7 +77,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+    return self.posts.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,7 +90,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *body = indexPath.row % 2 == 0 ? @"Testing out dynamic cell resizing with very long strings... It seems to work?!" : @"I'm like hey what's up hello!  This is a test.  This is a test. This is a test. This is a test. This is a test. This is a test.  This is a test.";
+    NSString *body = [self.posts[indexPath.row] body];
     
     NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
     CGFloat width = self.view.width * kPPPopCellTextViewRatio;
@@ -100,10 +106,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         cell = [[PPPopTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPopCellIdentifier];
     }
     
-    PPPost *post = PPPost.new;
-    post.body = indexPath.row % 2 == 0 ? @"Testing out dynamic cell resizing with very long strings... It seems to work?!" : @"I'm like hey what's up hello!  This is a test.  This is a test. This is a test. This is a test. This is a test. This is a test.  This is a test.";
-    
-    cell.post = post;
+    cell.post = self.posts[indexPath.row];
     cell.delegate = self;
     cell.indexPath = indexPath;
     
