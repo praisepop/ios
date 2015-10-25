@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, PPPostType) {
 @property (strong, nonatomic) NSString *from_id;
 @property (strong, nonatomic) NSString *body;
 
+@property (nonatomic) BOOL upvoted;
+
 @property (strong, nonatomic) PPOrganization *organization;
 
 @property (strong, nonatomic) NSArray *hashtags;

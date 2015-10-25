@@ -26,6 +26,7 @@
              @"_id" : @"_id",
              @"from_id" : @"from",
              @"body" : @"body",
+             @"upvoted" : @"upvoted",
              @"organization" : @"org",
              @"type" : @"type",
              @"hashtags" : @"hashtags",
@@ -57,6 +58,10 @@
     } reverseBlock:^id(NSDate *date, BOOL *success, NSError *__autoreleasing *error) {
         return [PraisePop.dateFormatter stringFromDate:date];
     }];
+}
+
++ (NSValueTransformer *)updatedJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
 }
 
 + (NSValueTransformer *)typeJSONTransformer {
