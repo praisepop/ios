@@ -6,6 +6,9 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+@class PPOrganization;
+@class PPUser;
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -14,5 +17,18 @@
 + (NSDateFormatter *)dateFormatter;
 
 + (UIViewController *)controllerWithIdentifier:(NSString *)identifier;
+
++ (NSString *)userToken;
+
++ (void)destorySession;
+
++ (void)saveToken:(NSString *)token email:(NSString *)email;
+
++ (PPUser *)currentUser;
++ (void)saveUserAccount:(PPUser *)user;
+
++ (void)saveOrganizations:(NSArray *)organizations;
+
++ (NSString *)parentOrganizationID;
 
 @end
