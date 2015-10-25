@@ -12,9 +12,9 @@
 #import "PPTimelineViewController.h"
 #import "PPOnboardingViewController.h"
 
-#import "AppDelegate.h"
+#import <SSKeychain/SSKeychain.h>
 
-#define IS_LOGGED_IN 1
+#import "AppDelegate.h"
 
 @interface AppDelegate () <SWRevealViewControllerDelegate>
 
@@ -32,7 +32,7 @@
     
     id frontViewController;
     
-    if (IS_LOGGED_IN) {
+    if (PraisePop.currentUser) {
         frontViewController = PPTimelineViewController.new;
         
         frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
@@ -74,13 +74,12 @@
 }
 
 - (void)APITests {
-//    [[PraisePopAPI sharedClient] login:@"rfawcett@andover.edu" withPassword:@"TEST" success:^(NSDictionary *result) {
-//        NSLog(@"result");
-//    } failure:nil];
-//    
-//    [[PraisePopAPI sharedClient] posts:^(NSArray *posts) {
-//        
-//    } failure:nil];
+    [[PraisePopAPI sharedClient] login:@"rfawcett@andover.edu" withPassword:@"TEST" success:^(BOOL result) {
+        NSLog(@"WE WERE ABLE TO LOGIN!");
+        [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
+            NSLog(@"NUMBER OF POSTS: %lu", (unsigned long)posts.count);
+        } failure:nil];
+    } failure:nil];
 }
 
 #pragma mark - SWRevealViewDelegate
