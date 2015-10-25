@@ -23,4 +23,12 @@
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:PPUser.class];
 }
 
+- (NSString *)displayName {
+    if (self.name.length == 0) {
+        return self.user.fullName;
+    }
+    
+    return self.name;
+}
+
 @end

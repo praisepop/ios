@@ -24,6 +24,9 @@
 
 @interface PPPopTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *addresseeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeAgoLabel;
+
 @property (weak, nonatomic) id<PPPopDelegate> delegate;
 
 @property (assign, nonatomic) NSIndexPath *indexPath;

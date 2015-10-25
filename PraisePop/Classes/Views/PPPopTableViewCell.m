@@ -26,6 +26,8 @@
 
 - (void)setPost:(PPPost *)post {
     self.textView.text = post.body;
+    
+    self.addresseeLabel.text = [NSString stringWithFormat:@"To %@", post.addressee.displayName];
 }
 
 - (IBAction)upvoteTapped:(id)sender {

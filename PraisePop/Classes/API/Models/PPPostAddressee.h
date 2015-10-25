@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) PPUser *user;
 
+- (NSString *)displayName;
+
 @end
