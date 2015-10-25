@@ -13,11 +13,11 @@
 #import "PPComposeViewController.h"
 #import "PPMenuViewController.h"
 
-#import "PPPopTableViewCell.h"
+#import "PPPostTableViewCell.h"
 
 #import "PPPost.h"
 
-NSString * const kPPPopCellIdentifier = @"PPPopCell";
+NSString * const kPPPopCellIdentifier = @"PPPostCellIdentifier";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController () <PPPopDelegate>
@@ -36,13 +36,18 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [self addReveal];
     [self initiateButtons];
     
-    UINib *popCell = [UINib nibWithNibName:@"PPPopCell" bundle:NSBundle.mainBundle];
+    UINib *popCell = [UINib nibWithNibName:@"PPPostCell" bundle:NSBundle.mainBundle];
     [self.tableView registerNib:popCell forCellReuseIdentifier:kPPPopCellIdentifier];
+    
+    [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
+        self.posts = posts;
+        [self.tableView reloadData];
+    } failure:nil];
     
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
 }
 
-#pragma mark - PP3DGlassesRefreshableController REQUIRED METHODS
+#pragma mark - BEGIN PP3DGlassesRefreshableController REQUIRED METHODS
 - (void)willBeginRefreshing {
     // TODO: Add stuff that needs to happen before refreshing here...
 }
@@ -54,9 +59,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     } failure:nil];
 }
 
-- (IBAction)pop:(id)sender {
-    
-}
+#pragma mark - END REQUIRED METHODS
 
 - (void)initiateButtons {
     UIBarButtonItem *composeButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"compose-nav-button"]
@@ -100,10 +103,21 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     return rect.size.height;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    PPPostTableViewCell *postCell = (PPPostTableViewCell *)cell;
+    
+    if ([self.posts[indexPath.row] upvoted]) {
+        [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
+    }
+    else {
+        [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PPPopTableViewCell *cell = (PPPopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
+    PPPostTableViewCell *cell = (PPPostTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
     if (cell == nil) {
-        cell = [[PPPopTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPopCellIdentifier];
+        cell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPopCellIdentifier];
     }
     
     cell.post = self.posts[indexPath.row];
@@ -113,8 +127,21 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     return cell;
 }
 
-- (void)didUpvotePop:(PPPost *)pop atIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"upvote");
+- (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath {
+    if (![self.posts[indexPath.row] upvoted]) {
+        [[PraisePopAPI sharedClient] upvote:self.posts[indexPath.row] success:^(BOOL result) {
+            PPPostTableViewCell *cell = (PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            
+            if (result) {
+                [self.posts[indexPath.row] setUpvoted:YES];
+                [cell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
+            }
+            else {
+                [self.posts[indexPath.row] setUpvoted:NO];
+                [cell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+            }
+        } failure:nil];
+    }
 }
 
 - (void)revealComposer:(id)sender {

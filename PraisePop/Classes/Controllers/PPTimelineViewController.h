@@ -15,7 +15,7 @@
 @class PPComposeViewController;
 @class PPMenuViewController;
 
-@class PPPopTableViewCell;
+@class PPPostTableViewCell;
 
 @class PPPost;
 
