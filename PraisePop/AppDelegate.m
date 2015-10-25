@@ -76,9 +76,6 @@
 - (void)APITests {
     [[PraisePopAPI sharedClient] login:@"rfawcett@andover.edu" withPassword:@"TEST" success:^(BOOL result) {
         NSLog(@"WE WERE ABLE TO LOGIN!");
-        [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
-            NSLog(@"NUMBER OF POSTS: %lu", (unsigned long)posts.count);
-        } failure:nil];
     } failure:nil];
 }
 
