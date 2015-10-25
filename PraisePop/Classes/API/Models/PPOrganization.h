@@ -2,14 +2,24 @@
 //  PPOrganization.h
 //  PraisePop
 //
-//  Created by Rudd Fawcett on 10/4/15.
+//  Created by Rudd Fawcett on 10/23/15.
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
+//
 
-#import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface PPOrganization : NSObject
+@interface PPOrganization : MTLModel <MTLJSONSerializing>
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
+@property (strong, nonatomic) NSString *_id;
+@property (strong, nonatomic) NSString *domain;
+
+@property (strong, nonatomic) NSDate *updatedAt;
+@property (strong, nonatomic) NSDate *createdAt;
+@property (strong, nonatomic) NSDate *retrievedAt;
+
+@property (nonatomic) BOOL parent;
+
+- (void)encodeWithCoder:(NSCoder *)encoder;
 
 @end

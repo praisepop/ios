@@ -1,29 +1,30 @@
 //
-//  PPUser.h
+//  PPReaction.h
 //  PraisePop
 //
 //  Created by Rudd Fawcett on 10/23/15.
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
+//
 
 #import <Mantle/Mantle.h>
 
-@class PPOrganization;
+typedef NS_ENUM(NSUInteger, PPReactionType) {
+    PPReactionText,
+    PPReactionEmoji
+};
 
-@interface PPUser : MTLModel <MTLJSONSerializing>
+@interface PPReaction : MTLModel <MTLJSONSerializing>
 
 @property (strong, nonatomic) NSString *_id;
-@property (strong, nonatomic) NSString *email;
-@property (strong, nonatomic) NSDictionary *name;
+@property (strong, nonatomic) NSString *post_id;
+
+@property (nonatomic) PPReactionType type;
+
+@property (strong, nonatomic) NSString *reaction;
 
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *retrievedAt;
-
-@property (strong, nonatomic) NSArray *organizations;
-
-@property (nonatomic) BOOL admin;
-
-- (NSString *)fullName;
 
 @end

@@ -1,16 +1,15 @@
 //
-//  PPUser.m
+//  PPReaction.m
 //  PraisePop
 //
 //  Created by Rudd Fawcett on 10/23/15.
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
+//
 
-#import "PPUser.h"
+#import "PPReaction.h"
 
-#import "PPOrganization.h"
-
-@implementation PPUser 
+@implementation PPReaction
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
     if (self = [super initWithDictionary:dictionaryValue error:error]) {
@@ -20,37 +19,15 @@
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self._id forKey:@"_id"];
-    [encoder encodeObject:self.name forKey:@"name"];
-    [encoder encodeObject:self.email forKey:@"email"];
-    [encoder encodeObject:@(self.admin) forKey:@"admin"];
-}
-
-- (id)initWithCoder:(NSCoder *)decoder {
-    if((self = [super init])) {
-        self._id = [decoder decodeObjectForKey:@"_id"];
-        self.name = [decoder decodeObjectForKey:@"name"];
-        self.email = [decoder decodeObjectForKey:@"email"];
-        self.admin = [[decoder decodeObjectForKey:@"admin"] boolValue];
-    }
-    return self;
-}
-
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"_id" : @"_id",
-             @"email" : @"email",
-             @"name" : @"name",
+             @"post_id" : @"post",
+             @"type" : @"type",
+             @"reaction" : @"reaction",
              @"updatedAt" : @"updated_at",
-             @"createdAt" : @"created_at",
-             @"organizations": @"orgs",
-             @"admin" : @"admin"
+             @"createdAt" : @"created_at"
              };
-}
-
-+ (NSValueTransformer *)organizationsJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:PPOrganization.class];
 }
 
 + (NSValueTransformer *)updatedAtJSONTransformer {
@@ -61,10 +38,6 @@
     }];
 }
 
-+ (NSValueTransformer *)adminJSONTransformer {
-    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
-}
-
 + (NSValueTransformer *)createdAtJSONTransformer {
     return [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *dateString, BOOL *success, NSError *__autoreleasing *error) {
         return [PraisePop.dateFormatter dateFromString:dateString];
@@ -73,8 +46,11 @@
     }];
 }
 
-- (NSString *)fullName {
-    return [NSString stringWithFormat:@"%@ %@", self.name[@"first"], self.name[@"last"]];
++ (NSValueTransformer *)typeJSONTransformer {
+    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:@{
+                                                                           @"TEXT": @(PPReactionText),
+                                                                           @"EMOJI": @(PPReactionEmoji)
+                                                                           }];
 }
 
 @end
