@@ -41,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Mantle (~> 2.0)
   - Overcoat (~> 3.0)
   - SSKeychain (~> 1.2)
   - SVWebViewController (~> 1.0)
