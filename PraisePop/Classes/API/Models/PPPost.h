@@ -10,7 +10,8 @@
 
 @class PPUser;
 @class PPOrganization;
-@class PPPostAddressee;
+
+#import "PPPostAddressee.h"
 
 typedef NS_ENUM(NSUInteger, PPPostType) {
     PPPostInvite,
@@ -34,9 +35,7 @@ typedef NS_ENUM(NSUInteger, PPPostType) {
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *retrievedAt;
 
-@property (strong, nonatomic) PPUser *to;
+@property (strong, nonatomic) PPPostAddressee *addressee;
 @property (strong, nonatomic) NSString *name;
-
-- (NSString *)displayName;
 
 @end

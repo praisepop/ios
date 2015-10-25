@@ -10,17 +10,16 @@
 
 #import "PPUser.h"
 #import "PPOrganization.h"
-#import "PPPostAddressee.h"
 
 @implementation PPPost
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-    if (self = [super initWithDictionary:dictionaryValue error:error]) {
-        self.retrievedAt = NSDate.date;
-    }
-    
-    return self;
-}
+//
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
+//    if (self = [super initWithDictionary:dictionaryValue error:error]) {
+//        self.retrievedAt = NSDate.date;
+//    }
+//    
+//    return self;
+//}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
@@ -30,13 +29,13 @@
              @"organization" : @"org",
              @"type" : @"type",
              @"hashtags" : @"hashtags",
-             @"to" : @"to",
+             @"addressee" : @"to",
              @"updatedAt" : @"updated_at",
              @"createdAt" : @"created_at"
              };
 }
 
-+ (NSValueTransformer *)toJSONTransformer {
++ (NSValueTransformer *)addresseeJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:PPPostAddressee.class];
 }
 
@@ -66,11 +65,6 @@
                                                                            @"ANNOUNCEMENT": @(PPPostAnnouncement),
                                                                            @"SHOUTOUT": @(PPPostShoutout)
                                                                            }];
-}
-
-
-- (NSString *)displayName {
-    return self.to.fullName;
 }
 
 @end
