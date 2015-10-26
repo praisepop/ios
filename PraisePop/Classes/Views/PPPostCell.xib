@@ -84,6 +84,7 @@
                 <outlet property="timeAgoLabel" destination="KLC-ST-Lv0" id="u4S-UV-Ull"/>
                 <outlet property="upvoteButton" destination="ikW-C9-Fzf" id="H3k-Zb-nZf"/>
             </connections>
+            <point key="canvasLocation" x="138.5" y="248"/>
         </tableViewCell>
     </objects>
     <resources>

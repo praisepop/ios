@@ -7,8 +7,12 @@
 //
 
 #import "PPComposeViewController.h"
+#import "PPComposeBar.h"
 
 @interface PPComposeViewController ()
+
+@property (strong, nonatomic) IBOutlet UITextField *recipientField;
+@property (strong, nonatomic) IBOutlet UITextView *postBody;
 
 @end
 

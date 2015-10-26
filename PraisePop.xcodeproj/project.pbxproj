@@ -20,8 +20,10 @@
 		F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F13D46AA1BCA1D1900072729 /* PPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A91BCA1D1900072729 /* PPLogInViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		F155B16A1BDDEC590073713A /* PPComposeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F155B1691BDDEC590073713A /* PPComposeBar.m */; settings = {ASSET_TAGS = (); }; };
 		F164C0601BDDBB430029F85C /* UIImage+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */ = {isa = PBXBuildFile; fileRef = F164C0611BDDCE3D0029F85C /* email-blacklist.json */; settings = {ASSET_TAGS = (); }; };
+		F164C0641BDDE8950029F85C /* PPComposerToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F164C0631BDDE8950029F85C /* PPComposerToolbar.xib */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F491BDB474900E43843 /* PPPostAddressee.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F481BDB474900E43843 /* PPPostAddressee.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F4C1BDB48A800E43843 /* PPAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4B1BDB48A800E43843 /* PPAuthentication.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F4F1BDD779D00E43843 /* PPPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -74,9 +76,12 @@
 		F13D46A91BCA1D1900072729 /* PPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLogInViewController.m; path = Classes/Controllers/PPLogInViewController.m; sourceTree = "<group>"; };
 		F13E52551BCA193C005555ED /* UIStoryboard+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+PPExtensions.h"; path = "Classes/Categories/UIStoryboard+PPExtensions.h"; sourceTree = "<group>"; };
 		F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+PPExtensions.m"; path = "Classes/Categories/UIStoryboard+PPExtensions.m"; sourceTree = "<group>"; };
+		F155B1681BDDEC590073713A /* PPComposeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPComposeBar.h; path = Classes/Views/PPComposeBar.h; sourceTree = "<group>"; };
+		F155B1691BDDEC590073713A /* PPComposeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPComposeBar.m; path = Classes/Views/PPComposeBar.m; sourceTree = "<group>"; };
 		F164C05E1BDDBB430029F85C /* UIImage+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PPExtensions.h"; path = "Classes/Categories/UIImage+PPExtensions.h"; sourceTree = "<group>"; };
 		F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PPExtensions.m"; path = "Classes/Categories/UIImage+PPExtensions.m"; sourceTree = "<group>"; };
 		F164C0611BDDCE3D0029F85C /* email-blacklist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "email-blacklist.json"; path = "../../backend/email-blacklist.json"; sourceTree = "<group>"; };
+		F164C0631BDDE8950029F85C /* PPComposerToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPComposerToolbar.xib; path = Classes/Views/PPComposerToolbar.xib; sourceTree = "<group>"; };
 		F1AC2F471BDB474900E43843 /* PPPostAddressee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPostAddressee.h; path = Models/PPPostAddressee.h; sourceTree = "<group>"; };
 		F1AC2F481BDB474900E43843 /* PPPostAddressee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPostAddressee.m; path = Models/PPPostAddressee.m; sourceTree = "<group>"; };
 		F1AC2F4A1BDB48A800E43843 /* PPAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPAuthentication.h; path = Models/PPAuthentication.h; sourceTree = "<group>"; };
@@ -292,6 +297,9 @@
 		F1BB6C421BC22D6600D96FA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F155B1681BDDEC590073713A /* PPComposeBar.h */,
+				F155B1691BDDEC590073713A /* PPComposeBar.m */,
+				F164C0631BDDE8950029F85C /* PPComposerToolbar.xib */,
 				F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */,
 				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
@@ -406,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */,
+				F164C0641BDDE8950029F85C /* PPComposerToolbar.xib in Resources */,
 				F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */,
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
 				F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */,
@@ -496,6 +505,7 @@
 				F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */,
 				F133D6DB1BC5667D00E86958 /* PPMenuControllerCache.m in Sources */,
 				F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */,
+				F155B16A1BDDEC590073713A /* PPComposeBar.m in Sources */,
 				F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */,
 				F103FBC11BDB1BA100C1C2A7 /* PPUser.m in Sources */,
 				F1BB6C451BC230BE00D96FA6 /* UIView+PPExtensions.m in Sources */,

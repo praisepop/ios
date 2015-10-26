@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class PPComposeBar;
+
 @interface PPComposeViewController : UIViewController
 
 @end
