@@ -217,7 +217,6 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
-        NSLog(@"%@", response);
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
