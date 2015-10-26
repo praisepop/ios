@@ -13,6 +13,8 @@
 #import "PPComposeViewController.h"
 #import "PPMenuViewController.h"
 
+#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
+
 #import "PPPostTableViewCell.h"
 
 #import "PPPost.h"
@@ -22,7 +24,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController () <PPPopDelegate, PPComposerDelegate>
 
-@property (strong, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSMutableArray *posts;
 
 @end
 
@@ -152,6 +154,44 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
             [error showError];
         }];
     }
+}
+
+- (void)didTapMore:(NSIndexPath *)indexPath {
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Options"
+                                                    delegate:nil
+                                           cancelButtonTitle:@"Cancel"
+                                      destructiveButtonTitle:@"Delete"
+                                           otherButtonTitles:@"Report", nil];
+    
+    as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    
+    as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
+        if (buttonIndex == 0) {
+            [[PraisePopAPI sharedClient] delete:self.posts[indexPath.row] success:^(BOOL result) {
+                if (result) {
+                    [self.posts removeObjectAtIndex:indexPath.row];
+                    [self.tableView reloadData];
+                }
+                else {
+                    [NSError showErrorAlertWithMessage:@"We were unable to delete your post.  Please check your connection and try again"];
+                }
+            } failure:nil];
+        }
+        else if (buttonIndex == 1) {
+            [[PraisePopAPI sharedClient] report:self.posts[indexPath.row] success:^(BOOL result) {
+                if (result) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"By reporting this post, you have made PraisePop a safer place." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    
+                    [alert show];
+                }
+                else {
+                    [NSError showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
+                }
+            } failure:nil];
+        }
+    };
+    
+    [as showInView:self.view];
 }
 
 - (void)revealComposer:(id)sender {

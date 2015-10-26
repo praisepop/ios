@@ -28,4 +28,8 @@
 
 - (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (void)singlePost:(PPPost *)post success:(void (^)(BOOL result, PPPost *post))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)report:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)delete:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 @end

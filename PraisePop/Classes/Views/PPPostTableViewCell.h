@@ -20,6 +20,8 @@
 
 - (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath;
 
+- (void)didTapMore:(NSIndexPath *)indexPath;
+
 @end
 
 @interface PPPostTableViewCell : UITableViewCell

@@ -175,7 +175,69 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
         
-        NSLog(@"%@", response);
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO);
+        }
+        else {
+            success(YES);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
+}
+
+- (void)singlePost:(PPPost *)post success:(void (^)(BOOL, PPPost *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
+
+    NSDictionary *parameters = @{
+                                 @"token" : PraisePop.userToken
+                                 };
+    
+    [self GET:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO, nil);
+        }
+        else {
+            PPPost *post = [MTLJSONAdapter modelOfClass:PPPost.class fromJSONDictionary:response error:nil];
+            success(YES, post);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
+}
+
+- (void)report:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"posts/%@/report", post._id];
+    
+    NSDictionary *parameters = @{
+                                 @"token" : PraisePop.userToken
+                                 };
+    
+    [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO);
+        }
+        else {
+            success(YES);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
+}
+
+- (void)delete:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
+    
+    NSDictionary *parameters = @{
+                                 @"token" : PraisePop.userToken
+                                 };
+    
+    [self DELETE:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);

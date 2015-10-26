@@ -54,6 +54,12 @@
     }
 }
 
+- (IBAction)moreTapped:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didTapMore:)]) {
+        [self.delegate didTapMore:self.indexPath];
+    }
+}
+
 - (void)unvote {
     [self.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
 }
