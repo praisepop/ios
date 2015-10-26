@@ -27,7 +27,7 @@
 - (void)setPost:(PPPost *)post {
     self.textView.text = post.body;
     
-    self.addresseeLabel.text = [NSString stringWithFormat:@"To %@", post.addressee.displayName];
+    self.addresseeLabel.text = [NSString stringWithFormat:@"To %@,", post.addressee.displayName];
     
     if (post.upvoted) {
         [self.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
