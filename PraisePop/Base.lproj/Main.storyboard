@@ -270,8 +270,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-uN-Tjf">
                                 <rect key="frame" x="13" y="244" width="250" height="72.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A prince from another continent served your popcorn at his wedding reception." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-2T-9Ox">
-                                        <rect key="frame" x="0.0" y="4" width="250" height="62.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We hope you enjoy this first release of PraisePop!  Please give us some feedback!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-2T-9Ox">
+                                        <rect key="frame" x="8" y="4" width="234" height="62.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -281,8 +281,8 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="D9p-2T-9Ox" secondAttribute="bottom" constant="6" id="Q12-zW-cia"/>
                                     <constraint firstItem="D9p-2T-9Ox" firstAttribute="top" secondItem="KSq-uN-Tjf" secondAttribute="top" constant="4" id="RLb-IH-0M5"/>
-                                    <constraint firstAttribute="trailing" secondItem="D9p-2T-9Ox" secondAttribute="trailing" id="aXP-Kn-D4h"/>
-                                    <constraint firstItem="D9p-2T-9Ox" firstAttribute="leading" secondItem="KSq-uN-Tjf" secondAttribute="leading" id="rUK-ry-K5v"/>
+                                    <constraint firstAttribute="trailing" secondItem="D9p-2T-9Ox" secondAttribute="trailing" constant="8" id="aXP-Kn-D4h"/>
+                                    <constraint firstItem="D9p-2T-9Ox" firstAttribute="leading" secondItem="KSq-uN-Tjf" secondAttribute="leading" constant="8" id="rUK-ry-K5v"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2I-mq-Yh2">
@@ -325,7 +325,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-om-5jo">
-                                        <rect key="frame" x="18" y="57" width="33.5" height="19.5"/>
+                                        <rect key="frame" x="17" y="57" width="33.5" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -339,12 +339,19 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="coming soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjg-Gy-ryN">
+                                        <rect key="frame" x="8" y="3.5" width="124" height="24"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.69019607839999997" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="7GU-om-5jo" firstAttribute="centerX" secondItem="h5l-d5-dxY" secondAttribute="centerX" id="2p5-TV-T8l"/>
                                     <constraint firstAttribute="trailing" secondItem="TdM-aw-1th" secondAttribute="trailing" id="4aU-Kb-x1A"/>
                                     <constraint firstItem="h5l-d5-dxY" firstAttribute="baseline" secondItem="20q-yO-pjw" secondAttribute="baseline" id="77X-89-d7U"/>
+                                    <constraint firstItem="kjg-Gy-ryN" firstAttribute="leading" secondItem="w2I-mq-Yh2" secondAttribute="leadingMargin" id="8MF-e7-erD"/>
                                     <constraint firstItem="20q-yO-pjw" firstAttribute="top" secondItem="w2I-mq-Yh2" secondAttribute="top" constant="35" id="8fe-sZ-IQP"/>
                                     <constraint firstAttribute="height" constant="153" id="A5a-Tm-7gm"/>
                                     <constraint firstItem="7GU-om-5jo" firstAttribute="top" secondItem="h5l-d5-dxY" secondAttribute="bottom" constant="2" id="BcH-NU-dji"/>
@@ -352,6 +359,7 @@
                                     <constraint firstItem="20q-yO-pjw" firstAttribute="leading" secondItem="h5l-d5-dxY" secondAttribute="trailing" constant="15.5" id="N1C-ab-gv3"/>
                                     <constraint firstAttribute="width" constant="200" id="OLI-2m-Dl3"/>
                                     <constraint firstItem="TdM-aw-1th" firstAttribute="leading" secondItem="w2I-mq-Yh2" secondAttribute="leading" id="Ocf-5N-rfR"/>
+                                    <constraint firstItem="h5l-d5-dxY" firstAttribute="top" secondItem="kjg-Gy-ryN" secondAttribute="bottom" constant="8" symbolic="YES" id="RRa-UT-7DK"/>
                                     <constraint firstItem="nWw-lA-ups" firstAttribute="top" secondItem="jvw-nS-sSG" secondAttribute="bottom" constant="2" id="TNg-sc-7Wd"/>
                                     <constraint firstAttribute="centerX" secondItem="20q-yO-pjw" secondAttribute="centerX" id="gQr-Jf-syW"/>
                                     <constraint firstItem="nWw-lA-ups" firstAttribute="centerX" secondItem="jvw-nS-sSG" secondAttribute="centerX" id="gWK-8V-iYe"/>
@@ -407,6 +415,7 @@
                     <size key="freeformSize" width="276" height="667"/>
                     <connections>
                         <outlet property="currentEmail" destination="DFN-So-Lja" id="nUW-WH-jFC"/>
+                        <outlet property="organizationDomain" destination="TdM-aw-1th" id="5HV-Xw-WmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s2-wC-u3x" userLabel="First Responder" sceneMemberID="firstResponder"/>

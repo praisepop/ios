@@ -29,6 +29,6 @@
 
 + (void)saveOrganizations:(NSArray *)organizations;
 
-+ (NSString *)parentOrganizationID;
++ (PPOrganization *)parentOrganization;
 
 @end

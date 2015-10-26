@@ -100,7 +100,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 }
 
 - (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
-    NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganizationID];
+    NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
 
     NSDictionary *paramters = @{
                             @"token" : PraisePop.userToken,

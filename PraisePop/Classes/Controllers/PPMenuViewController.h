@@ -11,6 +11,7 @@
 #import "PPMenuControllerCache.h"
 
 @class PPUser;
+@class PPOrganization;
 
 #import <SWRevealViewController/SWRevealViewController.h>
 

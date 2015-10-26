@@ -9,6 +9,7 @@
 #import "PPMenuViewController.h"
 
 #import "PPUser.h"
+#import "PPOrganization.h"
 
 #import "PPTimelineViewController.h"
 #import "PPMoreViewController.h"
@@ -19,6 +20,7 @@ NSString * const kPPMoreCacheKey = @"PPMoreViewController";
 @interface PPMenuViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *currentEmail;
+@property (strong, nonatomic) IBOutlet UILabel *organizationDomain;
 
 @end
 
@@ -28,6 +30,7 @@ NSString * const kPPMoreCacheKey = @"PPMoreViewController";
     [super viewDidAppear:animated];
     
     self.currentEmail.text = PraisePop.currentUser.email;
+    self.organizationDomain.text = [[NSString stringWithFormat:@"@%@", PraisePop.parentOrganization.domain] uppercaseString];
 }
 
 - (IBAction)buttonTouch:(id)sender {

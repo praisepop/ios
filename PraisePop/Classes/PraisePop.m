@@ -84,14 +84,14 @@ static NSString * const kPraisePopService = @"PraisePop";
     return nil;
 }
 
-+ (NSString *)parentOrganizationID {
++ (PPOrganization *)parentOrganization {
     NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
     NSData *savedOrganizations = [currentDefaults objectForKey:kPraisePopOrganizationsKey];
     NSArray *organizations = [NSKeyedUnarchiver unarchiveObjectWithData:savedOrganizations];
     
     for (PPOrganization *organization in organizations) {
         if (organization.parent) {
-            return organization._id;
+            return organization;
         }
     }
     
