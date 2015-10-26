@@ -159,7 +159,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-- (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)send:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts/new", PraisePop.parentOrganization._id];
     
     NSDictionary *parameters = @{
@@ -186,7 +186,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     }];
 }
 
-- (void)singlePost:(PPPost *)post success:(void (^)(BOOL, PPPost *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)post:(PPPost *)post success:(void (^)(BOOL, PPPost *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
 
     NSDictionary *parameters = @{
@@ -208,8 +208,8 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     }];
 }
 
-- (void)report:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
-    NSString *path = [NSString stringWithFormat:@"posts/%@/report", post._id];
+- (void)flag:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"posts/%@/flag", post._id];
     
     NSDictionary *parameters = @{
                                  @"token" : PraisePop.userToken
@@ -217,6 +217,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        NSLog(@"%@", response);
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);

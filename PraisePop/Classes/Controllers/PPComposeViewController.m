@@ -77,7 +77,7 @@
                 [rawHashtags addObject:[self.postBody.text substringWithRange:entity.range]];
             }
             
-            [[PraisePopAPI sharedClient] post:self.postBody.text type:self.postType recepient:name hashtags:rawHashtags success:^(BOOL result) {
+            [[PraisePopAPI sharedClient] send:self.postBody.text type:self.postType recepient:name hashtags:rawHashtags success:^(BOOL result) {
                 if (result) {
                     [self pp_dismiss];
                     

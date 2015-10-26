@@ -178,7 +178,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
             } failure:nil];
         }
         else if (buttonIndex == 1) {
-            [[PraisePopAPI sharedClient] report:self.posts[indexPath.row] success:^(BOOL result) {
+            [[PraisePopAPI sharedClient] flag:self.posts[indexPath.row] success:^(BOOL result) {
                 if (result) {
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"By reporting this post, you have made PraisePop a safer place." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     
