@@ -10,6 +10,20 @@
 
 @class PPComposeBar;
 
+@class PPPost;
+
+@class PPComposeViewController;
+
+@protocol PPComposerDelegate <NSObject>
+
+@optional;
+
+- (void)didPost;
+
+@end
+
 @interface PPComposeViewController : UIViewController
+
+@property (weak, nonatomic) id<PPComposerDelegate> delegate;
 
 @end

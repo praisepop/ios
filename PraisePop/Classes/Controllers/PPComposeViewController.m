@@ -8,6 +8,7 @@
 
 #import "PPComposeViewController.h"
 #import "PPComposeBar.h"
+#import "PPPost.h"
 
 #import "TwitterText.h"
 
@@ -79,7 +80,12 @@
             [[PraisePopAPI sharedClient] post:self.postBody.text type:self.postType recepient:name hashtags:rawHashtags success:^(BOOL result) {
                 if (result) {
                     [self pp_dismiss];
-                    // HANDLE ADDITIONAL LOGIC...
+                    
+                    
+                    
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(didPost)]) {
+                        [self.delegate didPost];
+                    }
                 }
                 else {
                     UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"We were unable to post your post... please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
