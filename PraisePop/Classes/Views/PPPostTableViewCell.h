@@ -33,4 +33,6 @@
 
 @property (strong, nonatomic) PPPost *post;
 
+- (void)unvote;
+
 @end

@@ -10,6 +10,8 @@
 
 #import "PPPost.h"
 
+#import <DateTools/NSDate+DateTools.h>
+
 @interface PPPostTableViewCell ()
 
 @property (strong, nonatomic) IBOutlet UILabel *addresseeLabel;
@@ -32,6 +34,8 @@
     if (post.upvoted) {
         [self.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
     }
+    
+    self.timeAgoLabel.text = [NSString stringWithFormat:@"%@ ago", post.createdAt.shortTimeAgoSinceNow];
 }
 
 - (IBAction)upvoteTapped:(id)sender {
@@ -48,6 +52,10 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(didUpvotePost:atIndexPath:)]) {
         [self.delegate didUpvotePost:self.post atIndexPath:self.indexPath];
     }
+}
+
+- (void)unvote {
+    [self.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
 }
 
 - (NSArray *)images {
