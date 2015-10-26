@@ -787,7 +787,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Comp 2_00065" translatesAutoresizingMaskIntoConstraints="NO" id="OaC-3R-AKK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-6" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rl-4g-Nck">
                                 <rect key="frame" x="284" y="18" width="68" height="38"/>
@@ -838,13 +838,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OaC-3R-AKK" secondAttribute="trailing" constant="-16" id="2y2-qj-I1N"/>
+                            <constraint firstItem="OaC-3R-AKK" firstAttribute="leading" secondItem="1FC-G3-hSQ" secondAttribute="leadingMargin" constant="-22" id="6xi-cz-n4C"/>
                             <constraint firstItem="MBw-xn-85X" firstAttribute="leading" secondItem="1FC-G3-hSQ" secondAttribute="leadingMargin" constant="7" id="Go7-to-Vks"/>
-                            <constraint firstItem="OaC-3R-AKK" firstAttribute="top" secondItem="1FC-G3-hSQ" secondAttribute="topMargin" id="LWW-KO-NxM"/>
-                            <constraint firstItem="r62-bF-MeA" firstAttribute="top" secondItem="OaC-3R-AKK" secondAttribute="bottom" id="epV-fh-qyK"/>
+                            <constraint firstItem="OaC-3R-AKK" firstAttribute="top" secondItem="1FC-G3-hSQ" secondAttribute="top" id="g9k-GA-b6q"/>
+                            <constraint firstItem="OaC-3R-AKK" firstAttribute="bottom" secondItem="r62-bF-MeA" secondAttribute="top" id="hmh-vH-3f9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OaC-3R-AKK" secondAttribute="trailing" constant="-10" id="uUy-SO-JlK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Rl-4g-Nck" secondAttribute="trailing" constant="7" id="vQN-Mk-J9p"/>
                             <constraint firstItem="1Rl-4g-Nck" firstAttribute="top" secondItem="1FC-G3-hSQ" secondAttribute="topMargin" constant="18" id="ySH-9y-eeO"/>
-                            <constraint firstItem="OaC-3R-AKK" firstAttribute="leading" secondItem="1FC-G3-hSQ" secondAttribute="leadingMargin" constant="-16" id="yeh-jf-neF"/>
                             <constraint firstItem="MBw-xn-85X" firstAttribute="top" secondItem="1FC-G3-hSQ" secondAttribute="topMargin" constant="18" id="za5-6V-US2"/>
                         </constraints>
                     </view>
@@ -1073,6 +1073,10 @@
                     <navigationItem key="navigationItem" id="DK3-sn-1H7"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="dB8-PV-JsF" id="XtA-sH-xqK"/>
+                        <outlet property="passwordField" destination="wfh-1v-VAz" id="ma7-m3-WgO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOa-bY-clB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
