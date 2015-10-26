@@ -10,8 +10,6 @@
 
 @interface PPComposeBar ()
 
-@property (strong, nonatomic) IBOutlet UILabel *characterCounter;
-
 @end
 
 @implementation PPComposeBar

@@ -33,8 +33,8 @@
     //    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewController:sender];
+- (void)pp_dismiss {
+    [self dismissViewController:nil];
 }
 
 - (void)dismissViewController:(id)sender {

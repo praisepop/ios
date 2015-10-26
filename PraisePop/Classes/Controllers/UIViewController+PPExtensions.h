@@ -14,4 +14,6 @@
 
 - (void)pp_setTitle:(NSString *)title;
 
+- (void)pp_dismiss;
+
 @end

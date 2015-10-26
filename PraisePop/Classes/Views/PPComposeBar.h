@@ -24,6 +24,8 @@
 
 @interface PPComposeBar : UIView
 
+@property (strong, nonatomic) IBOutlet UILabel *characterCounter;
+
 @property (weak, nonatomic) id<PPComposeBarDelegate> delegate;
 
 @end
