@@ -30,5 +30,6 @@
 + (void)saveOrganizations:(NSArray *)organizations;
 
 + (PPOrganization *)parentOrganization;
++ (PPOrganization *)childOrganization;
 
 @end

@@ -13,6 +13,7 @@
 #import "PPOrganization.h"
 
 #import <SSKeychain/SSKeychain.h>
+#import <Parse/Parse.h>
 
 @implementation PraisePop
 
@@ -26,6 +27,7 @@ static NSString * const kPraisePopService = @"PraisePop";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedDateFormatter = NSDateFormatter.new;
+        _sharedDateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
     });
     
     return _sharedDateFormatter;
@@ -47,6 +49,10 @@ static NSString * const kPraisePopService = @"PraisePop";
 
 + (void)destorySession {
     [SSKeychain deletePasswordForService:kPraisePopService account:PraisePop.currentUser.email];
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    currentInstallation.channels = [NSArray array];
+    [currentInstallation saveEventually];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dictionary = [defaults dictionaryRepresentation];
@@ -91,6 +97,20 @@ static NSString * const kPraisePopService = @"PraisePop";
     
     for (PPOrganization *organization in organizations) {
         if (organization.parent) {
+            return organization;
+        }
+    }
+    
+    return nil;
+}
+
++ (PPOrganization *)childOrganization {
+    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *savedOrganizations = [currentDefaults objectForKey:kPraisePopOrganizationsKey];
+    NSArray *organizations = [NSKeyedUnarchiver unarchiveObjectWithData:savedOrganizations];
+    
+    for (PPOrganization *organization in organizations) {
+        if (!organization.parent) {
             return organization;
         }
     }
