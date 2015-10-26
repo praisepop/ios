@@ -17,9 +17,11 @@
 
 @implementation PPOnboardingViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.view.userInteractionEnabled = YES;
+    self.revealViewController.panGestureRecognizer.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {

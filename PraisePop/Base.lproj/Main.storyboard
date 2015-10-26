@@ -364,7 +364,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="microwave-control" translatesAutoresizingMaskIntoConstraints="NO" id="sac-5r-tHh">
                                 <rect key="frame" x="220" y="88" width="43" height="126"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="msunami@andover.edu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-So-Lja">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test@andover.edu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-So-Lja">
                                 <rect key="frame" x="0.0" y="617" width="276" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6ZV-7G-9UW"/>
@@ -405,6 +405,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="276" height="667"/>
+                    <connections>
+                        <outlet property="currentEmail" destination="DFN-So-Lja" id="nUW-WH-jFC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s2-wC-u3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

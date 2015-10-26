@@ -27,6 +27,12 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView setContentOffset:CGPointZero animated:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -120,7 +126,8 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
         if (indexPath.row == 0) {
             [PraisePop destorySession];
             [[PPMenuControllerCache sharedCache] removeControllerFromCache:kPPTimelineCacheKey];
-            self.revealViewController.frontViewController = [UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingViewController"];
+            self.revealViewController.frontViewController = (UINavigationController *)[UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingNavigationController"];
+            self.revealViewController.frontViewController.childViewControllers[0].view.userInteractionEnabled = YES;
         }
 //        else {
 //            

@@ -10,6 +10,8 @@
 
 #import "PPMenuControllerCache.h"
 
+@class PPUser;
+
 #import <SWRevealViewController/SWRevealViewController.h>
 
 @class PPTimelineViewController;

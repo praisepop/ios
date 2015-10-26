@@ -47,6 +47,12 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.revealViewController.panGestureRecognizer.enabled = YES;
+}
+
 #pragma mark - BEGIN PP3DGlassesRefreshableController REQUIRED METHODS
 - (void)willBeginRefreshing {
     // TODO: Add stuff that needs to happen before refreshing here...

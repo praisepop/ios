@@ -28,13 +28,14 @@
     self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
     
+    [self APITests];
+    
     PPMenuViewController *rearViewController = (PPMenuViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPMenuViewController"];
     
     id frontViewController;
     
     if (PraisePop.currentUser) {
         frontViewController = PPTimelineViewController.new;
-        
         frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     }
     else {
@@ -48,8 +49,6 @@
     self.window.rootViewController = revealController;
     
     [self.window makeKeyAndVisible];
-    
-    [self APITests];
     
     return YES;
 }
@@ -74,9 +73,7 @@
 }
 
 - (void)APITests {
-    [[PraisePopAPI sharedClient] login:@"rfawcett@andover.edu" withPassword:@"TEST" success:^(BOOL result) {
-        NSLog(@"WE WERE ABLE TO LOGIN!");
-    } failure:nil];
+    
 }
 
 #pragma mark - SWRevealViewDelegate

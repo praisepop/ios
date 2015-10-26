@@ -8,6 +8,8 @@
 
 #import "PPMenuViewController.h"
 
+#import "PPUser.h"
+
 #import "PPTimelineViewController.h"
 #import "PPMoreViewController.h"
 
@@ -16,9 +18,17 @@ NSString * const kPPMoreCacheKey = @"PPMoreViewController";
 
 @interface PPMenuViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *currentEmail;
+
 @end
 
 @implementation PPMenuViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.currentEmail.text = PraisePop.currentUser.email;
+}
 
 - (IBAction)buttonTouch:(id)sender {
     UIButton *button = (UIButton *)sender;
