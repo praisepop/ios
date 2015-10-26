@@ -14,6 +14,7 @@
 		F103FBCB1BDB1C0C00C1C2A7 /* PPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = F103FBCA1BDB1C0C00C1C2A7 /* PPPost.m */; settings = {ASSET_TAGS = (); }; };
 		F106F1CC1BDE04230025B1CE /* TwitterText.m in Sources */ = {isa = PBXBuildFile; fileRef = F106F1C91BDE04230025B1CE /* TwitterText.m */; settings = {ASSET_TAGS = (); }; };
 		F106F1CD1BDE04230025B1CE /* TwitterTextEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F106F1CB1BDE04230025B1CE /* TwitterTextEntity.m */; settings = {ASSET_TAGS = (); }; };
+		F10AD00A1BDE7F6B002A45DE /* NSError+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F10AD0091BDE7F6B002A45DE /* NSError+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6CE1BC557D800E86958 /* PPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6CD1BC557D800E86958 /* PPMoreViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6D11BC55D5E00E86958 /* PPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D01BC55D5E00E86958 /* PPMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D71BC564E200E86958 /* UITableViewController+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
@@ -66,6 +67,8 @@
 		F106F1C91BDE04230025B1CE /* TwitterText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterText.m; sourceTree = "<group>"; };
 		F106F1CA1BDE04230025B1CE /* TwitterTextEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTextEntity.h; sourceTree = "<group>"; };
 		F106F1CB1BDE04230025B1CE /* TwitterTextEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTextEntity.m; sourceTree = "<group>"; };
+		F10AD0081BDE7F6B002A45DE /* NSError+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+PPExtensions.h"; path = "Classes/Categories/NSError+PPExtensions.h"; sourceTree = "<group>"; };
+		F10AD0091BDE7F6B002A45DE /* NSError+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+PPExtensions.m"; path = "Classes/Categories/NSError+PPExtensions.m"; sourceTree = "<group>"; };
 		F133D6CC1BC557D800E86958 /* PPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMoreViewController.h; path = Classes/Controllers/PPMoreViewController.h; sourceTree = "<group>"; };
 		F133D6CD1BC557D800E86958 /* PPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMoreViewController.m; path = Classes/Controllers/PPMoreViewController.m; sourceTree = "<group>"; };
 		F133D6CF1BC55D5E00E86958 /* PPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMenuViewController.h; path = Classes/Controllers/PPMenuViewController.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 		F1BB6C461BC230FB00D96FA6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F10AD0081BDE7F6B002A45DE /* NSError+PPExtensions.h */,
+				F10AD0091BDE7F6B002A45DE /* NSError+PPExtensions.m */,
 				F1E9B6721BC2EF81008DD309 /* UIColor+PPExtensions.h */,
 				F1E9B6731BC2EF81008DD309 /* UIColor+PPExtensions.m */,
 				F1E9B6751BC2EFA1008DD309 /* UIFont+PPExtensions.h */,
@@ -514,6 +519,7 @@
 				F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */,
 				F1AC2F491BDB474900E43843 /* PPPostAddressee.m in Sources */,
 				F106F1CC1BDE04230025B1CE /* TwitterText.m in Sources */,
+				F10AD00A1BDE7F6B002A45DE /* NSError+PPExtensions.m in Sources */,
 				F1E9B6741BC2EF81008DD309 /* UIColor+PPExtensions.m in Sources */,
 				F103FBC71BDB1BDD00C1C2A7 /* PPReaction.m in Sources */,
 				F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */,

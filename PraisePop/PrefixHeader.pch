@@ -21,5 +21,6 @@
 #include "UIColor+PPExtensions.h"
 #include "UIFont+PPExtensions.h"
 #include "UIStoryboard+PPExtensions.h"
+#include "NSError+PPExtensions.h"
 
 #endif /* PrefixHeader_pch */
