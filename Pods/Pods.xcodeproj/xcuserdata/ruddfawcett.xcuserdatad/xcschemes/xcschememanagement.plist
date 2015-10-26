@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DateTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Overcoat.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,12 +57,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1766C1390DEDDFAFBB464A146F0E7FC0</key>
+		<key>11771DE856F5109ABFEF0475810474D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39BFACF2796B11EB6CC8208352830D74</key>
+		<key>1679E95086AF39DB770AC67D54EC7855</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31FF44B5E2FF8CF00090950A8B67AFF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C40AD938D23DF5F8345D23B4D3E1644</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D33F919616D3A88C488FF748CB18274</key>
+		<key>5366B7F679CF2BA31EA583EA35CA2D90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A20C6E0FCB8B9E5BA24B7635FB76E05F</key>
+		<key>B0B3F3808B70B36254CF2B8FCCDC6C8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D97C55A6661245515FB6CCA63B36B787</key>
 		<dict>
 			<key>primary</key>
 			<true/>
