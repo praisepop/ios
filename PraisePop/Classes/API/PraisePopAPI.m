@@ -7,6 +7,7 @@
 //
 
 #import <CommonCrypto/CommonDigest.h>
+#import <Parse/Parse.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
@@ -58,7 +59,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     return acceptedCodes;
 }
 
-- (void)signup:(NSString *)email withPassword:(NSString *)password andName:(NSDictionary *)name success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)signup:(NSString *)email withPassword:(NSString *)password andName:(NSDictionary *)name success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : [self md5:password],
@@ -74,10 +75,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         else {
             success(YES);
         }
-    } failure:failure];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
 }
 
-- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : [self md5:password]
@@ -94,12 +97,21 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             [PraisePop saveToken:authentication.token email:authentication.user.email];
             [PraisePop saveOrganizations:authentication.user.organizations];
             [PraisePop saveUserAccount:authentication.user];
+            
+            [PFPush subscribeToChannelInBackground:authentication.user._id block:nil];
+            [PFPush subscribeToChannelInBackground:PraisePop.parentOrganization._id block:nil];
+            
+            if (PraisePop.childOrganization) {
+                [PFPush subscribeToChannelInBackground:PraisePop.childOrganization._id block:nil];
+            }
             success(YES);
         }
-    } failure:failure];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
 }
 
-- (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
 
     NSDictionary *paramters = @{
@@ -123,10 +135,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             
             success(YES, posts);
         }
-    } failure:failure];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
 }
 
-- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
     
     NSDictionary *parameters = @{
@@ -145,7 +159,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-- (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts/new", PraisePop.parentOrganization._id];
     
     NSDictionary *parameters = @{
@@ -169,7 +183,9 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         else {
             success(YES);
         }
-    } failure:nil];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error showError];
+    }];
 }
 
 - (NSString *)md5:(NSString *)input {
