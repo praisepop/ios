@@ -129,8 +129,6 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 - (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
     
-    NSLog(@"%@", path);
-    
     NSDictionary *parameters = @{
                                  @"token" : PraisePop.userToken
                                  };
@@ -145,6 +143,33 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:failure];
+}
+
+- (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"orgs/%@/posts/new", PraisePop.parentOrganization._id];
+    
+    NSDictionary *parameters = @{
+                                 @"token" : PraisePop.userToken,
+                                 @"hashtags" : hashtags,
+                                 @"to" : @{
+                                     @"name" : recipient
+                                 },
+                                 @"body" : postBody,
+                                 @"type" : postType
+                                 };
+    
+    [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        
+        NSLog(@"%@", response);
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO);
+        }
+        else {
+            success(YES);
+        }
+    } failure:nil];
 }
 
 - (NSString *)md5:(NSString *)input {

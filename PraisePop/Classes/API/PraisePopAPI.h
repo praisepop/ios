@@ -26,4 +26,6 @@
 
 - (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
+- (void)post:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+
 @end

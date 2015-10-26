@@ -16,7 +16,8 @@
 typedef NS_ENUM(NSUInteger, PPPostType) {
     PPPostInvite,
     PPPostShoutout,
-    PPPostAnnouncement
+    PPPostAnnouncement,
+    PPPostUncategorized
 };
 
 @interface PPPost : MTLModel <MTLJSONSerializing>

@@ -68,7 +68,8 @@
     return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:@{
                                                                            @"INVITE": @(PPPostInvite),
                                                                            @"ANNOUNCEMENT": @(PPPostAnnouncement),
-                                                                           @"SHOUTOUT": @(PPPostShoutout)
+                                                                           @"SHOUTOUT": @(PPPostShoutout),
+                                                                           @"UNCATEGORIZED": @(PPPostUncategorized)
                                                                            }];
 }
 

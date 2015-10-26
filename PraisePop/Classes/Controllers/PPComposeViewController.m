@@ -9,6 +9,8 @@
 #import "PPComposeViewController.h"
 #import "PPComposeBar.h"
 
+#import "TwitterText.h"
+
 @interface PPComposeViewController () <UITextFieldDelegate, UITextViewDelegate, PPComposeBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *recipientField;
@@ -31,17 +33,23 @@
     self.composeBar = [[[NSBundle mainBundle] loadNibNamed:@"PPComposerToolbar" owner:self options:nil] firstObject];
     self.composeBar.delegate = self;
     
+    self.postType = @"UNCATEGORIZED";
+    
     self.postBody.inputAccessoryView = self.composeBar;
+    self.recipientField.inputAccessoryView = self.composeBar;
     self.postBody.delegate = self;
     
     self.types = @{
                    @"Announcement" : @"ANNOUNCEMENT",
-                   @"Invitation" : @"INVITATION",
-                   @"Shoutout" : @"SHOUTOUT"
+                   @"Invite" : @"INVITE",
+                   @"Shoutout" : @"SHOUTOUT",
+                   @"Uncategorized" : @"UNCATEGORIZED"
                    };
     
     self.postTypePicker.delegate = self;
     self.postTypePicker.dataSource = self;
+    
+    [self.postBody becomeFirstResponder];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -52,7 +60,42 @@
 }
 
 - (void)didSendPost {
-    
+    if (self.postBody.text.length != 0 && self.postBody.text.length != 0) {
+        NSArray *nameParts = [self.recipientField.text componentsSeparatedByString:@" "];
+        if (nameParts.count >= 2) {
+            NSDictionary *name = @{
+                                   @"first" : nameParts[0],
+                                   @"last" : [self.recipientField.text stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ ",nameParts[0]] withString:@""]
+                                   };
+            
+            NSArray *hashtags = [TwitterText hashtagsInText:self.postBody.text checkingURLOverlap:NO];
+            
+            NSMutableArray *rawHashtags = [@[] mutableCopy];
+            
+            for (TwitterTextEntity *entity in hashtags) {
+                [rawHashtags addObject:[self.postBody.text substringWithRange:entity.range]];
+            }
+            
+            [[PraisePopAPI sharedClient] post:self.postBody.text type:self.postType recepient:name hashtags:rawHashtags success:^(BOOL result) {
+                if (result) {
+                    [self pp_dismiss];
+                    // HANDLE ADDITIONAL LOGIC...
+                }
+                else {
+                    UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"We were unable to post your post... please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
+                }
+            } failure:nil];
+        }
+        else {
+            UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please enter a valid name!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+    else {
+        UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please fill out all of the fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)didSelectPostType {
@@ -65,6 +108,10 @@
 }
 
 #pragma mark PickerView DataSource
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 40;
+}
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
