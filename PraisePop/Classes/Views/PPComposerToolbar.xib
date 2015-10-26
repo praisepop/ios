@@ -76,8 +76,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvw-ht-Yo0">
-                    <rect key="frame" x="137" y="7" width="101" height="30"/>
+                    <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="150" id="2yL-B7-mLa"/>
                         <constraint firstAttribute="height" constant="30" id="RDL-rx-S6m"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="15"/>
@@ -92,7 +93,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="co2-0a-Rhh" firstAttribute="leading" secondItem="9Wf-qM-S6O" secondAttribute="leading" id="58J-F9-PpP"/>
-                <constraint firstItem="0XO-4W-sFh" firstAttribute="leading" secondItem="Jvw-ht-Yo0" secondAttribute="trailing" constant="42" id="7ra-mH-CPQ"/>
+                <constraint firstItem="0XO-4W-sFh" firstAttribute="leading" secondItem="Jvw-ht-Yo0" secondAttribute="trailing" constant="17.5" id="7ra-mH-CPQ"/>
                 <constraint firstItem="wfQ-m0-bqS" firstAttribute="top" secondItem="9Wf-qM-S6O" secondAttribute="top" constant="7" id="CQa-ua-lch"/>
                 <constraint firstItem="CCm-TL-lA2" firstAttribute="top" secondItem="9Wf-qM-S6O" secondAttribute="top" constant="6" id="Ge7-8Z-HhR"/>
                 <constraint firstItem="0XO-4W-sFh" firstAttribute="bottom" secondItem="CCm-TL-lA2" secondAttribute="bottom" constant="2" id="Jth-QO-JWG"/>
@@ -101,7 +102,6 @@
                 <constraint firstItem="Jvw-ht-Yo0" firstAttribute="top" secondItem="9Wf-qM-S6O" secondAttribute="top" constant="7" id="SXr-dY-rof"/>
                 <constraint firstAttribute="trailing" secondItem="CCm-TL-lA2" secondAttribute="trailing" constant="16" id="g53-lg-wIE"/>
                 <constraint firstItem="Jvw-ht-Yo0" firstAttribute="centerX" secondItem="co2-0a-Rhh" secondAttribute="centerX" id="jju-Eu-mfB"/>
-                <constraint firstAttribute="trailing" secondItem="0XO-4W-sFh" secondAttribute="trailing" constant="63" id="sy2-c6-Tcn"/>
                 <constraint firstItem="0XO-4W-sFh" firstAttribute="bottom" secondItem="Jvw-ht-Yo0" secondAttribute="bottom" constant="1" id="vyz-eE-vCt"/>
                 <constraint firstItem="co2-0a-Rhh" firstAttribute="top" secondItem="9Wf-qM-S6O" secondAttribute="top" id="y9B-q0-Wxr"/>
                 <constraint firstItem="Jvw-ht-Yo0" firstAttribute="centerY" secondItem="co2-0a-Rhh" secondAttribute="centerY" id="ypf-X5-CwJ"/>
@@ -109,6 +109,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="characterCounter" destination="0XO-4W-sFh" id="bqN-79-9ye"/>
+                <outlet property="typeButton" destination="Jvw-ht-Yo0" id="LyW-E6-6fc"/>
             </connections>
             <point key="canvasLocation" x="338.5" y="225"/>
         </view>

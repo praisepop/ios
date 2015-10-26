@@ -1079,8 +1079,15 @@
                                 <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqv-WQ-9y4">
-                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqv-WQ-9y4">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9rk-Zo-nsO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="gsj-B4-xQg" id="wac-v2-CQI"/>
+                                    <outlet property="delegate" destination="gsj-B4-xQg" id="Wkd-HQ-OT9"/>
+                                </connections>
                             </pickerView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="whats-poppin" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-0Z-z5Z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -1088,25 +1095,28 @@
                                     <constraint firstAttribute="width" secondItem="ccH-0Z-z5Z" secondAttribute="height" multiplier="375:128" id="2Fa-bT-HUw"/>
                                 </constraints>
                             </imageView>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-Ee-bij">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-Ee-bij">
                                 <rect key="frame" x="16" y="203" width="343" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="wxY-NH-6Le"/>
+                                </constraints>
                                 <color key="textColor" red="0.27834024229999998" green="0.27834024229999998" blue="0.27834024229999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AMb-f5-Uud" firstAttribute="trailing" secondItem="gsj-B4-xQg" secondAttribute="trailingMargin" id="1Ep-Yg-t1r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rqv-WQ-9y4" secondAttribute="trailing" constant="-16" id="2mn-sM-D1e"/>
                             <constraint firstItem="bP4-Jd-D3M" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" constant="-16" id="3vX-gd-fZf"/>
+                            <constraint firstItem="rqv-WQ-9y4" firstAttribute="bottom" secondItem="NFg-SX-1uF" secondAttribute="top" id="4LB-Z1-N73"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bP4-Jd-D3M" secondAttribute="trailing" constant="-16" id="AeJ-sx-Pau"/>
                             <constraint firstItem="6Xq-Ee-bij" firstAttribute="top" secondItem="fCp-6k-kjo" secondAttribute="bottom" constant="8" id="E7b-CZ-j4f"/>
                             <constraint firstItem="ccH-0Z-z5Z" firstAttribute="top" secondItem="gsj-B4-xQg" secondAttribute="topMargin" priority="900" id="Eyj-7E-gJ3"/>
                             <constraint firstItem="AMb-f5-Uud" firstAttribute="top" secondItem="bP4-Jd-D3M" secondAttribute="bottom" constant="4" id="Hvc-Tx-iqz"/>
-                            <constraint firstItem="rqv-WQ-9y4" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" constant="-16" id="MvI-2G-S0w"/>
                             <constraint firstItem="fCp-6k-kjo" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" constant="-16" id="NVs-ij-xat"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Vk-Jz-T9Y" secondAttribute="trailing" constant="4" id="Njg-HZ-KQD"/>
+                            <constraint firstItem="rqv-WQ-9y4" firstAttribute="trailing" secondItem="fCp-6k-kjo" secondAttribute="trailing" id="OZN-5S-kmR"/>
                             <constraint firstItem="mg5-Pu-Lpz" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" id="Phx-Ts-tvr"/>
                             <constraint firstItem="bP4-Jd-D3M" firstAttribute="top" secondItem="ccH-0Z-z5Z" secondAttribute="bottom" constant="15" id="QXN-Vj-chx"/>
                             <constraint firstItem="fCp-6k-kjo" firstAttribute="top" secondItem="AMb-f5-Uud" secondAttribute="bottom" constant="5" id="ScU-X2-8w7"/>
@@ -1114,8 +1124,8 @@
                             <constraint firstItem="ccH-0Z-z5Z" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" constant="-16" id="ZEH-cg-UVT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fCp-6k-kjo" secondAttribute="trailing" constant="-16" id="b9l-Nv-59j"/>
                             <constraint firstItem="6Xq-Ee-bij" firstAttribute="trailing" secondItem="gsj-B4-xQg" secondAttribute="trailingMargin" id="gk6-YD-x16"/>
-                            <constraint firstItem="rqv-WQ-9y4" firstAttribute="bottom" secondItem="gsj-B4-xQg" secondAttribute="bottomMargin" id="kNm-Q1-t6u"/>
                             <constraint firstItem="6Xq-Ee-bij" firstAttribute="leading" secondItem="gsj-B4-xQg" secondAttribute="leadingMargin" id="mRE-E7-afP"/>
+                            <constraint firstItem="rqv-WQ-9y4" firstAttribute="leading" secondItem="fCp-6k-kjo" secondAttribute="leading" id="oYH-0l-tKF"/>
                             <constraint firstItem="5Vk-Jz-T9Y" firstAttribute="leading" secondItem="mg5-Pu-Lpz" secondAttribute="trailing" constant="4" id="ufz-hn-SkF"/>
                             <constraint firstItem="5Vk-Jz-T9Y" firstAttribute="baseline" secondItem="mg5-Pu-Lpz" secondAttribute="baseline" id="vqS-8F-r4K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccH-0Z-z5Z" secondAttribute="trailing" constant="-16" id="wUm-AK-DlI"/>
@@ -1130,6 +1140,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="postBody" destination="6Xq-Ee-bij" id="8Mt-rt-gwn"/>
+                        <outlet property="postTypePicker" destination="rqv-WQ-9y4" id="QQF-kT-dlt"/>
                         <outlet property="recipientField" destination="5Vk-Jz-T9Y" id="ujX-rr-65c"/>
                     </connections>
                 </viewController>
