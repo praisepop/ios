@@ -10,6 +10,8 @@
 
 #import <SVWebViewController/SVWebViewController.h>
 
+@class PPOnboardingViewController;
+
 @class PPMenuViewController;
 
 typedef NS_ENUM(NSUInteger, PPMenuViewControllerSections) {

@@ -10,6 +10,8 @@
 
 #import "PPMenuViewController.h"
 
+#import "PPOnboardingViewController.h"
+
 NSString * const kPPMoreCellIdentifier = @"PPMoreCell";
 
 CGFloat const kPPMoreViewControllerSectionHeaderHeight = 50;
@@ -116,11 +118,13 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     }
     else {
         if (indexPath.row == 0) {
-            
+            [PraisePop destorySession];
+            [[PPMenuControllerCache sharedCache] removeControllerFromCache:kPPTimelineCacheKey];
+            self.revealViewController.frontViewController = [UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingViewController"];
         }
-        else {
-            
-        }
+//        else {
+//            
+//        }
     }
 }
 
@@ -153,7 +157,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
                      ],
              @"Account Actions": @[
                      @"Logout",
-                     @"Change Password"
+//                     @"Change Password"
                      ]
              };
 }
