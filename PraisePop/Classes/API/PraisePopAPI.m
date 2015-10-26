@@ -6,6 +6,8 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+#import <CommonCrypto/CommonDigest.h>
+
 #import "PPUser.h"
 #import "PPOrganization.h"
 #import "PPPost.h"
@@ -56,10 +58,29 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     return acceptedCodes;
 }
 
+- (void)signup:(NSString *)email withPassword:(NSString *)password andName:(NSDictionary *)name success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSDictionary *paramters = @{
+                                @"email" : email,
+                                @"password" : [self md5:password],
+                                @"name" : name
+                                };
+    
+    [self POST:@"users/new" parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO);
+        }
+        else {
+            success(YES);
+        }
+    } failure:failure];
+}
+
 - (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSDictionary *paramters = @{
                                 @"email" : email,
-                                @"password" : password
+                                @"password" : [self md5:password]
                                 };
     
     [self POST:@"users/authenticate" parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -126,8 +147,17 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-- (NSString *)token {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+- (NSString *)md5:(NSString *)input {
+    const char *cStr = [input UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5( cStr, (int)strlen(cStr), digest );
+    
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return  output;
 }
 
 @end
