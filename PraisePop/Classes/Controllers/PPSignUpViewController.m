@@ -10,4 +10,8 @@
 
 @implementation PPSignUpViewController
 
+- (IBAction)popViewcontroller:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

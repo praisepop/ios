@@ -20,6 +20,7 @@
 		F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F13D46AA1BCA1D1900072729 /* PPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A91BCA1D1900072729 /* PPLogInViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
+		F164C0601BDDBB430029F85C /* UIImage+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F491BDB474900E43843 /* PPPostAddressee.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F481BDB474900E43843 /* PPPostAddressee.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F4C1BDB48A800E43843 /* PPAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4B1BDB48A800E43843 /* PPAuthentication.m */; settings = {ASSET_TAGS = (); }; };
 		F1AC2F4F1BDD779D00E43843 /* PPPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -72,6 +73,8 @@
 		F13D46A91BCA1D1900072729 /* PPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLogInViewController.m; path = Classes/Controllers/PPLogInViewController.m; sourceTree = "<group>"; };
 		F13E52551BCA193C005555ED /* UIStoryboard+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+PPExtensions.h"; path = "Classes/Categories/UIStoryboard+PPExtensions.h"; sourceTree = "<group>"; };
 		F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+PPExtensions.m"; path = "Classes/Categories/UIStoryboard+PPExtensions.m"; sourceTree = "<group>"; };
+		F164C05E1BDDBB430029F85C /* UIImage+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PPExtensions.h"; path = "Classes/Categories/UIImage+PPExtensions.h"; sourceTree = "<group>"; };
+		F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PPExtensions.m"; path = "Classes/Categories/UIImage+PPExtensions.m"; sourceTree = "<group>"; };
 		F1AC2F471BDB474900E43843 /* PPPostAddressee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPostAddressee.h; path = Models/PPPostAddressee.h; sourceTree = "<group>"; };
 		F1AC2F481BDB474900E43843 /* PPPostAddressee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPostAddressee.m; path = Models/PPPostAddressee.m; sourceTree = "<group>"; };
 		F1AC2F4A1BDB48A800E43843 /* PPAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPAuthentication.h; path = Models/PPAuthentication.h; sourceTree = "<group>"; };
@@ -310,6 +313,8 @@
 				F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */,
 				F1BB6C431BC230BE00D96FA6 /* UIView+PPExtensions.h */,
 				F1BB6C441BC230BE00D96FA6 /* UIView+PPExtensions.m */,
+				F164C05E1BDDBB430029F85C /* UIImage+PPExtensions.h */,
+				F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
 				F103FBC81BDB1BDD00C1C2A7 /* PPOrganization.m in Sources */,
 				F133D6E21BC5960800E86958 /* PP3DGlassesRefreshableController.m in Sources */,
+				F164C0601BDDBB430029F85C /* UIImage+PPExtensions.m in Sources */,
 				F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */,
 				F133D6D11BC55D5E00E86958 /* PPMenuViewController.m in Sources */,
 				F1E9B6771BC2EFA1008DD309 /* UIFont+PPExtensions.m in Sources */,
