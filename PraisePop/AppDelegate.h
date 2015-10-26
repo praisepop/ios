@@ -13,6 +13,7 @@
 @class PPOnboardingViewController;
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 #import <SWRevealViewController/SWRevealViewController.h>
 
