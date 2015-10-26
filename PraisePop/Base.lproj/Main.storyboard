@@ -1020,12 +1020,20 @@
                                 <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="checkTextField:" destination="oYM-ue-v0e" eventType="editingChanged" id="NTr-xP-QgZ"/>
+                                    <outlet property="delegate" destination="oYM-ue-v0e" id="7bc-vA-xhM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-1v-VAz">
                                 <rect key="frame" x="24" y="224" width="335" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="checkTextField:" destination="oYM-ue-v0e" eventType="editingChanged" id="KRC-fZ-hX4"/>
+                                    <outlet property="delegate" destination="oYM-ue-v0e" id="Yus-ix-PqS"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPi-97-bWI">
                                 <rect key="frame" x="131" y="266" width="113" height="33"/>
@@ -1034,6 +1042,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="oYM-ue-v0e" eventType="touchUpInside" id="JeO-de-FrM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-rc-cRe">
                                 <rect key="frame" x="16" y="25" width="18" height="32"/>
@@ -1103,12 +1114,18 @@
                                 <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vdL-yb-YTp" id="0sv-z4-BBC"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="14i-1T-roO">
                                 <rect key="frame" x="24" y="227" width="335" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vdL-yb-YTp" id="l8d-2W-L7Z"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gID-Mm-23c">
                                 <rect key="frame" x="131" y="378" width="113" height="33"/>
@@ -1120,6 +1137,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="vdL-yb-YTp" eventType="touchUpInside" id="qBh-oh-o5D"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-kernel" translatesAutoresizingMaskIntoConstraints="NO" id="9TP-ei-X9W">
                                 <rect key="frame" x="-32" y="25" width="438" height="128"/>
@@ -1153,6 +1173,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vdL-yb-YTp" id="KRH-9e-Bio"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1182,6 +1205,11 @@
                     <navigationItem key="navigationItem" id="BWL-XW-03h"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="62T-E1-lEq" id="xc0-x8-uQ3"/>
+                        <outlet property="nameField" destination="dfa-lr-ygk" id="VBp-Kd-VkF"/>
+                        <outlet property="passwordField" destination="14i-1T-roO" id="PeH-k6-hPC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcT-7q-vy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
