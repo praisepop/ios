@@ -20,7 +20,7 @@
 NSString * const kPPPopCellIdentifier = @"PPPostCellIdentifier";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
-@interface PPTimelineViewController () <PPPopDelegate>
+@interface PPTimelineViewController () <PPPopDelegate, PPComposerDelegate>
 
 @property (strong, nonatomic) NSArray *posts;
 
@@ -135,8 +135,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath {
     if (![self.posts[indexPath.row] upvoted]) {
+        PPPostTableViewCell *cell = (PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         [[PraisePopAPI sharedClient] upvote:self.posts[indexPath.row] success:^(BOOL result) {
-            PPPostTableViewCell *cell = (PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
             
             if (result) {
                 [self.posts[indexPath.row] setUpvoted:YES];
@@ -146,16 +146,25 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
                 [self.posts[indexPath.row] setUpvoted:NO];
                 [cell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
             }
-        } failure:nil];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [cell unvote];
+            [self.posts[indexPath.row] setUpvoted:NO];
+            [error showError];
+        }];
     }
 }
 
 - (void)revealComposer:(id)sender {
     PPComposeViewController *composer = (PPComposeViewController *)[PraisePop controllerWithIdentifier:@"PPComposeViewController"];
+    composer.delegate = self;
     
     [self.navigationController presentViewController:composer animated:YES completion:^{
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     }];
+}
+
+- (void)didPost {
+    [self refresh];
 }
 
 @end
