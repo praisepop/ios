@@ -18,7 +18,11 @@
 
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate () <SWRevealViewControllerDelegate>
+
+@property (strong, nonatomic) UIImageView *splashImageView;
 
 @end
 
@@ -61,6 +65,39 @@
     
     [self.window makeKeyAndVisible];
     
+    self.splashImageView = [UIImageView.alloc initWithFrame:UIScreen.mainScreen.bounds];
+    self.splashImageView.y -= 50;
+    self.splashImageView.layer.zPosition = 0;
+    self.splashImageView.userInteractionEnabled = NO;
+    self.splashImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.splashImageView.backgroundColor = UIColor.pp_redColor;
+
+    [self.window.rootViewController.view addSubview:self.splashImageView];
+    
+    NSMutableArray *images = [@[] mutableCopy];
+    
+    for (int i = 0; i < 66; i++) {
+        [images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Comp 2_%05d", i]]];
+    }
+    
+    self.splashImageView.animationImages = images;
+    self.splashImageView.image = [images lastObject];
+    self.splashImageView.animationDuration = 1;
+    self.splashImageView.animationRepeatCount = 1;
+    
+    [self.splashImageView startAnimating];
+    
+    [UIView animateWithDuration:.5 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.splashImageView.alpha = 0;
+        self.splashImageView.center = CGPointMake(self.splashImageView.center.x, -revealController.view.bounds.size.height);
+    } completion:nil];
+
+    double delay = 3 * NSEC_PER_SEC;
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay));
+    dispatch_after(time, dispatch_get_main_queue(), ^(void){
+        [self.splashImageView removeFromSuperview];
+    });
+
     return YES;
 }
 
