@@ -15,20 +15,42 @@
 
 @interface PPComposeViewController () <UITextFieldDelegate, UITextViewDelegate, PPComposeBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
+/**
+ *  The recipient field.
+ */
 @property (strong, nonatomic) IBOutlet UITextField *recipientField;
 
+/**
+ *  The postBody text view;
+ */
 @property (strong, nonatomic) IBOutlet UITextView *postBody;
 
+/**
+ *  The post type picker.
+ */
 @property (strong, nonatomic) IBOutlet UIPickerView *postTypePicker;
 
+/**
+ *  The post type.
+ */
 @property (nonatomic) PPPostType postType;
 
+/**
+ *  The input accessory toolbar.
+ */
 @property (strong, nonatomic) PPComposeBar *composeBar;
 
 @end
 
 @implementation PPComposeViewController
 
+/**
+ *  Converts a PPPostType into a string.
+ *
+ *  @param postType The post type.
+ *
+ *  @return The resulting string.
+ */
 NSString * NSStringFromPPPostType(PPPostType postType) {
     switch (postType) {
         case PPPostShoutout:

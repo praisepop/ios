@@ -10,6 +10,13 @@
 
 @interface UIStoryboard (PPExtensions)
 
+/**
+ *  Convenience method to get a contoller from a storyboard.
+ *
+ *  @param identifier The controller identifier.
+ *
+ *  @return The controller from a storyboard.
+ */
 + (UIViewController *)pp_controllerWithIdentifier:(NSString *)identifier;
 
 @end

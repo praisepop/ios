@@ -10,8 +10,17 @@
 
 @interface UITableViewController (PPExtensions)
 
+/**
+ *  Adds a settings icon in the top left, which shows the
+ *  reveal controller.
+ */
 - (void)addReveal;
 
+/**
+ *  Sets the title with appropriate kerning and font size.
+ *
+ *  @param title The title to set.
+ */
 - (void)pp_setTitle:(NSString *)title;
 
 @end

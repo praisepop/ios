@@ -10,6 +10,11 @@
 
 @interface PPUnselectableTextView : UITextView
 
+/**
+ *  The attributes of the text view: color, font, etc.
+ *
+ *  @return The dictionary of the attributes.
+ */
 + (NSDictionary *)attributes;
 
 @end

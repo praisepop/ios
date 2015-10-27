@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  The status of the controller refresh view.
+ */
 typedef NS_ENUM(NSUInteger, PP3DGlassesRefreshControlState) {
+    /**
+     *  An idle state for the controller.
+     */
     PP3DGlassesRefreshControlStateIdle,
+    /**
+     *  The refreshing state for the controller.
+     */
     PP3DGlassesRefreshControlStateRefreshing,
+    /**
+     *  The resetting state for the controller.
+     */
     PP3DGlassesRefreshControlStateResetting
 };
 

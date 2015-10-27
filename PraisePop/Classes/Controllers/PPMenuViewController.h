@@ -10,8 +10,17 @@
 
 #import "PPMenuControllerCache.h"
 
+/**
+ *  Menu button identifiers.
+ */
 typedef NS_ENUM(NSUInteger, PPMenuButtonIndexes) {
+    /**
+     *  The menu button for a timeline controller.
+     */
     PPMenuButtonTimeline = 0,
+    /**
+     *  The menu button for the more controller.
+     */
     PPMenuButtonMore = 1
 };
 

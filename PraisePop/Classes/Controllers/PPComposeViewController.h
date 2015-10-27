@@ -14,12 +14,19 @@
 
 @optional;
 
+/**
+ *  Tells a implementer if a new post has been create,
+ *  so the controller can react accodringly.
+ */
 - (void)didPost;
 
 @end
 
 @interface PPComposeViewController : UIViewController
 
+/**
+ *  The PPComposerDelegate.
+ */
 @property (weak, nonatomic) id<PPComposerDelegate> delegate;
 
 @end

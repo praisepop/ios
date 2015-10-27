@@ -10,8 +10,18 @@
 
 @interface UIColor (PPExtensions)
 
+/**
+ *  Our PraisePop red color.
+ *
+ *  @return A bright vibrant red!
+ */
 + (UIColor *)pp_redColor;
 
+/**
+ *  An off white color.
+ *
+ *  @return The off white color.
+ */
 + (UIColor *)pp_offWhiteColor;
 
 @end

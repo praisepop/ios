@@ -10,8 +10,17 @@
 
 @interface PPSignUpViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 
+/**
+ *  The email field.
+ */
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
+/**
+ *  The password field.  Secure text entry.
+ */
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
+/**
+ *  The name field, its content is later parsed into parts.
+ */
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 
 @end
