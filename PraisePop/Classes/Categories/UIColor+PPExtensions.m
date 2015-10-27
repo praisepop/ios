@@ -11,7 +11,7 @@
 @implementation UIColor (PPExtensions)
 
 + (UIColor *)pp_redColor {
-    return [UIColor colorWithRed:0.92 green:0.26 blue:0.01 alpha:1];
+    return [UIColor colorWithRed:0.9 green:0.27 blue:0.16 alpha:1];
 }
 
 + (UIColor *)pp_offWhiteColor {
