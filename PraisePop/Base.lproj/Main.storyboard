@@ -899,7 +899,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="checkTextField:" destination="oYM-ue-v0e" eventType="editingChanged" id="3pn-ZU-FaW"/>
+                                            <action selector="checkTextField:" destination="vdL-yb-YTp" eventType="editingDidEnd" id="dIf-tE-EJp"/>
                                             <outlet property="delegate" destination="oYM-ue-v0e" id="21Z-o3-LBm"/>
                                         </connections>
                                     </textField>
@@ -937,9 +937,9 @@
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="checkTextField:" destination="oYM-ue-v0e" eventType="editingChanged" id="n3f-ns-qIm"/>
+                                            <action selector="checkTextField:" destination="vdL-yb-YTp" eventType="editingDidEnd" id="oBp-u0-1SE"/>
                                             <outlet property="delegate" destination="oYM-ue-v0e" id="CBP-wQ-n6j"/>
                                         </connections>
                                     </textField>
@@ -964,10 +964,9 @@
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="checkTextField:" destination="oYM-ue-v0e" eventType="editingChanged" id="LNM-Iv-9wV"/>
-                                            <outlet property="delegate" destination="oYM-ue-v0e" id="o27-gD-XXw"/>
+                                            <action selector="checkTextField:" destination="vdL-yb-YTp" eventType="editingDidEnd" id="Y4U-oZ-tnT"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -992,7 +991,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="oYM-ue-v0e" eventType="touchUpInside" id="Up4-fG-LM0"/>
+                                    <action selector="signUp:" destination="vdL-yb-YTp" eventType="touchUpInside" id="2gI-5a-YPZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1030,6 +1029,11 @@
                     <navigationItem key="navigationItem" id="BWL-XW-03h"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="bxd-Ix-25K" id="HRZ-Sk-Z0G"/>
+                        <outlet property="nameField" destination="50i-U8-LzF" id="GF5-mb-yh9"/>
+                        <outlet property="passwordField" destination="ca9-cb-ccQ" id="za6-Ee-Qei"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcT-7q-vy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
