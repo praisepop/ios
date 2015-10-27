@@ -148,41 +148,66 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (void)didTapMore:(NSIndexPath *)indexPath {
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Options"
-                                                    delegate:nil
-                                           cancelButtonTitle:@"Cancel"
-                                      destructiveButtonTitle:@"Delete"
-                                           otherButtonTitles:@"Report", nil];
-    
-    as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-    
-    as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
-        if (buttonIndex == 0) {
-            [[PraisePopAPI sharedClient] delete:self.posts[indexPath.row] success:^(BOOL result) {
-                if (result) {
-                    [self.posts removeObjectAtIndex:indexPath.row];
-                    [self.tableView reloadData];
-                }
-                else {
-                    [NSError pp_showErrorAlertWithMessage:@"We were unable to delete your post.  Please check your connection and try again"];
-                }
-            } failure:nil];
-        }
-        else if (buttonIndex == 1) {
-            [[PraisePopAPI sharedClient] flag:self.posts[indexPath.row] success:^(BOOL result) {
-                if (result) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"By reporting this post, you have made PraisePop a safer place." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    
-                    [alert show];
-                }
-                else {
-                    [NSError pp_showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
-                }
-            } failure:nil];
-        }
-    };
-    
-    [as showInView:self.view];
+    if ([self.posts[indexPath.row] isDeletable]) {
+        UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Options"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"Cancel"
+                                          destructiveButtonTitle:@"Delete"
+                                               otherButtonTitles:@"Report", nil];
+        
+        as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+        
+        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
+            if (buttonIndex == 0) {
+                [[PraisePopAPI sharedClient] delete:self.posts[indexPath.row] success:^(BOOL result) {
+                    if (result) {
+                        [self.posts removeObjectAtIndex:indexPath.row];
+                        [self.tableView reloadData];
+                    }
+                    else {
+                        [NSError pp_showErrorAlertWithMessage:@"We were unable to delete your post.  Please check your connection and try again"];
+                    }
+                } failure:nil];
+            }
+            else if (buttonIndex == 1) {
+                [[PraisePopAPI sharedClient] flag:self.posts[indexPath.row] success:^(BOOL result) {
+                    if (result) {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"By reporting this post, you have made PraisePop a safer place." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        
+                        [alert show];
+                    }
+                    else {
+                        [NSError pp_showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
+                    }
+                } failure:nil];
+            }
+        };
+        
+        [as showInView:self.view];
+    }
+    else {
+        UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Option"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                          destructiveButtonTitle:@""
+                                               otherButtonTitles:@"Report", nil];
+        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
+            if (buttonIndex == 0) {
+                [[PraisePopAPI sharedClient] flag:self.posts[indexPath.row] success:^(BOOL result) {
+                    if (result) {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"By reporting this post, you have made PraisePop a safer place." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        
+                        [alert show];
+                    }
+                    else {
+                        [NSError pp_showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
+                    }
+                } failure:nil];
+            }
+        };
+        
+        [as showInView:self.view];
+    }
 }
 
 #pragma mark - PPComposerDelegate
