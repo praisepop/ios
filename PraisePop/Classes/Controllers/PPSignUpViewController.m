@@ -18,10 +18,6 @@
 
 @implementation PPSignUpViewController
 
-- (IBAction)popViewcontroller:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.emailField) {
         [self.passwordField becomeFirstResponder];
@@ -55,7 +51,7 @@
                     
                     [[PraisePopAPI sharedClient] signup:self.emailField.text password:self.passwordField.text name:name success:^(BOOL result) {
                         if (result) {
-                            [self popViewcontroller:nil];
+                            [self.navigationController popToRootViewControllerAnimated:NO];
                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Please check your email to verify your account." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                             
                             [alert show];

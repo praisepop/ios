@@ -19,10 +19,6 @@
 
 @implementation PPLogInViewController 
 
-- (IBAction)popViewcontroller:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.emailField) {
         [self.passwordField becomeFirstResponder];
