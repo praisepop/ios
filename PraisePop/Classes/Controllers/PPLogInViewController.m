@@ -43,6 +43,7 @@
 
 - (IBAction)login:(id)sender {
     [self.view endEditing:YES];
+    
     if (self.emailField.text.length != 0 && self.passwordField.text.length != 0) {
         if ([self validEmail:self.emailField.text]) {
             [[PraisePopAPI sharedClient] login:self.emailField.text withPassword:self.passwordField.text success:^(BOOL result) {
@@ -65,6 +66,11 @@
             
             [alert show];
         }
+    }
+    else {
+        UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please fill out all fields!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
     }
 }
 

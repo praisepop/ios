@@ -48,6 +48,7 @@
 
 - (IBAction)signUp:(id)sender {
     [self.view endEditing:YES];
+    
     if (self.emailField.text.length != 0 && self.passwordField.text.length != 0 && self.nameField.text.length != 0) {
         if ([self validEmail:self.emailField.text]) {
             if (![self blackListed:self.emailField.text]) {
