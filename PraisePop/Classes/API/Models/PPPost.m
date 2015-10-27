@@ -10,16 +10,11 @@
 
 #import "PPUser.h"
 #import "PPOrganization.h"
+#import "PPPostAddressee.h"
 
 @implementation PPPost
-//
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-//    if (self = [super initWithDictionary:dictionaryValue error:error]) {
-//        self.retrievedAt = NSDate.date;
-//    }
-//    
-//    return self;
-//}
+
+#pragma mark - Mantle Methods
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
@@ -71,6 +66,12 @@
                                                                            @"SHOUTOUT": @(PPPostShoutout),
                                                                            @"UNCATEGORIZED": @(PPPostUncategorized)
                                                                            }];
+}
+
+#pragma mark - Helpers
+
+- (BOOL)isDeletable {
+    return self.from_id == PraisePop.currentUser._id || PraisePop.currentUser.admin;
 }
 
 @end

@@ -10,8 +10,8 @@
 
 @interface NSError (PPExtensions)
 
-- (void)showError;
+- (void)pp_showError;
 
-+ (void)showErrorAlertWithMessage:(NSString *)message;
++ (void)pp_showErrorAlertWithMessage:(NSString *)message;
 
 @end

@@ -35,7 +35,6 @@
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
 		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
 		F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */; };
-		F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */; };
 		F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */; };
 		F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */; };
 		F1BB6C331BC222ED00D96FA6 /* PPComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C321BC222ED00D96FA6 /* PPComposeViewController.m */; };
@@ -105,8 +104,6 @@
 		F1BB6C041BC1FB3000D96FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1BB6C1E1BC20EB300D96FA6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PraisePop/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PraisePop/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOnboardingViewController.h; path = Classes/Controllers/PPOnboardingViewController.h; sourceTree = "<group>"; };
-		F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOnboardingViewController.m; path = Classes/Controllers/PPOnboardingViewController.m; sourceTree = "<group>"; };
 		F1BB6C2C1BC2214100D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1BB6C2E1BC2222A00D96FA6 /* PPTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPTimelineViewController.h; path = Classes/Controllers/PPTimelineViewController.h; sourceTree = "<group>"; };
 		F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPTimelineViewController.m; path = Classes/Controllers/PPTimelineViewController.m; sourceTree = "<group>"; };
@@ -201,8 +198,6 @@
 			children = (
 				F13D46A51BCA1D0000072729 /* PPSignUpViewController.h */,
 				F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */,
-				F1BB6C251BC2210400D96FA6 /* PPOnboardingViewController.h */,
-				F1BB6C261BC2210400D96FA6 /* PPOnboardingViewController.m */,
 				F13D46A81BCA1D1900072729 /* PPLogInViewController.h */,
 				F13D46A91BCA1D1900072729 /* PPLogInViewController.m */,
 			);
@@ -318,12 +313,12 @@
 		F1BB6C421BC22D6600D96FA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F155B1681BDDEC590073713A /* PPComposeBar.h */,
-				F155B1691BDDEC590073713A /* PPComposeBar.m */,
 				F164C0631BDDE8950029F85C /* PPComposerToolbar.xib */,
 				F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */,
 				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
+				F155B1681BDDEC590073713A /* PPComposeBar.h */,
+				F155B1691BDDEC590073713A /* PPComposeBar.m */,
 				F1AC2F4D1BDD779D00E43843 /* PPPostTableViewCell.h */,
 				F1AC2F4E1BDD779D00E43843 /* PPPostTableViewCell.m */,
 			);
@@ -514,7 +509,6 @@
 				F1BB6C411BC22D6100D96FA6 /* PPUnselectableTextView.m in Sources */,
 				F1BB6C361BC2230D00D96FA6 /* PPDetailViewController.m in Sources */,
 				F1BB6C3C1BC2247700D96FA6 /* PraisePopAPI.m in Sources */,
-				F1BB6C271BC2210400D96FA6 /* PPOnboardingViewController.m in Sources */,
 				F103FBC81BDB1BDD00C1C2A7 /* PPOrganization.m in Sources */,
 				F133D6E21BC5960800E86958 /* PP3DGlassesRefreshableController.m in Sources */,
 				F164C0601BDDBB430029F85C /* UIImage+PPExtensions.m in Sources */,

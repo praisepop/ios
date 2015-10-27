@@ -26,9 +26,10 @@
     paragrapStyle.alignment = NSTextAlignmentLeft;
     paragrapStyle.lineSpacing = 3;
     
-    return @{ NSFontAttributeName : [UIFont pp_fontWithName:FuturaBook size:17],
-              NSParagraphStyleAttributeName : paragrapStyle
-              };
+    return @{
+             NSFontAttributeName : [UIFont pp_fontWithName:FuturaBook size:17],
+             NSParagraphStyleAttributeName : paragrapStyle
+             };
 }
 
 @end

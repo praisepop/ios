@@ -10,11 +10,11 @@
 
 @implementation NSError (PPExtensions)
 
-- (void)showError {
-    [NSError showErrorAlertWithMessage:self.localizedDescription];
+- (void)pp_showError {
+    [NSError pp_showErrorAlertWithMessage:self.localizedDescription];
 }
 
-+ (void)showErrorAlertWithMessage:(NSString *)message {
++ (void)pp_showErrorAlertWithMessage:(NSString *)message {
     UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Error"
                                                 message:message
                                                delegate:nil

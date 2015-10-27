@@ -6,18 +6,19 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import <CommonCrypto/CommonDigest.h>
 #import <Parse/Parse.h>
+#import <SSKeychain/SSKeychain.h>
+#import <CommonCrypto/CommonDigest.h>
 
 #import "PPUser.h"
-#import "PPOrganization.h"
 #import "PPPost.h"
-#import "PPAuthentication.h"
 #import "PPReaction.h"
+#import "PPAuthentication.h"
+#import "PPOrganization.h"
 
 #import "PraisePopAPI.h"
 
-static NSString * const PraisePopAPIBaseURLString = @"http://localhost:8080/api/v1/";
+static NSString * const PraisePopAPIBaseURLString = @"https://praisepop.herokuapp.com/api/v1/";
 
 static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
@@ -59,7 +60,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     return acceptedCodes;
 }
 
-- (void)signup:(NSString *)email withPassword:(NSString *)password andName:(NSDictionary *)name success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)signup:(NSString *)email password:(NSString *)password name:(NSDictionary *)name success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : [self md5:password],
@@ -76,7 +77,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -107,7 +108,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -136,7 +137,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES, posts);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -182,7 +183,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -204,7 +205,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES, post);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -225,7 +226,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 
@@ -246,7 +247,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        [error showError];
+        [error pp_showError];
     }];
 }
 

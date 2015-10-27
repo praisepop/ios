@@ -18,10 +18,9 @@ typedef NS_ENUM(NSUInteger, PPReactionType) {
 
 @property (strong, nonatomic) NSString *_id;
 @property (strong, nonatomic) NSString *post_id;
+@property (strong, nonatomic) NSString *reaction;
 
 @property (nonatomic) PPReactionType type;
-
-@property (strong, nonatomic) NSString *reaction;
 
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *createdAt;

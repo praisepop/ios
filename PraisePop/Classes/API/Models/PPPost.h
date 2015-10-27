@@ -8,8 +8,8 @@
 
 #import <Mantle/Mantle.h>
 
-@class PPUser;
 @class PPOrganization;
+@class PPPostAddressee;
 
 #import "PPPostAddressee.h"
 
@@ -25,20 +25,20 @@ typedef NS_ENUM(NSUInteger, PPPostType) {
 @property (strong, nonatomic) NSString *_id;
 @property (strong, nonatomic) NSString *from_id;
 @property (strong, nonatomic) NSString *body;
+@property (strong, nonatomic) NSString *name;
 
 @property (nonatomic) BOOL upvoted;
 
 @property (strong, nonatomic) PPOrganization *organization;
-
-@property (strong, nonatomic) NSArray *hashtags;
-
+@property (strong, nonatomic) PPPostAddressee *addressee;
 @property (nonatomic) PPPostType type;
 
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *retrievedAt;
 
-@property (strong, nonatomic) PPPostAddressee *addressee;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSArray *hashtags;
+
+- (BOOL)isDeletable;
 
 @end

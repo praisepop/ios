@@ -6,15 +6,19 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPPostTableViewCell.h"
+
+#import <DateTools/NSDate+DateTools.h>
 
 #import "PPPost.h"
 
-#import <DateTools/NSDate+DateTools.h>
+#import "PPUnselectableTextView.h"
+
+#import "PPPostTableViewCell.h"
 
 @interface PPPostTableViewCell ()
 
 @property (strong, nonatomic) IBOutlet UILabel *addresseeLabel;
+
 @property (strong, nonatomic) IBOutlet PPUnselectableTextView *textView;
 
 
@@ -63,6 +67,8 @@
 - (void)unvote {
     [self.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
 }
+
+#pragma mark - Animations
 
 - (NSArray *)images {
     NSMutableArray *images = NSMutableArray.array;

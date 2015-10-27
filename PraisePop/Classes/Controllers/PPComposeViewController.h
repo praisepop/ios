@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class PPComposeBar;
-
-@class PPPost;
-
 @class PPComposeViewController;
 
 @protocol PPComposerDelegate <NSObject>

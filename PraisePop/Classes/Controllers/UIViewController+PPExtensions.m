@@ -26,11 +26,6 @@
     [label sizeToFit];
     
     self.navigationItem.titleView = label;
-    
-    //    UIImage *navBarImage = [UIImage imageNamed:@"logo-nav-bar"];
-    //    UIImageView *titleImageView = [UIImageView.alloc initWithImage:navBarImage];
-    //    titleImageView.frame = CGRectMake(titleImageView.x, titleImageView.y, 172.5f, 20.5f);
-    //    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)pp_dismiss {

@@ -6,27 +6,46 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPComposeViewController.h"
-#import "PPComposeBar.h"
+#import "TwitterText.h"
 #import "PPPost.h"
 
-#import "TwitterText.h"
+#import "PPComposeBar.h"
+
+#import "PPComposeViewController.h"
 
 @interface PPComposeViewController () <UITextFieldDelegate, UITextViewDelegate, PPComposeBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *recipientField;
+
 @property (strong, nonatomic) IBOutlet UITextView *postBody;
 
-@property (strong, nonatomic) PPComposeBar *composeBar;
 @property (strong, nonatomic) IBOutlet UIPickerView *postTypePicker;
 
-@property (strong, nonatomic) NSDictionary *types;
+@property (nonatomic) PPPostType postType;
 
-@property (strong, nonatomic) NSString *postType;
+@property (strong, nonatomic) PPComposeBar *composeBar;
 
 @end
 
 @implementation PPComposeViewController
+
+NSString * NSStringFromPPPostType(PPPostType postType) {
+    switch (postType) {
+        case PPPostShoutout:
+            return @"SHOUTOUT";
+            break;
+        case PPPostInvite:
+            return @"INVITE";
+            break;
+        case PPPostAnnouncement:
+            return @"ANNOUNCEMENT";
+            break;
+            
+        default:
+            return @"UNCATEGORIZED";
+            break;
+    }
+};
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,18 +53,12 @@
     self.composeBar = [[[NSBundle mainBundle] loadNibNamed:@"PPComposerToolbar" owner:self options:nil] firstObject];
     self.composeBar.delegate = self;
     
-    self.postType = @"UNCATEGORIZED";
+    self.postType = PPPostUncategorized;
     
     self.postBody.inputAccessoryView = self.composeBar;
-    self.recipientField.inputAccessoryView = self.composeBar;
     self.postBody.delegate = self;
     
-    self.types = @{
-                   @"Announcement" : @"ANNOUNCEMENT",
-                   @"Invite" : @"INVITE",
-                   @"Shoutout" : @"SHOUTOUT",
-                   @"Uncategorized" : @"UNCATEGORIZED"
-                   };
+    self.recipientField.inputAccessoryView = self.composeBar;
     
     self.postTypePicker.delegate = self;
     self.postTypePicker.dataSource = self;
@@ -53,10 +66,23 @@
     [self.postBody becomeFirstResponder];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (NSDictionary *)types {
+    return @{
+             @"Announcement" : @"ANNOUNCEMENT",
+             @"Invite" : @"INVITE",
+             @"Shoutout" : @"SHOUTOUT",
+             @"Uncategorized" : @"UNCATEGORIZED"
+             };
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     int length = 500 - (int)(textView.text.length + text.length - range.length);
-    
     self.composeBar.characterCounter.text = [NSString stringWithFormat:@"%i", length];
+    
     return textView.text.length + (text.length - range.length) <= 500;
 }
 
@@ -77,7 +103,7 @@
                 [rawHashtags addObject:[self.postBody.text substringWithRange:entity.range]];
             }
             
-            [[PraisePopAPI sharedClient] send:self.postBody.text type:self.postType recepient:name hashtags:rawHashtags success:^(BOOL result) {
+            [[PraisePopAPI sharedClient] send:self.postBody.text type:NSStringFromPPPostType(self.postType) recepient:name hashtags:rawHashtags success:^(BOOL result) {
                 if (result) {
                     [self pp_dismiss];
                     
@@ -113,7 +139,7 @@
     [self pp_dismiss];
 }
 
-#pragma mark PickerView DataSource
+#pragma mark PickerView Delegate
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
     return 40;
@@ -132,17 +158,12 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.postType = self.types[self.types.allKeys[row]];
+    self.postType = row;
     [self.postTypePicker selectRow:row inComponent:0 animated:YES];
     [self.composeBar.typeButton setTitle:self.types.allKeys[row] forState:UIControlStateNormal];
     [self.postBody becomeFirstResponder];
     
     self.postTypePicker.hidden = YES;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

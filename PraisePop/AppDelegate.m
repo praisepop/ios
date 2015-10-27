@@ -6,13 +6,15 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+
+#import <Parse/Parse.h>
+#import <SWRevealViewController/SWRevealViewController.h>
+#import <SSKeychain/SSKeychain.h>
+
 #import "PraisePopAPI.h"
 
 #import "PPMenuViewController.h"
 #import "PPTimelineViewController.h"
-#import "PPOnboardingViewController.h"
-
-#import <SSKeychain/SSKeychain.h>
 
 #import "AppDelegate.h"
 
@@ -23,14 +25,15 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = UIColor.whiteColor;
+    
     [self setupAppearances];
     
     PraisepopKeys *keys = PraisepopKeys.new;
     
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
-
     
-    // Register for Push Notitications
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);
@@ -38,11 +41,6 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
-    
-    self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = UIColor.whiteColor;
-    
-    [self APITests];
     
     PPMenuViewController *rearViewController = (PPMenuViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPMenuViewController"];
     
@@ -57,7 +55,6 @@
     }
     
     SWRevealViewController *revealController = [SWRevealViewController.alloc initWithRearViewController:rearViewController frontViewController:frontViewController];
-    
     revealController.delegate = self;
     
     self.window.rootViewController = revealController;
@@ -68,8 +65,8 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation saveInBackground];
 }
@@ -94,10 +91,6 @@
     
     [[UIToolbar appearance] setTintColor:UIColor.pp_redColor];
     [[UIToolbar appearance] setTranslucent:NO];
-    
-}
-
-- (void)APITests {
     
 }
 

@@ -6,14 +6,13 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PraisePop.h"
+#import <Parse/Parse.h>
+#import <SSKeychain/SSKeychain.h>
 
 #import "PPUser.h"
-
 #import "PPOrganization.h"
 
-#import <SSKeychain/SSKeychain.h>
-#import <Parse/Parse.h>
+#import "PraisePop.h"
 
 @implementation PraisePop
 
@@ -31,12 +30,6 @@ static NSString * const kPraisePopService = @"PraisePop";
     });
     
     return _sharedDateFormatter;
-}
-
-+ (UIViewController *)controllerWithIdentifier:(NSString *)identifier {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    
-    return [storyboard instantiateViewControllerWithIdentifier:identifier];
 }
 
 + (void)saveToken:(NSString *)token email:(NSString *)email {

@@ -10,13 +10,10 @@
 
 #import "PPMenuControllerCache.h"
 
-@class PPUser;
-@class PPOrganization;
-
-#import <SWRevealViewController/SWRevealViewController.h>
-
-@class PPTimelineViewController;
-@class PPMoreViewController;
+typedef NS_ENUM(NSUInteger, PPMenuButtonIndexes) {
+    PPMenuButtonTimeline = 0,
+    PPMenuButtonMore = 1
+};
 
 @interface PPMenuViewController : UIViewController
 

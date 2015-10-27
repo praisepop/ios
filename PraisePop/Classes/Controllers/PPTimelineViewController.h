@@ -10,16 +10,6 @@
 
 #import "PP3DGlassesRefreshableController.h"
 
-@class PPMenuControllerCache;
-
-@class PPComposeViewController;
-@class PPMenuViewController;
-
-@class PPPostTableViewCell;
-
-@class PPPost;
-
 @interface PPTimelineViewController : PP3DGlassesRefreshableController
-
 
 @end

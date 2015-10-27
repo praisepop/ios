@@ -20,6 +20,4 @@
 
 @property (nonatomic) BOOL parent;
 
-- (void)encodeWithCoder:(NSCoder *)encoder;
-
 @end

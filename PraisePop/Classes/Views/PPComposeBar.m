@@ -8,10 +8,6 @@
 
 #import "PPComposeBar.h"
 
-@interface PPComposeBar ()
-
-@end
-
 @implementation PPComposeBar
 
 - (IBAction)cancel:(id)sender {
@@ -31,6 +27,5 @@
         [self.delegate didSelectPostType];
     }
 }
-
 
 @end

@@ -11,13 +11,7 @@
 
 @implementation PPReaction
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-    if (self = [super initWithDictionary:dictionaryValue error:error]) {
-        self.retrievedAt = NSDate.date;
-    }
-    
-    return self;
-}
+#pragma mark - Mantle Methods
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{

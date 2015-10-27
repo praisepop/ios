@@ -11,28 +11,7 @@
 
 @implementation PPOrganization
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-    if (self = [super initWithDictionary:dictionaryValue error:error]) {
-        self.retrievedAt = NSDate.date;
-    }
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self._id forKey:@"_id"];
-    [encoder encodeObject:self.domain forKey:@"domain"];
-    [encoder encodeObject:@(self.parent) forKey:@"parent"];
-}
-
-- (id)initWithCoder:(NSCoder *)decoder {
-    if((self = [super init])) {
-        self._id = [decoder decodeObjectForKey:@"_id"];
-        self.domain = [decoder decodeObjectForKey:@"domain"];
-        self.parent = [[decoder decodeObjectForKey:@"parent"] boolValue];
-    }
-    return self;
-}
+#pragma mark - Mantle Methods
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
@@ -62,6 +41,24 @@
     } reverseBlock:^id(NSDate *date, BOOL *success, NSError *__autoreleasing *error) {
         return [PraisePop.dateFormatter stringFromDate:date];
     }];
+}
+
+#pragma mark - Encoding for Storage
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self._id forKey:@"_id"];
+    [encoder encodeObject:self.domain forKey:@"domain"];
+    [encoder encodeObject:@(self.parent) forKey:@"parent"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self._id = [decoder decodeObjectForKey:@"_id"];
+        self.domain = [decoder decodeObjectForKey:@"domain"];
+        self.parent = [[decoder decodeObjectForKey:@"parent"] boolValue];
+    }
+    
+    return self;
 }
 
 @end

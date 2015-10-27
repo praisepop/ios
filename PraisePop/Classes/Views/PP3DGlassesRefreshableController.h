@@ -14,8 +14,6 @@ typedef NS_ENUM(NSUInteger, PP3DGlassesRefreshControlState) {
     PP3DGlassesRefreshControlStateResetting
 };
 
-@class ASBatteryMonitor;
-
 @interface PP3DGlassesRefreshableController : UITableViewController
 
 @end

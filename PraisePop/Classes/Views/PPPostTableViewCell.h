@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class PPPost;
-
-#import "PPUnselectableTextView.h"
-
 @class PPPostTableViewCell;
 
-@protocol PPPopDelegate <NSObject>
+@protocol PPPostDelegate <NSObject>
 
 @optional
 
@@ -26,10 +22,17 @@
 
 @interface PPPostTableViewCell : UITableViewCell
 
+#pragma mark - Outlets
+
 @property (strong, nonatomic) IBOutlet UIButton *upvoteButton;
+
 @property (strong, nonatomic) IBOutlet UILabel *timeAgoLabel;
 
-@property (weak, nonatomic) id<PPPopDelegate> delegate;
+#pragma mark - Delegate
+
+@property (weak, nonatomic) id<PPPostDelegate> delegate;
+
+#pragma mark - Properties
 
 @property (assign, nonatomic) NSIndexPath *indexPath;
 

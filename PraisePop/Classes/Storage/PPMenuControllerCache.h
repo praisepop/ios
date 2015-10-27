@@ -13,12 +13,18 @@ extern NSString * const kPPMoreCacheKey;
 
 @interface PPMenuControllerCache : NSObject
 
+#pragma mark - Singleton
+
 + (instancetype)sharedCache;
+
+#pragma mark - Properties
+
+@property (strong, nonatomic) NSMutableDictionary *cache;
+
+#pragma mark - Methods
 
 - (void)addControllerToCache:(UIViewController *)controller withKey:(NSString *)key;
 
 - (void)removeControllerFromCache:(NSString *)key;
-
-@property (strong, nonatomic) NSMutableDictionary *cache;
 
 @end

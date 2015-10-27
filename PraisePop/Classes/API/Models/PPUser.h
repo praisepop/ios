@@ -16,13 +16,13 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSDictionary *name;
 
+@property (nonatomic) BOOL admin;
+
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *retrievedAt;
 
 @property (strong, nonatomic) NSArray *organizations;
-
-@property (nonatomic) BOOL admin;
 
 - (NSString *)fullName;
 

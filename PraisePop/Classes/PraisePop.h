@@ -16,20 +16,17 @@
 
 + (NSDateFormatter *)dateFormatter;
 
-+ (UIViewController *)controllerWithIdentifier:(NSString *)identifier;
++ (void)saveUserAccount:(PPUser *)user;
++ (void)saveOrganizations:(NSArray *)organizations;
++ (void)saveToken:(NSString *)token email:(NSString *)email;
 
 + (NSString *)userToken;
 
-+ (void)destorySession;
-
-+ (void)saveToken:(NSString *)token email:(NSString *)email;
-
 + (PPUser *)currentUser;
-+ (void)saveUserAccount:(PPUser *)user;
-
-+ (void)saveOrganizations:(NSArray *)organizations;
 
 + (PPOrganization *)parentOrganization;
 + (PPOrganization *)childOrganization;
+
++ (void)destorySession;
 
 @end

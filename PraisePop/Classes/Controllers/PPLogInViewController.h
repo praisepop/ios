@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class PPTimelineViewController;
-
 @interface PPLogInViewController : UIViewController
 
 @end

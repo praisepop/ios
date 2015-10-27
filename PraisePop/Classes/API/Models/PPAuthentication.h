@@ -13,6 +13,7 @@
 @interface PPAuthentication : MTLModel <MTLJSONSerializing>
 
 @property (strong, nonatomic) NSString *token;
+
 @property (strong, nonatomic) PPUser *user;
 
 @property (strong, nonatomic) NSDate *retrievedAt;

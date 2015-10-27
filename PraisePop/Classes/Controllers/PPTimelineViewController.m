@@ -6,23 +6,23 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPTimelineViewController.h"
+#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
 
+#import "PPPost.h"
 #import "PPMenuControllerCache.h"
+
+#import "PPPostTableViewCell.h"
+#import "PPUnselectableTextView.h"
 
 #import "PPComposeViewController.h"
 #import "PPMenuViewController.h"
 
-#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
-
-#import "PPPostTableViewCell.h"
-
-#import "PPPost.h"
+#import "PPTimelineViewController.h"
 
 NSString * const kPPPopCellIdentifier = @"PPPostCellIdentifier";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
-@interface PPTimelineViewController () <PPPopDelegate, PPComposerDelegate>
+@interface PPTimelineViewController () <PPPostDelegate, PPComposerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *posts;
 
@@ -42,7 +42,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [self.tableView registerNib:popCell forCellReuseIdentifier:kPPPopCellIdentifier];
     
     [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
-        self.posts = posts;
+        self.posts = posts.mutableCopy;
         [self.tableView reloadData];
     } failure:nil];
     
@@ -56,13 +56,14 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 #pragma mark - BEGIN PP3DGlassesRefreshableController REQUIRED METHODS
+
 - (void)willBeginRefreshing {
     // TODO: Add stuff that needs to happen before refreshing here...
 }
 
 - (void)refresh {
     [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
-        self.posts = posts;
+        self.posts = posts.mutableCopy;
         [self.tableView reloadData];
     } failure:nil];
 }
@@ -78,10 +79,9 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -98,17 +98,6 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     else {
         return [self heightForTextViewAtIndexPath:indexPath] + 100;
     }
-}
-
-- (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *body = [self.posts[indexPath.row] body];
-    
-    NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
-    CGFloat width = self.view.width * kPPPopCellTextViewRatio;
-    
-    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:nil];
-    
-    return rect.size.height;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -135,6 +124,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     return cell;
 }
 
+#pragma mark - PPPostDelegate
+
 - (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath {
     if (![self.posts[indexPath.row] upvoted]) {
         PPPostTableViewCell *cell = (PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
@@ -151,7 +142,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [cell unvote];
             [self.posts[indexPath.row] setUpvoted:NO];
-            [error showError];
+            [error pp_showError];
         }];
     }
 }
@@ -173,7 +164,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
                     [self.tableView reloadData];
                 }
                 else {
-                    [NSError showErrorAlertWithMessage:@"We were unable to delete your post.  Please check your connection and try again"];
+                    [NSError pp_showErrorAlertWithMessage:@"We were unable to delete your post.  Please check your connection and try again"];
                 }
             } failure:nil];
         }
@@ -185,7 +176,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
                     [alert show];
                 }
                 else {
-                    [NSError showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
+                    [NSError pp_showErrorAlertWithMessage:@"We were unable to report this post.  Please check your connection and try again."];
                 }
             } failure:nil];
         }
@@ -194,8 +185,15 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [as showInView:self.view];
 }
 
+#pragma mark - PPComposerDelegate
+
+- (void)didPost {
+    [self refresh];
+}
+
+
 - (void)revealComposer:(id)sender {
-    PPComposeViewController *composer = (PPComposeViewController *)[PraisePop controllerWithIdentifier:@"PPComposeViewController"];
+    PPComposeViewController *composer = (PPComposeViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPComposeViewController"];
     composer.delegate = self;
     
     [self.navigationController presentViewController:composer animated:YES completion:^{
@@ -203,8 +201,17 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     }];
 }
 
-- (void)didPost {
-    [self refresh];
+#pragma mark - Helpers
+
+- (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *body = [self.posts[indexPath.row] body];
+    
+    NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
+    CGFloat width = self.view.width * kPPPopCellTextViewRatio;
+    
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:nil];
+    
+    return rect.size.height;
 }
 
 @end

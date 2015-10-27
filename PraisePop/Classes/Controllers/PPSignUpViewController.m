@@ -52,7 +52,7 @@
                                            @"last" : [self.nameField.text stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ ",nameParts[0]] withString:@""]
                                            };
                     
-                    [[PraisePopAPI sharedClient] signup:self.emailField.text withPassword:self.passwordField.text andName:name success:^(BOOL result) {
+                    [[PraisePopAPI sharedClient] signup:self.emailField.text password:self.passwordField.text name:name success:^(BOOL result) {
                         if (result) {
                             [self popViewcontroller:nil];
                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Please check your email to verify your account." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -103,11 +103,8 @@
 }
 
 - (BOOL)blackListed:(NSString *)email {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"email-blacklist"
-                                                     ofType:@"json"];
-    NSString *json = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                  error:NULL];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"email-blacklist" ofType:@"json"];
+    NSString *json = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *parsedData = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     

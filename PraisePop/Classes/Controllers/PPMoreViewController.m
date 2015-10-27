@@ -10,8 +10,6 @@
 
 #import "PPMenuViewController.h"
 
-#import "PPOnboardingViewController.h"
-
 NSString * const kPPMoreCellIdentifier = @"PPMoreCell";
 
 CGFloat const kPPMoreViewControllerSectionHeaderHeight = 50;

@@ -12,6 +12,8 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#include <Keys/PraisepopKeys.h>
+
 #include "PraisePop.h"
 #include "PraisePopAPI.h"
 
@@ -22,7 +24,4 @@
 #include "UIFont+PPExtensions.h"
 #include "UIStoryboard+PPExtensions.h"
 #include "NSError+PPExtensions.h"
-
-#include <Keys/PraisepopKeys.h>
-
 #endif /* PrefixHeader_pch */

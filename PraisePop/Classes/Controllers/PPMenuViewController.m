@@ -6,13 +6,16 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPMenuViewController.h"
+
+#import <SWRevealViewController/SWRevealViewController.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
 
 #import "PPTimelineViewController.h"
 #import "PPMoreViewController.h"
+
+#import "PPMenuViewController.h"
 
 NSString * const kPPTimelineCacheKey = @"PPTimelineViewController";
 NSString * const kPPMoreCacheKey = @"PPMoreViewController";
@@ -36,12 +39,7 @@ NSString * const kPPMoreCacheKey = @"PPMoreViewController";
 - (IBAction)buttonTouch:(id)sender {
     UIButton *button = (UIButton *)sender;
     
-    // Tagging for buttons for sanity...
-    // Feed == 0
-    // More == 1
-    // etc. when added.
-    
-    if (button.tag == 0) {
+    if (button.tag == PPMenuButtonTimeline) {
         [self pushFrontViewController:kPPTimelineCacheKey];
     }
     else {
