@@ -20,3 +20,9 @@ pod 'Mantle', '~> 2.0'
 pod 'Parse', '~> 1.9'
 pod 'DateTools'
 pod 'UIActionSheet+Blocks'
+pod 'VTAcknowledgementsViewController'
+
+post_install do | installer |
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods/Pods-Acknowledgements.plist', 'PraisePop/Pods-Acknowledgements.plist', :remove_destination => true)
+end

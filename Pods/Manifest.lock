@@ -44,6 +44,7 @@ PODS:
   - SVWebViewController (1.0)
   - SWRevealViewController (2.3.0)
   - UIActionSheet+Blocks (0.9)
+  - VTAcknowledgementsViewController (0.15)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - SVWebViewController (~> 1.0)
   - SWRevealViewController (~> 2.3)
   - UIActionSheet+Blocks
+  - VTAcknowledgementsViewController
 
 EXTERNAL SOURCES:
   Keys:
@@ -73,5 +75,6 @@ SPEC CHECKSUMS:
   SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
+  VTAcknowledgementsViewController: 575f5841fb47b7d9c852ccb406104ea68de07b21
 
 COCOAPODS: 0.39.0

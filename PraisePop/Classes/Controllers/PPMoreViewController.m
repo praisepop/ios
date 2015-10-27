@@ -6,9 +6,11 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-#import "PPMoreViewController.h"
+#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 
 #import "PPMenuViewController.h"
+
+#import "PPMoreViewController.h"
 
 NSString * const kPPMoreCellIdentifier = @"PPMoreCell";
 
@@ -116,8 +118,13 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
         else if (indexPath.row == 1) {
             [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
         }
-        else {
+        else if (indexPath.row == 2) {
             // TODO: What is our contact method?
+        }
+        else {
+            VTAcknowledgementsViewController *viewController = [VTAcknowledgementsViewController acknowledgementsViewController];
+            viewController.headerText = NSLocalizedString(@"We love open source software.", nil); // optional
+            [self.navigationController pushViewController:viewController animated:YES];
         }
     }
     else {
@@ -158,7 +165,8 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
              @"Important Stuff": @[
                      @"Rules",
                      @"Privacy Policy",
-                     @"Contact Us"
+                     @"Contact Us",
+                     @"Third Party Licenses"
                      ],
              @"Account Actions": @[
                      @"Logout",

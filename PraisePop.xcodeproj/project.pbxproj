@@ -48,6 +48,7 @@
 		F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */; };
 		F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */; };
 		F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */; };
+		F1EC0A221BDF4AE8005D54B9 /* Pods-Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Book.ttf"; sourceTree = "<group>"; };
 		F1E9B67D1BC3073D008DD309 /* UIViewController+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PPExtensions.h"; path = "Classes/Controllers/UIViewController+PPExtensions.h"; sourceTree = "<group>"; };
 		F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PPExtensions.m"; path = "Classes/Controllers/UIViewController+PPExtensions.m"; sourceTree = "<group>"; };
+		F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-Acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +250,7 @@
 				F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */,
 				F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */,
 				F1BB6C041BC1FB3000D96FA6 /* Info.plist */,
-				F164C0611BDDCE3D0029F85C /* email-blacklist.json */,
+				F1EC0A231BDF4AEC005D54B9 /* Resources */,
 				F1BB6C1E1BC20EB300D96FA6 /* AppDelegate.h */,
 				F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */,
 				F1BB6C471BC2313200D96FA6 /* PrefixHeader.pch */,
@@ -371,6 +373,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F1EC0A231BDF4AEC005D54B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */,
+				F164C0611BDDCE3D0029F85C /* email-blacklist.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,6 +455,7 @@
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
 				F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */,
 				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
+				F1EC0A221BDF4AE8005D54B9 /* Pods-Acknowledgements.plist in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
 				F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */,
 			);
