@@ -67,6 +67,7 @@
     
     self.splashImageView = [UIImageView.alloc initWithFrame:UIScreen.mainScreen.bounds];
     self.splashImageView.y -= 50;
+    self.splashImageView.height += 50;
     self.splashImageView.layer.zPosition = 0;
     self.splashImageView.userInteractionEnabled = NO;
     self.splashImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -129,6 +130,7 @@
     [[UIToolbar appearance] setTintColor:UIColor.pp_redColor];
     [[UIToolbar appearance] setTranslucent:NO];
     
+    [[UITextView appearance] setTintColor:UIColor.pp_redColor];
 }
 
 #pragma mark - SWRevealViewDelegate
