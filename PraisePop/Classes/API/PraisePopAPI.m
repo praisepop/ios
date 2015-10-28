@@ -62,6 +62,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 }
 
 - (void)signup:(NSString *)email password:(NSString *)password name:(NSDictionary *)name success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    [PraisePopAPI showActivityIndicator];
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : [self md5:password],
@@ -70,6 +71,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:@"users/new" parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
@@ -79,10 +81,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
-- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)login:(NSString *)email withPassword:(NSString *)password success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [PraisePopAPI showActivityIndicator];
     NSDictionary *paramters = @{
                                 @"email" : email,
                                 @"password" : [self md5:password]
@@ -90,6 +94,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:@"users/authenticate" parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
@@ -110,10 +115,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
-- (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
 
     NSDictionary *paramters = @{
@@ -124,6 +131,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
     [self GET:path parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO, nil);
@@ -139,10 +147,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
-- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
     
     NSDictionary *parameters = @{
@@ -161,7 +171,9 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     } failure:failure];
 }
 
-- (void)send:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure; {
+- (void)send:(NSString *)postBody type:(NSString *)postType recepient:(NSDictionary *)recipient hashtags:(NSArray *)hashtags success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [PraisePopAPI showActivityIndicator];
+    
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts/new", PraisePop.parentOrganization._id];
     
     NSDictionary *parameters = @{
@@ -176,6 +188,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
@@ -185,10 +198,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
 - (void)post:(PPPost *)post success:(void (^)(BOOL, PPPost *))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
 
     NSDictionary *parameters = @{
@@ -197,6 +212,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self GET:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO, nil);
@@ -206,11 +222,13 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             success(YES, post);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [PraisePopAPI hideActivityIndicator];
         [error pp_showError];
     }];
 }
 
 - (void)flag:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"posts/%@/flag", post._id];
     
     NSDictionary *parameters = @{
@@ -219,6 +237,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
@@ -228,10 +247,12 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
 - (void)delete:(PPPost *)post success:(void (^)(BOOL))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
     
     NSDictionary *parameters = @{
@@ -240,6 +261,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self DELETE:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);
@@ -249,6 +271,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
     }];
 }
 
@@ -279,6 +302,14 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     && (flags & kSCNetworkReachabilityFlagsReachable);
     
     return canReach;
+}
+
++ (void)showActivityIndicator {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
++ (void)hideActivityIndicator {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 @end

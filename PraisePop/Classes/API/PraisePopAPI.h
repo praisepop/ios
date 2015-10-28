@@ -120,4 +120,13 @@
  */
 + (BOOL)isReachable;
 
+/**
+ *  Shows the little loading icon in the status bar.
+ */
++ (void)showActivityIndicator;
+/**
+ *  Hides the little loading icon in the status bar.
+ */
++ (void)hideActivityIndicator;
+
 @end
