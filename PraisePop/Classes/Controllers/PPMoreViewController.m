@@ -122,7 +122,9 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
             // TODO: What is our contact method?
         }
         else {
-            VTAcknowledgementsViewController *viewController = [VTAcknowledgementsViewController acknowledgementsViewController];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-Acknowledgements" ofType:@"plist"];
+            VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithAcknowledgementsPlistPath:path];
+            [viewController pp_setTitle:@"Licenses"];
             viewController.headerText = NSLocalizedString(@"We love open source software.", nil); // optional
             [self.navigationController pushViewController:viewController animated:YES];
         }
