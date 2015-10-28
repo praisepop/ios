@@ -6,10 +6,11 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-
 #import <Parse/Parse.h>
 #import <SWRevealViewController/SWRevealViewController.h>
 #import <SSKeychain/SSKeychain.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #import "PraisePopAPI.h"
 
@@ -18,8 +19,6 @@
 #import "PPComposeViewController.h"
 
 #import "AppDelegate.h"
-
-
 
 @interface AppDelegate () <SWRevealViewControllerDelegate>
 
@@ -38,6 +37,7 @@
     PraisepopKeys *keys = PraisepopKeys.new;
     
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
+    [Fabric with:@[[Crashlytics class]]];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |

@@ -21,7 +21,11 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.4.0)
+  - Crashlytics (3.3.4)
   - DateTools (1.7.0)
+  - Fabric (1.5.5):
+    - Fabric/Base (= 1.5.5)
+  - Fabric/Base (1.5.5)
   - Keys (1.0.0)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
@@ -48,7 +52,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Crashlytics
   - DateTools
+  - Fabric
   - Keys (from `Pods/CocoaPodsKeys`)
   - Mantle (~> 2.0)
   - Overcoat (~> 3.0)
@@ -66,7 +72,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   Overcoat: 16f4a7b17c5189bc270466eef03a7b1c01ebfbd4

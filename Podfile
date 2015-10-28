@@ -21,6 +21,8 @@ pod 'Parse', '~> 1.9'
 pod 'DateTools'
 pod 'UIActionSheet+Blocks'
 pod 'VTAcknowledgementsViewController'
+pod 'Fabric'
+pod 'Crashlytics'
 
 post_install do | installer |
     require 'fileutils'
