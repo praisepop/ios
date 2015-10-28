@@ -104,6 +104,20 @@
 
 #pragma mark - Helpers
 
+/**
+ *  MD5s a string.
+ *
+ *  @param input The string to hash.
+ *
+ *  @return The hashed string.
+ */
 - (NSString *)md5:(NSString *)input;
+
+/**
+ *  Checks to see if the API is reachable.
+ *
+ *  @return Whether or not it's reachable.
+ */
++ (BOOL)isReachable;
 
 @end

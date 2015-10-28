@@ -6,6 +6,7 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+#import <SystemConfiguration/SCNetworkReachability.h>
 #import <Parse/Parse.h>
 #import <SSKeychain/SSKeychain.h>
 #import <CommonCrypto/CommonDigest.h>
@@ -251,6 +252,8 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     }];
 }
 
+#pragma mark - Helpers
+
 - (NSString *)md5:(NSString *)input {
     const char *cStr = [input UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
@@ -262,6 +265,20 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
         [output appendFormat:@"%02x", digest[i]];
     
     return  output;
+}
+
++ (BOOL)isReachable {
+    SCNetworkReachabilityFlags flags;
+    SCNetworkReachabilityRef address;
+    address = SCNetworkReachabilityCreateWithName(NULL, "www.google.com");
+    Boolean success = SCNetworkReachabilityGetFlags(address, &flags);
+    CFRelease(address);
+    
+    bool canReach = success
+    && !(flags & kSCNetworkReachabilityFlagsConnectionRequired)
+    && (flags & kSCNetworkReachabilityFlagsReachable);
+    
+    return canReach;
 }
 
 @end
