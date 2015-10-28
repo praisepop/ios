@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <SSKeychain/SSKeychain.h>
 #import <CommonCrypto/CommonDigest.h>
+#import <Crashlytics/Crashlytics.h>
 
 #import "PPUser.h"
 #import "PPPost.h"
@@ -111,6 +112,11 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             if (PraisePop.childOrganization) {
                 [PFPush subscribeToChannelInBackground:PraisePop.childOrganization._id block:nil];
             }
+            
+            [CrashlyticsKit setUserIdentifier:authentication.user._id];
+            [CrashlyticsKit setUserEmail:authentication.user.email];
+            [CrashlyticsKit setUserName:authentication.user.fullName];
+            
             success(YES);
         }
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
