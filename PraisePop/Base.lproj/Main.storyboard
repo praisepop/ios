@@ -88,6 +88,11 @@
                                     <constraint firstAttribute="trailing" secondItem="D9p-2T-9Ox" secondAttribute="trailing" constant="8" id="aXP-Kn-D4h"/>
                                     <constraint firstItem="D9p-2T-9Ox" firstAttribute="leading" secondItem="KSq-uN-Tjf" secondAttribute="leading" constant="8" id="rUK-ry-K5v"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="3.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2I-mq-Yh2">
                                 <rect key="frame" x="13" y="83" width="200" height="153"/>
@@ -164,6 +169,11 @@
                                     <constraint firstItem="20q-yO-pjw" firstAttribute="baseline" secondItem="jvw-nS-sSG" secondAttribute="baseline" id="sn1-uQ-41L"/>
                                     <constraint firstItem="e5Q-HB-z4k" firstAttribute="centerX" secondItem="20q-yO-pjw" secondAttribute="centerX" id="zmT-Xp-8C2"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="3.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="microwave-control" translatesAutoresizingMaskIntoConstraints="NO" id="sac-5r-tHh">
                                 <rect key="frame" x="220" y="88" width="43" height="126"/>
