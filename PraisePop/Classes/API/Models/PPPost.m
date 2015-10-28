@@ -71,7 +71,9 @@
 #pragma mark - Helpers
 
 - (BOOL)isDeletable {
-    return self.from_id == PraisePop.currentUser._id || PraisePop.currentUser.admin;
+    return [PraisePop.currentUser._id isEqualToString:self.addressee.user._id] ||
+           [self.from_id isEqualToString:PraisePop.currentUser._id] ||
+           PraisePop.currentUser.admin;
 }
 
 @end
