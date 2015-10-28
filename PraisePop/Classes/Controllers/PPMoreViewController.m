@@ -97,6 +97,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == PPMenuViewControllerSectionLoveUs) {
         if (indexPath.row == 0) {
+            
         }
         else if (indexPath.row == 1) {
             [self openURL:nil actual:@"https://www.facebook.com/praisepopbywoco"];
@@ -113,7 +114,9 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     }
     else if (indexPath.section == PPMenuViewControllerSectionImportant) {
         if (indexPath.row == 0) {
-            [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
+            UIViewController *rulesViewcontroller = (UIViewController *)[UIStoryboard pp_controllerWithIdentifier:@"PPRulesViewController"];
+            [rulesViewcontroller pp_setTitle:@"Rules"];
+            [self.navigationController pushViewController:rulesViewcontroller animated:YES];
         }
         else if (indexPath.row == 1) {
             [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
