@@ -161,6 +161,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     cell.delegate = self;
     cell.indexPath = indexPath;
     
+    cell.userInteractionEnabled = YES;
+    
     return cell;
 }
 
@@ -197,7 +199,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         
         as.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
         
-        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
+        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
             if (buttonIndex == 0) {
                 [[PraisePopAPI sharedClient] delete:self.posts[indexPath.row] success:^(BOOL result) {
                     if (result) {
@@ -229,9 +231,9 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Option"
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
-                                          destructiveButtonTitle:@""
+                                          destructiveButtonTitle:nil
                                                otherButtonTitles:@"Report", nil];
-        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex){
+        as.tapBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
             if (buttonIndex == 0) {
                 [[PraisePopAPI sharedClient] flag:self.posts[indexPath.row] success:^(BOOL result) {
                     if (result) {
