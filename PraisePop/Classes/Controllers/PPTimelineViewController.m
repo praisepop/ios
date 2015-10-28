@@ -26,6 +26,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @property (strong, nonatomic) NSMutableArray *posts;
 
+@property (strong, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation PPTimelineViewController
@@ -47,6 +49,25 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     } failure:nil];
     
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
+    
+    [self checkNetwork];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(checkNetwork) userInfo:nil repeats:YES];
+}
+
+- (void)checkNetwork {
+    BOOL reachable = PraisePopAPI.isReachable;
+    [PraisePopAPI showActivityIndicator];
+    
+    self.navigationItem.leftBarButtonItem.enabled = reachable;
+    self.navigationItem.rightBarButtonItem.enabled = reachable;
+    
+    self.revealViewController.panGestureRecognizer.enabled = reachable;
+    
+    if (reachable) {
+        [self refresh];
+    }
+    
+    [PraisePopAPI hideActivityIndicator];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -88,7 +109,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count;
+    return self.posts.count == 0 ? 1 : self.posts.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,13 +122,15 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    PPPostTableViewCell *postCell = (PPPostTableViewCell *)cell;
-    
-    if ([self.posts[indexPath.row] upvoted]) {
-        [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
-    }
-    else {
-        [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+    if (self.posts.count != 0) {
+        PPPostTableViewCell *postCell = (PPPostTableViewCell *)cell;
+        
+        if ([self.posts[indexPath.row] upvoted]) {
+            [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
+        }
+        else {
+            [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+        }
     }
 }
 
@@ -115,6 +138,23 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     PPPostTableViewCell *cell = (PPPostTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
     if (cell == nil) {
         cell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPopCellIdentifier];
+    }
+    
+    if (self.posts.count == 0) {
+        PPPost *empty = [PPPost new];
+        
+        PPPostAddressee *placeholder = [PPPostAddressee new];
+        placeholder.name = PraisePopAPI.isReachable ? @"You" : @"Internet Connection";
+        
+        empty.addressee = placeholder;
+        empty.body = PraisePopAPI.isReachable ? self.lonelyMessage : self.unreachableMessage;
+        empty.upvoted = YES;
+        empty.createdAt = NSDate.date;
+        
+        cell.post = empty;
+        cell.userInteractionEnabled = NO;
+        
+        return cell;
     }
     
     cell.post = self.posts[indexPath.row];
@@ -229,7 +269,14 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 #pragma mark - Helpers
 
 - (CGFloat)heightForTextViewAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *body = [self.posts[indexPath.row] body];
+    NSString *body;
+    
+    if (self.posts.count != 0) {
+        body = [self.posts[indexPath.row] body];
+    }
+    else {
+        body = PraisePopAPI.isReachable ? self.lonelyMessage : self.unreachableMessage;
+    }
     
     NSAttributedString *attributedString = [NSAttributedString.alloc initWithString:body attributes:[PPUnselectableTextView attributes]];
     CGFloat width = self.view.width * kPPPopCellTextViewRatio;
@@ -237,6 +284,14 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:nil];
     
     return rect.size.height;
+}
+
+- (NSString *)unreachableMessage {
+    return @"I miss you. Come back to me so PraisePop can load its feed. Thanks for being there for me at other times, though!";
+}
+
+- (NSString *)lonelyMessage {
+    return @"What are you looking at me for? My feed is currently empty! Fill it up with some positivity!";
 }
 
 @end
