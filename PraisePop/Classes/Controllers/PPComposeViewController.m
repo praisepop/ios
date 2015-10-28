@@ -85,7 +85,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
     self.postTypePicker.delegate = self;
     self.postTypePicker.dataSource = self;
     
-    [self.postBody becomeFirstResponder];
+    [self.recipientField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
