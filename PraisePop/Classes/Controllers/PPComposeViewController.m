@@ -78,7 +78,6 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
     self.postType = PPPostUncategorized;
     
     self.postBody.inputAccessoryView = self.composeBar;
-    self.postBody.delegate = self;
     
     self.recipientField.inputAccessoryView = self.composeBar;
     
@@ -102,6 +101,13 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        
+        return NO;
+    }
+    
     int length = 500 - (int)(textView.text.length + text.length - range.length);
     self.composeBar.characterCounter.text = [NSString stringWithFormat:@"%i", length];
     
