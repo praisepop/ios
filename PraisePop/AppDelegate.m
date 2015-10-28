@@ -15,6 +15,7 @@
 
 #import "PPMenuViewController.h"
 #import "PPTimelineViewController.h"
+#import "PPComposeViewController.h"
 
 #import "AppDelegate.h"
 
@@ -131,6 +132,8 @@
     [[UIToolbar appearance] setTranslucent:NO];
     
     [[UITextView appearance] setTintColor:UIColor.pp_redColor];
+    
+    [[UITextField appearanceWhenContainedIn:PPComposeViewController.class, nil] setTintColor:UIColor.pp_redColor];
 }
 
 #pragma mark - SWRevealViewDelegate
