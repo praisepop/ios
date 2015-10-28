@@ -23,6 +23,7 @@
 		F13D46A71BCA1D0000072729 /* PPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A61BCA1D0000072729 /* PPSignUpViewController.m */; };
 		F13D46AA1BCA1D1900072729 /* PPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D46A91BCA1D1900072729 /* PPLogInViewController.m */; };
 		F13E52571BCA193C005555ED /* UIStoryboard+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */; };
+		F15417451BE061B900A5F071 /* Pods-Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15417441BE061B900A5F071 /* Pods-Acknowledgements.plist */; };
 		F155B16A1BDDEC590073713A /* PPComposeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F155B1691BDDEC590073713A /* PPComposeBar.m */; };
 		F164C0601BDDBB430029F85C /* UIImage+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F164C05F1BDDBB430029F85C /* UIImage+PPExtensions.m */; };
 		F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */ = {isa = PBXBuildFile; fileRef = F164C0611BDDCE3D0029F85C /* email-blacklist.json */; };
@@ -48,7 +49,6 @@
 		F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */; };
 		F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */; };
 		F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */; };
-		F1EC0A221BDF4AE8005D54B9 /* Pods-Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +85,7 @@
 		F13D46A91BCA1D1900072729 /* PPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLogInViewController.m; path = Classes/Controllers/PPLogInViewController.m; sourceTree = "<group>"; };
 		F13E52551BCA193C005555ED /* UIStoryboard+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+PPExtensions.h"; path = "Classes/Categories/UIStoryboard+PPExtensions.h"; sourceTree = "<group>"; };
 		F13E52561BCA193C005555ED /* UIStoryboard+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+PPExtensions.m"; path = "Classes/Categories/UIStoryboard+PPExtensions.m"; sourceTree = "<group>"; };
+		F15417441BE061B900A5F071 /* Pods-Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-Acknowledgements.plist"; sourceTree = "<group>"; };
 		F155B1681BDDEC590073713A /* PPComposeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPComposeBar.h; path = Classes/Views/PPComposeBar.h; sourceTree = "<group>"; };
 		F155B1691BDDEC590073713A /* PPComposeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPComposeBar.m; path = Classes/Views/PPComposeBar.m; sourceTree = "<group>"; };
 		F164C05E1BDDBB430029F85C /* UIImage+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PPExtensions.h"; path = "Classes/Categories/UIImage+PPExtensions.h"; sourceTree = "<group>"; };
@@ -129,7 +130,6 @@
 		F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Book.ttf"; sourceTree = "<group>"; };
 		F1E9B67D1BC3073D008DD309 /* UIViewController+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PPExtensions.h"; path = "Classes/Controllers/UIViewController+PPExtensions.h"; sourceTree = "<group>"; };
 		F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PPExtensions.m"; path = "Classes/Controllers/UIViewController+PPExtensions.m"; sourceTree = "<group>"; };
-		F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-Acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,7 +376,7 @@
 		F1EC0A231BDF4AEC005D54B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F1EC0A211BDF4AE8005D54B9 /* Pods-Acknowledgements.plist */,
+				F15417441BE061B900A5F071 /* Pods-Acknowledgements.plist */,
 				F164C0611BDDCE3D0029F85C /* email-blacklist.json */,
 			);
 			name = Resources;
@@ -455,7 +455,7 @@
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
 				F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */,
 				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
-				F1EC0A221BDF4AE8005D54B9 /* Pods-Acknowledgements.plist in Resources */,
+				F15417451BE061B900A5F071 /* Pods-Acknowledgements.plist in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
 				F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */,
 			);
