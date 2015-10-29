@@ -64,10 +64,6 @@
     }
 }
 
-- (void)unvote {
-    [self.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
-}
-
 #pragma mark - Animations
 
 - (NSArray *)images {

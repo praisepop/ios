@@ -64,9 +64,4 @@
  */
 @property (strong, nonatomic) PPPost *post;
 
-/**
- *  Called the post was unvoted (AKA popcorn icon was unselected).
- */
-- (void)unvote;
-
 @end
