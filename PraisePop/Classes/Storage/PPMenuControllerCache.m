@@ -8,6 +8,9 @@
 
 #import "PPMenuControllerCache.h"
 
+NSString * const kPPTimelineCacheKey = @"PPTimelineViewController";
+NSString * const kPPMoreCacheKey = @"PPMoreViewController";
+
 @implementation PPMenuControllerCache
 
 + (instancetype)sharedCache {

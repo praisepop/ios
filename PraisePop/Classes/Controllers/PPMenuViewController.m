@@ -17,9 +17,6 @@
 
 #import "PPMenuViewController.h"
 
-NSString * const kPPTimelineCacheKey = @"PPTimelineViewController";
-NSString * const kPPMoreCacheKey = @"PPMoreViewController";
-
 @interface PPMenuViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *currentEmail;
