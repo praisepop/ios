@@ -159,7 +159,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (void)didSelectPostType {
-    [self.postBody resignFirstResponder];
+    [self.view endEditing:YES];
     self.postTypePicker.hidden = NO;
 }
 
