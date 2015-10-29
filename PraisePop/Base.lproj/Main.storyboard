@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RO0-Sj-aFq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RO0-Sj-aFq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -40,6 +40,7 @@
                     <view key="view" contentMode="scaleToFill" id="Eqb-sn-LnV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -62,6 +63,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-0C-SH8">
                                 <rect key="frame" x="16" y="357" width="42" height="37"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <state key="normal" title="Feed">
                                     <color key="titleColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,11 +78,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We hope you enjoy this first release of PraisePop!  Please give us some feedback!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-2T-9Ox">
                                         <rect key="frame" x="8" y="4" width="234" height="62.5"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.65098039220000004" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="D9p-2T-9Ox" secondAttribute="bottom" constant="6" id="Q12-zW-cia"/>
@@ -99,12 +103,14 @@
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="popcorn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5Q-HB-z4k">
                                         <rect key="frame" x="71" y="57" width="57.5" height="19.5"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20q-yO-pjw">
                                         <rect key="frame" x="75" y="35" width="50" height="20"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49.5" id="TqF-gz-zK7"/>
                                         </constraints>
@@ -114,12 +120,14 @@
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-lA-ups">
                                         <rect key="frame" x="142" y="57" width="47" height="19.5"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvw-nS-sSG">
                                         <rect key="frame" x="141" y="35" width="50" height="20"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49.5" id="LcF-bW-Z0X"/>
                                         </constraints>
@@ -129,12 +137,14 @@
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-om-5jo">
                                         <rect key="frame" x="17" y="57" width="33.5" height="19.5"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5l-d5-dxY">
                                         <rect key="frame" x="9" y="35" width="50" height="20"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49.5" id="fiO-VO-NQ2"/>
                                         </constraints>
@@ -144,11 +154,13 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ANDOVER.EDU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdM-aw-1th">
                                         <rect key="frame" x="0.0" y="28" width="200" height="97"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.69019607839999997" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="7GU-om-5jo" firstAttribute="centerX" secondItem="h5l-d5-dxY" secondAttribute="centerX" id="2p5-TV-T8l"/>
@@ -179,9 +191,11 @@
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="microwave-control" translatesAutoresizingMaskIntoConstraints="NO" id="sac-5r-tHh">
                                 <rect key="frame" x="220" y="88" width="43" height="126"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test@andover.edu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-So-Lja">
                                 <rect key="frame" x="0.0" y="617" width="276" height="50"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6ZV-7G-9UW"/>
                                 </constraints>
@@ -191,6 +205,7 @@
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgU-yO-9jc">
                                 <rect key="frame" x="16" y="402" width="48" height="37"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <state key="normal" title="More">
                                     <color key="titleColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -201,6 +216,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DDk-uZ-cme" firstAttribute="top" secondItem="DFN-So-Lja" secondAttribute="bottom" id="4WR-nz-jHT"/>
@@ -244,6 +260,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f5N-WR-a9M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -253,7 +270,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lfl-qU-fAy" id="o5k-I7-6RM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -267,6 +286,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11p-eO-4U4">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="50"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="FGL-6O-RI0"/>
@@ -274,6 +294,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="11p-eO-4U4" firstAttribute="top" secondItem="yiF-Tv-aQ7" secondAttribute="top" id="2BG-F5-bgg"/>
                                     <constraint firstAttribute="bottom" secondItem="11p-eO-4U4" secondAttribute="bottom" id="ITW-BD-tLL"/>
@@ -283,6 +304,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yiF-Tv-aQ7" secondAttribute="bottom" id="7hk-nm-S1L"/>
@@ -321,6 +343,7 @@
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="caution" translatesAutoresizingMaskIntoConstraints="NO" id="yvO-gW-1Es">
                                         <rect key="frame" x="173" y="10" width="28" height="26"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="PJN-3c-L26"/>
                                             <constraint firstAttribute="height" constant="26" id="uYt-nF-7as"/>
@@ -328,11 +351,13 @@
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are accessing confidential records. Never use this for any purpose other than holding post authors accountable." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-1d-kBv">
                                         <rect key="frame" x="16" y="41" width="343" height="74"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.78039215689999997" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cgq-1d-kBv" firstAttribute="leading" secondItem="T1g-fV-AAa" secondAttribute="leading" constant="16" id="947-wi-vnH"/>
@@ -346,6 +371,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="215" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PJq-fs-9Ob">
                                 <rect key="frame" x="0.0" y="125" width="375" height="478"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -358,6 +384,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-K4-mpk">
                                                     <rect key="frame" x="17" y="178" width="32" height="15"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="3vw-Zu-SKu"/>
                                                     </constraints>
@@ -367,24 +394,28 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFB-4C-yOL">
                                                     <rect key="frame" x="17" y="70" width="39.5" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <color key="textColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ea-Wj-07e">
                                                     <rect key="frame" x="329" y="171" width="22" height="22"/>
+                                                    <animations/>
                                                     <state key="normal" image="otherbutton">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Something" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VC-p1-y6z" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="99" width="341" height="33.5"/>
+                                                    <animations/>
                                                     <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="post-bubble" translatesAutoresizingMaskIntoConstraints="NO" id="7nK-mT-Khm">
                                                     <rect key="frame" x="18" y="23" width="18" height="20"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="D0u-cs-3wf"/>
                                                         <constraint firstAttribute="width" constant="18" id="kVb-Uh-n5R"/>
@@ -392,6 +423,7 @@
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="msunami@andover.edu posted this on Saturday, May 3rd 2015 at 4:50 PM." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ant-gM-afK" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
                                                     <rect key="frame" x="39" y="13" width="319" height="55"/>
+                                                    <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="r6m-eX-JFb"/>
@@ -401,6 +433,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="9VC-p1-y6z" firstAttribute="top" secondItem="dFB-4C-yOL" secondAttribute="bottom" constant="8" id="0Sa-KU-m4X"/>
                                                 <constraint firstItem="XVP-K4-mpk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9VC-p1-y6z" secondAttribute="bottom" constant="7" id="5XH-nc-B9h"/>
@@ -419,6 +452,7 @@
                                                 <constraint firstItem="dFB-4C-yOL" firstAttribute="top" secondItem="Ant-gM-afK" secondAttribute="bottom" constant="2" id="z88-mr-tHa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="authorTextView" destination="Ant-gM-afK" id="HJl-p9-Dqu"/>
@@ -436,11 +470,13 @@
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nothing yet :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-Lm-U3D">
                                 <rect key="frame" x="0.0" y="125" width="375" height="478"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="T1g-fV-AAa" secondAttribute="trailing" id="2vg-ad-CEz"/>
@@ -482,14 +518,17 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Special Thanks to Kastan Day, Andrew Lin, Michelle Darby, Maria Litvin" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wt4-pW-6S0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="salt" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-KM-mZe">
                                 <rect key="frame" x="46" y="535" width="282" height="106"/>
+                                <animations/>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zyh-Wn-sce"/>
@@ -519,12 +558,14 @@
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="juicerules" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-oJ-6gW">
                                                 <rect key="frame" x="110" y="16" width="155" height="295"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="OTD-oJ-6gW" secondAttribute="height" multiplier="31:59" id="h5M-as-V8y"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2v-Vh-yOs" customClass="PPUnselectableTextView">
                                                 <rect key="frame" x="28" y="327" width="319" height="423"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">1. You will not pop anything offensive, hurtful, or annoying.  Zero tolerance for bullying or harassment of any kind.
 
@@ -541,6 +582,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="f2v-Vh-yOs" firstAttribute="top" secondItem="OTD-oJ-6gW" secondAttribute="bottom" constant="16" id="1go-tb-iuV"/>
@@ -553,6 +595,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Rc9-bc-Uby" secondAttribute="trailing" id="O0r-Um-Cga"/>
                                     <constraint firstItem="Rc9-bc-Uby" firstAttribute="centerY" secondItem="GkT-55-E7v" secondAttribute="centerY" id="S9K-3G-gPQ"/>
@@ -567,6 +610,7 @@
                                 </variation>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xix-Y8-Ibs" firstAttribute="top" secondItem="GkT-55-E7v" secondAttribute="bottom" id="7RD-Yo-GCX"/>
@@ -601,6 +645,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GhX-K9-0N4">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Dvf-Yq-N8q" customClass="SweetTableViewCell" customModule="PraisePop" customModuleProvider="target">
@@ -612,18 +657,21 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zL1-Xs-8BY">
                                             <rect key="frame" x="17" y="90" width="32" height="15.5"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="14"/>
                                             <color key="textColor" red="0.99215686270000003" green="0.50588235290000005" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJI-VN-Clo">
                                             <rect key="frame" x="17" y="26" width="46.5" height="25"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                             <color key="textColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxR-Hk-cMj">
                                             <rect key="frame" x="319" y="86" width="32" height="21.5"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="32" id="8fo-Oo-1zC"/>
                                                 <constraint firstAttribute="height" constant="22" id="sbh-qd-v11"/>
@@ -634,6 +682,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-DL-LF9">
                                             <rect key="frame" x="319" y="26" width="39" height="37"/>
+                                            <animations/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" image="pop-popcorn">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -641,6 +690,7 @@
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pop-share" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-CW-N5I">
                                             <rect key="frame" x="277" y="88" width="34" height="16"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="GKZ-XO-g0X"/>
                                                 <constraint firstAttribute="width" constant="34" id="uQa-nS-BJ6"/>
@@ -648,6 +698,7 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCj-7X-7qs">
                                             <rect key="frame" x="271" y="81" width="46" height="30"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="1PE-zx-qu6"/>
                                                 <constraint firstAttribute="width" constant="46" id="4xh-Vv-Wkk"/>
@@ -658,11 +709,13 @@
                                         </button>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Something" translatesAutoresizingMaskIntoConstraints="NO" id="sce-hX-fCk" customClass="UnselectableTextView" customModule="PraisePop" customModuleProvider="target">
                                             <rect key="frame" x="17" y="59" width="294" height="33.5"/>
+                                            <animations/>
                                             <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="QJI-VN-Clo" firstAttribute="leading" secondItem="7PX-NB-7Th" secondAttribute="leading" constant="17" id="3tf-7f-k8u"/>
                                         <constraint firstItem="vxR-Hk-cMj" firstAttribute="centerY" secondItem="zL1-Xs-8BY" secondAttribute="centerY" constant="-1" id="58H-Fs-teW"/>
@@ -681,6 +734,7 @@
                                         <constraint firstItem="QJI-VN-Clo" firstAttribute="leading" secondItem="zL1-Xs-8BY" secondAttribute="leading" id="rSQ-vx-3qr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="reportButton" destination="vxR-Hk-cMj" id="ZYs-wK-6iA"/>
                                     <outlet property="subjectTextView" destination="QJI-VN-Clo" id="vXk-y3-9Af"/>
@@ -695,7 +749,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZrP-aG-gFw" id="syb-Zh-HCC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -725,6 +781,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="whL-hi-qpu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -752,6 +809,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john@school.edu" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dB8-PV-JsF">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
@@ -762,6 +820,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dB8-PV-JsF" firstAttribute="leading" secondItem="DJf-ie-gYT" secondAttribute="leading" constant="7" id="2Sk-S2-8ez"/>
@@ -778,6 +837,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPi-97-bWI">
                                 <rect key="frame" x="89" y="296" width="197" height="33"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="LOGIN TO START POPPIN'">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -789,6 +849,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-popcorn" translatesAutoresizingMaskIntoConstraints="NO" id="SlB-s4-6g9">
                                 <rect key="frame" x="0.0" y="65" width="375" height="98"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="GiT-I7-xrz"/>
                                 </constraints>
@@ -798,6 +859,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-1v-VAz">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -807,6 +869,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980392157" green="0.20000000000000001" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="wfh-1v-VAz" firstAttribute="centerY" secondItem="5w5-LZ-EQQ" secondAttribute="centerY" id="A2C-M7-NLD"/>
@@ -822,6 +885,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gID-Mm-23c">
                                 <rect key="frame" x="290" y="30" width="67" height="13"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -833,6 +897,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SlB-s4-6g9" firstAttribute="top" relation="lessThanOrEqual" secondItem="faD-Fk-Wp3" secondAttribute="bottom" constant="65" id="0L8-M3-LDa"/>
@@ -878,6 +943,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CT-lx-nDH">
                                 <rect key="frame" x="18" y="30" width="43" height="33"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -889,6 +955,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0ls-2a-hLE">
                                 <rect key="frame" x="18" y="258" width="339" height="65"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="2eK-Aa-Glh"/>
                                     <constraint firstAttribute="height" constant="65" id="wZP-cy-G6c"/>
@@ -908,6 +975,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john@school.edu" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bxd-Ix-25K">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
@@ -918,6 +986,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="bxd-Ix-25K" firstAttribute="centerY" secondItem="f8b-Pq-swz" secondAttribute="centerY" id="KbX-4M-U2I"/>
@@ -934,6 +1003,7 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-kernel" translatesAutoresizingMaskIntoConstraints="NO" id="VvP-Va-fS4">
                                 <rect key="frame" x="0.0" y="40" width="375" height="0.0"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="2uL-hR-lqz"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="98" id="cBW-Rd-d39"/>
@@ -949,6 +1019,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ca9-cb-ccQ">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -958,6 +1029,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ca9-cb-ccQ" firstAttribute="leading" secondItem="Cd3-CW-8Sm" secondAttribute="leading" constant="7" id="50H-YL-wi5"/>
@@ -976,6 +1048,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="50i-U8-LzF">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -985,6 +1058,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="50i-U8-LzF" firstAttribute="centerX" secondItem="UNu-JA-cPx" secondAttribute="centerX" id="CCx-q4-g9Y"/>
@@ -1000,6 +1074,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTH-if-3zV">
                                 <rect key="frame" x="154" y="227" width="67" height="33"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1010,6 +1085,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VvP-Va-fS4" secondAttribute="trailing" id="0B2-NC-tpO"/>
@@ -1070,22 +1146,26 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-Pu-Lpz">
                                 <rect key="frame" x="16" y="161" width="22" height="19"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="17"/>
                                 <color key="textColor" red="0.41043526790000001" green="0.41043526790000001" blue="0.41043526790000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-6k-kjo">
                                 <rect key="frame" x="0.0" y="193" width="375" height="2"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="bP4-Jd-D3M">
                                 <rect key="frame" x="0.0" y="143" width="375" height="2"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMb-f5-Uud">
                                 <rect key="frame" x="320" y="149" width="39" height="39"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AMb-f5-Uud" secondAttribute="height" multiplier="1:1" id="UA6-0I-com"/>
                                 </constraints>
@@ -1095,6 +1175,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Exact Name of Recipient" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Vk-Jz-T9Y">
                                 <rect key="frame" x="42" y="161" width="313" height="19"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="313" id="LI7-tc-daP"/>
                                 </constraints>
@@ -1104,6 +1185,7 @@
                             </textField>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqv-WQ-9y4">
                                 <rect key="frame" x="0.0" y="487" width="375" height="180"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Xa0-jo-fji"/>
                                 </constraints>
@@ -1114,12 +1196,14 @@
                             </pickerView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="whats-poppin" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-0Z-z5Z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ccH-0Z-z5Z" secondAttribute="height" multiplier="375:128" id="2Fa-bT-HUw"/>
                                 </constraints>
                             </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-Ee-bij">
                                 <rect key="frame" x="16" y="203" width="343" height="200"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="wxY-NH-6Le"/>
                                 </constraints>
@@ -1131,6 +1215,7 @@
                                 </connections>
                             </textView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AMb-f5-Uud" firstAttribute="trailing" secondItem="gsj-B4-xQg" secondAttribute="trailingMargin" id="1Ep-Yg-t1r"/>
@@ -1188,6 +1273,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-4w-EUK">
                                 <rect key="frame" x="18" y="20" width="43" height="13"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1196,6 +1282,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="LLf-7k-8dM">
                                 <rect key="frame" x="18" y="381" width="339" height="65"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Y3c-u0-3qJ"/>
                                     <constraint firstAttribute="height" constant="65" id="nTv-gf-mZI"/>
@@ -1215,6 +1302,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john@school.edu" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zIs-pk-yMA">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
@@ -1225,6 +1313,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="zIs-pk-yMA" firstAttribute="leading" secondItem="8xZ-Ke-3gG" secondAttribute="leading" constant="7" id="NE4-fV-AGF"/>
@@ -1241,6 +1330,7 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-kernel" translatesAutoresizingMaskIntoConstraints="NO" id="1CQ-Gj-J8I">
                                 <rect key="frame" x="0.0" y="65" width="375" height="98"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="98" id="CiM-VY-AxS"/>
                                     <constraint firstAttribute="height" constant="98" id="r9D-WL-kvi"/>
@@ -1256,6 +1346,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PbX-RW-nAR">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -1265,6 +1356,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="PbX-RW-nAR" firstAttribute="centerY" secondItem="26e-vi-8qw" secondAttribute="centerY" id="00M-ub-JqP"/>
@@ -1283,6 +1375,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zfj-CH-Byj">
                                         <rect key="frame" x="7" y="7" width="325" height="26"/>
+                                        <animations/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -1292,6 +1385,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.20000000000000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="zfj-CH-Byj" firstAttribute="leading" secondItem="prU-fz-AIC" secondAttribute="leading" constant="7" id="Crz-s8-hsG"/>
@@ -1307,6 +1401,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-aF-oUu">
                                 <rect key="frame" x="154" y="350" width="67" height="33"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1317,6 +1412,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.27058823529999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1CQ-Gj-J8I" firstAttribute="top" secondItem="Ued-4w-EUK" secondAttribute="bottom" constant="32" id="12B-zq-dzi"/>

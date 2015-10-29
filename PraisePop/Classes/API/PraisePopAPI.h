@@ -61,6 +61,8 @@
  */
 - (void)posts:(void (^)(BOOL result, NSArray *posts))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+
+- (void)posts:(NSUInteger)page success:(void (^)(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 #pragma mark - Compose
 
 /**

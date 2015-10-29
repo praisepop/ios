@@ -157,6 +157,44 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     }];
 }
 
+- (void)posts:(NSUInteger)page success:(void (^)(BOOL, NSArray *, NSUInteger, NSUInteger, NSUInteger))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    [PraisePopAPI showActivityIndicator];
+    NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
+    
+    NSDictionary *paramters = @{
+                                @"token" : PraisePop.userToken,
+                                @"limit" : @(PRAISE_POP_FEED_LIMIT),
+                                @"page" : @(page)
+                                };
+    
+    [self GET:path parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
+        
+        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
+            success(NO, nil, 0, 0, 0);
+        }
+        else {
+            NSMutableArray *posts = [@[] mutableCopy];
+            for (NSDictionary *aPost in response[@"data"]) {
+                PPPost *post = [MTLJSONAdapter modelOfClass:PPPost.class fromJSONDictionary:aPost error:nil];
+                [posts addObject:post];
+            }
+            
+            NSDictionary *paging = response[@"paging"];
+            
+            NSUInteger currentPage = [paging[@"current_page"] integerValue];
+            NSUInteger totalPages = [paging[@"page_count"] integerValue];
+            NSUInteger totalItems = [paging[@"total_items"] integerValue];
+            
+            success(YES, posts, currentPage, totalPages, totalItems);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        [error pp_showError];
+        [PraisePopAPI hideActivityIndicator];
+    }];
+}
+
 - (void)upvote:(PPPost *)post success:(void (^)(BOOL result))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
@@ -167,6 +205,7 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *response = (NSDictionary *)responseObject;
+        [PraisePopAPI hideActivityIndicator];
         
         if (response[@"result"] && [response[@"result"] boolValue] == NO) {
             success(NO);

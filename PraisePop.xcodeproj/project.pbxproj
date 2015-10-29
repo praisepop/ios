@@ -49,6 +49,7 @@
 		F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B6791BC301B5008DD309 /* Futura-Bold.ttf */; };
 		F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */; };
 		F1E9B67F1BC3073D008DD309 /* UIViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */; };
+		F1F9FD851BE1D8EB007DC390 /* PPLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F9FD841BE1D8EB007DC390 /* PPLoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		F1E9B67A1BC301B5008DD309 /* Futura-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Book.ttf"; sourceTree = "<group>"; };
 		F1E9B67D1BC3073D008DD309 /* UIViewController+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PPExtensions.h"; path = "Classes/Controllers/UIViewController+PPExtensions.h"; sourceTree = "<group>"; };
 		F1E9B67E1BC3073D008DD309 /* UIViewController+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PPExtensions.m"; path = "Classes/Controllers/UIViewController+PPExtensions.m"; sourceTree = "<group>"; };
+		F1F9FD841BE1D8EB007DC390 /* PPLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPLoadingCell.xib; path = Classes/Views/PPLoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			children = (
 				F164C0631BDDE8950029F85C /* PPComposerToolbar.xib */,
 				F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */,
+				F1F9FD841BE1D8EB007DC390 /* PPLoadingCell.xib */,
 				F1BB6C3F1BC22D6100D96FA6 /* PPUnselectableTextView.h */,
 				F1BB6C401BC22D6100D96FA6 /* PPUnselectableTextView.m */,
 				F155B1681BDDEC590073713A /* PPComposeBar.h */,
@@ -450,6 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F9FD851BE1D8EB007DC390 /* PPLoadingCell.xib in Resources */,
 				F1E9B67C1BC301B5008DD309 /* Futura-Book.ttf in Resources */,
 				F164C0641BDDE8950029F85C /* PPComposerToolbar.xib in Resources */,
 				F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */,

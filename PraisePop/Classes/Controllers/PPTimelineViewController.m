@@ -19,7 +19,8 @@
 
 #import "PPTimelineViewController.h"
 
-NSString * const kPPPopCellIdentifier = @"PPPostCellIdentifier";
+NSString * const kPPPostCellIdentifier = @"PPPostCellIdentifier";
+NSString * const kPPLoadingCellIdentifier = @"PPLoadingCellIdentifier";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController () <PPPostDelegate, PPComposerDelegate>
@@ -27,6 +28,12 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 @property (strong, nonatomic) NSMutableArray *posts;
 
 @property (strong, nonatomic) NSTimer *timer;
+
+@property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSInteger totalPages;
+@property (nonatomic, assign) NSInteger totalItems;
+@property (nonatomic, assign) NSInteger maxPages;
+@property (nonatomic, assign) BOOL showsPaging;
 
 @end
 
@@ -40,13 +47,17 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [self addReveal];
     [self initiateButtons];
     
-    UINib *popCell = [UINib nibWithNibName:@"PPPostCell" bundle:NSBundle.mainBundle];
-    [self.tableView registerNib:popCell forCellReuseIdentifier:kPPPopCellIdentifier];
+    UINib *postCell = [UINib nibWithNibName:@"PPPostCell" bundle:NSBundle.mainBundle];
+    [self.tableView registerNib:postCell forCellReuseIdentifier:kPPPostCellIdentifier];
     
-    [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
-        self.posts = posts.mutableCopy;
-        [self.tableView reloadData];
-    } failure:nil];
+    UINib *loadingCell = [UINib nibWithNibName:@"PPLoadingCell" bundle:NSBundle.mainBundle];
+    [self.tableView registerNib:loadingCell forCellReuseIdentifier:kPPLoadingCellIdentifier];
+    
+    self.posts = [@[] mutableCopy];
+    self.currentPage = 0;
+    self.totalPages  = 0;
+    self.totalItems  = 0;
+    self.showsPaging = false;
     
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
     
@@ -82,9 +93,31 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     // TODO: Add stuff that needs to happen before refreshing here...
 }
 
+/**
+ *  Reset the entire posts array.
+ */
 - (void)refresh {
-    [[PraisePopAPI sharedClient] posts:^(BOOL success, NSArray *posts) {
+    [[PraisePopAPI sharedClient] posts:1 success:^(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems) {
         self.posts = posts.mutableCopy;
+        
+        self.currentPage = currentPage;
+        self.totalPages  = totalPages;
+        self.totalItems  = totalItems;
+        self.showsPaging = currentPage != totalPages;
+        
+        [self.tableView reloadData];
+    } failure:nil];
+}
+
+- (void)loadPosts:(NSUInteger)page {
+    [[PraisePopAPI sharedClient] posts:page success:^(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems) {
+        [self.posts addObjectsFromArray:posts];
+        
+        self.currentPage = currentPage;
+        self.totalPages  = totalPages;
+        self.totalItems  = totalItems;
+        self.showsPaging = currentPage != totalPages;
+        
         [self.tableView reloadData];
     } failure:nil];
 }
@@ -109,10 +142,16 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count == 0 ? 1 : self.posts.count;
+    NSUInteger count = self.showsPaging ? self.posts.count + 1 : self.posts.count;
+    
+    return self.posts.count == 0 ? 1 : count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.showsPaging && indexPath.row == self.posts.count) {
+        return UITableViewAutomaticDimension;
+    }
+    
     if ([self heightForTextViewAtIndexPath:indexPath] <= 35) {
         return 130;
     }
@@ -123,21 +162,40 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.posts.count != 0) {
+        if (self.showsPaging && (self.currentPage != self.maxPages && indexPath.row == self.posts.count - 1)) {
+            [self loadPosts:++self.currentPage];
+        }
+        
         PPPostTableViewCell *postCell = (PPPostTableViewCell *)cell;
         
-        if ([self.posts[indexPath.row] upvoted]) {
-            [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
-        }
-        else {
-            [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+        if (indexPath.row != self.posts.count) {
+            if ([self.posts[indexPath.row] upvoted]) {
+                [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
+            }
+            else {
+                [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
+            }
         }
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PPPostTableViewCell *cell = (PPPostTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPopCellIdentifier];
+    if (self.showsPaging && indexPath.row == self.posts.count) {
+        UITableViewCell *loadingCell = [tableView dequeueReusableCellWithIdentifier:kPPLoadingCellIdentifier];
+        
+        if (loadingCell == nil) {
+            loadingCell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPLoadingCellIdentifier];
+        }
+        
+        UIActivityIndicatorView *activityIndicator = (UIActivityIndicatorView *)[loadingCell.contentView viewWithTag:100];
+        [activityIndicator startAnimating];
+        
+        return loadingCell;
+    }
+    
+    PPPostTableViewCell *cell = (PPPostTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPostCellIdentifier];
     if (cell == nil) {
-        cell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPopCellIdentifier];
+        cell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPostCellIdentifier];
     }
     
     if (self.posts.count == 0) {
@@ -170,21 +228,14 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath {
     if (![self.posts[indexPath.row] upvoted]) {
-        PPPostTableViewCell *cell = (PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         [[PraisePopAPI sharedClient] upvote:self.posts[indexPath.row] success:^(BOOL result) {
-            
-            if (result) {
-                [self.posts[indexPath.row] setUpvoted:YES];
-                [cell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
-            }
-            else {
-                [self.posts[indexPath.row] setUpvoted:NO];
-                [cell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
-            }
+            [self.posts[indexPath.row] setUpvoted:result];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [cell unvote];
             [self.posts[indexPath.row] setUpvoted:NO];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             [error pp_showError];
+            [PraisePopAPI hideActivityIndicator];
         }];
     }
 }
