@@ -190,6 +190,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         UIActivityIndicatorView *activityIndicator = (UIActivityIndicatorView *)[loadingCell.contentView viewWithTag:100];
         [activityIndicator startAnimating];
         
+        loadingCell.separatorInset = UIEdgeInsetsMake(0, loadingCell.bounds.size.width, 0, 0);
+        
         return loadingCell;
     }
     
