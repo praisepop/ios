@@ -10,5 +10,7 @@
 
 - (NSString *)parseAppID;
 - (NSString *)parseClientKey;
+- (NSString *)fabricAPIKey;
+- (NSString *)fabricBuildSecret;
 
 @end
