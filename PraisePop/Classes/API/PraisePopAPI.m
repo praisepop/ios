@@ -32,6 +32,10 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
 @implementation PraisePopAPI
 
+NSString * NSStringFromObjectID(NSString *objectID) {
+    return [NSString stringWithFormat:@"PPC%@", objectID];
+}
+
 + (instancetype)sharedClient {
     static PraisePopAPI *_sharedClient = nil;
     static dispatch_once_t onceToken;
@@ -106,8 +110,13 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
             [PraisePop saveOrganizations:authentication.user.organizations];
             [PraisePop saveUserAccount:authentication.user];
             
-            [PFPush subscribeToChannelInBackground:authentication.user._id block:nil];
-            [PFPush subscribeToChannelInBackground:PraisePop.parentOrganization._id block:nil];
+            if (PraisePop.userToken == nil) {
+                [PraisePop destorySession];
+                success(NO);
+            }
+            
+            [PFPush subscribeToChannelInBackground:NSStringFromObjectID(authentication.user._id) block:nil];
+            [PFPush subscribeToChannelInBackground:NSStringFromObjectID(PraisePop.parentOrganization._id) block:nil];
             
             if (PraisePop.childOrganization) {
                 [PFPush subscribeToChannelInBackground:PraisePop.childOrganization._id block:nil];
