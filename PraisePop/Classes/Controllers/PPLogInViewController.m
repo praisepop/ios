@@ -30,7 +30,7 @@
         [self.passwordField becomeFirstResponder];
     }
     else if (textField == self.passwordField) {
-        [self.view endEditing:YES];
+        [self login:self.passwordField];
     }
     
     return YES;

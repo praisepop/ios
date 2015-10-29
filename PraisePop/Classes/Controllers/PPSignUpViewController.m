@@ -35,7 +35,7 @@
         [self.nameField becomeFirstResponder];
     }
     else {
-        [self.view endEditing:YES];
+        [self signUp:self.nameField];
     }
     
     return YES;
