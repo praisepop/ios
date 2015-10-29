@@ -33,6 +33,10 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     [self.tableView setContentOffset:CGPointZero animated:NO];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
