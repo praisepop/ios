@@ -126,31 +126,8 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 }
 
 - (void)posts:(void (^)(BOOL result, NSArray *))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    [PraisePopAPI showActivityIndicator];
-    NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
-
-    NSDictionary *paramters = @{
-                            @"token" : PraisePop.userToken,
-                            @"limit" : @(PRAISE_POP_FEED_LIMIT),
-                            @"page" : @(1)
-                            };
-
-    [self GET:path parameters:paramters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSDictionary *response = (NSDictionary *)responseObject;
-        [PraisePopAPI hideActivityIndicator];
-        
-        if (response[@"result"] && [response[@"result"] boolValue] == NO) {
-            success(NO, nil);
-        }
-        else {
-            NSMutableArray *posts = [@[] mutableCopy];
-            for (NSDictionary *aPost in response[@"data"]) {
-                PPPost *post = [MTLJSONAdapter modelOfClass:PPPost.class fromJSONDictionary:aPost error:nil];
-                [posts addObject:post];
-            }
-            
-            success(YES, posts);
-        }
+    [self posts:1 success:^(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems) {
+        success(result, posts);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
         [PraisePopAPI hideActivityIndicator];

@@ -59,9 +59,15 @@
  *  @param success  Whether or not the request was successful.
  *  @param failure  What to do if the request wasn't successful.
  */
-- (void)posts:(void (^)(BOOL result, NSArray *posts))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)posts:(void (^)(BOOL result, NSArray *posts))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure __deprecated_msg("This is deprecated.  Use posts:success:failure instead..");
 
-
+/**
+ *  An array of posts fo
+ *
+ *  @param page    The page to fetch.
+ *  @param success  Whether or not the request was successful.
+ *  @param failure  What to do if the request wasn't successful.
+ */
 - (void)posts:(NSUInteger)page success:(void (^)(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 #pragma mark - Compose
 
