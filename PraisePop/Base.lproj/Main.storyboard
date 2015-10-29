@@ -1262,7 +1262,7 @@
         <!--View Controller-->
         <scene sceneID="BCa-yz-gCC">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BwT-aJ-ngt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PPSignUpViewControllerKernel" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BwT-aJ-ngt" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3r8-jI-0bc"/>
                         <viewControllerLayoutGuide type="bottom" id="aAT-7M-5aX"/>
