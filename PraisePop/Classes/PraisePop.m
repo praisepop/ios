@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import <SSKeychain/SSKeychain.h>
+#import <Instabug/Instabug.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
@@ -61,6 +62,10 @@ static NSString * const kPraisePopService = @"PraisePop";
 }
 
 + (void)destorySession {
+    [Instabug setDefaultEmail:nil];
+    [Instabug setWillShowEmailField:YES];
+    [Instabug setUserData:nil];
+    
     [SSKeychain deletePasswordForService:kPraisePopService account:PraisePop.currentUser.email];
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];

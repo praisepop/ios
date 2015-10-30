@@ -26,6 +26,7 @@ PODS:
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
   - Fabric/Base (1.5.5)
+  - Instabug (4.1.7)
   - Keys (1.0.0)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - Crashlytics
   - DateTools
   - Fabric
+  - Instabug (~> 4.1)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Mantle (~> 2.0)
   - Parse (~> 1.9)
@@ -62,6 +64,7 @@ SPEC CHECKSUMS:
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
+  Instabug: 58f773fcefe0dec9b1bd3fcf09c6e46560353f5d
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b

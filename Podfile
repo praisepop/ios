@@ -7,7 +7,8 @@ plugin 'cocoapods-keys', {
     :project => "PraisePop",
     :keys => [
         "ParseAppID",
-        "ParseClientKey"
+        "ParseClientKey",
+	"InstaBugToken"
     ]
 }
 
@@ -22,6 +23,7 @@ pod 'UIActionSheet+Blocks'
 pod 'VTAcknowledgementsViewController'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'Instabug', '~> 4.1'
 
 post_install do | installer |
     require 'fileutils'

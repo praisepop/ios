@@ -21,7 +21,15 @@ typedef NS_ENUM(NSUInteger, PPMenuButtonIndexes) {
     /**
      *  The menu button for the more controller.
      */
-    PPMenuButtonMore = 1
+    PPMenuButtonMore = 1,
+    /**
+     *  The menu button for the more controller.
+     */
+    PPMenuButtonFeedback = 2,
+    /**
+     *  The menu button for the bug controller.
+     */
+    PPMenuButtonReportBug = 3
 };
 
 @interface PPMenuViewController : UIViewController

@@ -6,8 +6,8 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
-
 #import <SWRevealViewController/SWRevealViewController.h>
+#import <Instabug/Instabug.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
@@ -39,8 +39,16 @@
     if (button.tag == PPMenuButtonTimeline) {
         [self pushFrontViewController:kPPTimelineCacheKey];
     }
-    else {
+    else if (button.tag == PPMenuButtonMore) {
         [self pushFrontViewController:kPPMoreCacheKey];
+    }
+    else if (button.tag == PPMenuButtonFeedback) {
+        [Instabug invokeFeedbackSenderViaEmail];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
+    else {
+        UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Reporting Bugs" message:@"To report a bug at any time, simply shake your device when you are having a problem!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
 }
 

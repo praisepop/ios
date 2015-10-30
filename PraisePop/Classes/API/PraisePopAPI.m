@@ -11,6 +11,7 @@
 #import <SSKeychain/SSKeychain.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Instabug/Instabug.h>
 
 #import "PPUser.h"
 #import "PPPost.h"
@@ -107,6 +108,10 @@ NSString * NSStringFromObjectID(NSString *objectID) {
             [PraisePop saveToken:authentication.token email:authentication.user.email];
             [PraisePop saveOrganizations:authentication.user.organizations];
             [PraisePop saveUserAccount:authentication.user];
+            
+            [Instabug setDefaultEmail:authentication.user.email];
+            [Instabug setWillShowEmailField:NO];
+            [Instabug setUserData:authentication.user._id];
             
             if ([PraisePop shared].userToken == nil) {
                 [PraisePop destorySession];

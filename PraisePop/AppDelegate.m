@@ -13,6 +13,7 @@
 #import <SSKeychain/SSKeychain.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Instabug/Instabug.h>
 
 #import "PraisePopAPI.h"
 
@@ -33,12 +34,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
+    self.window.tintColor = UIColor.pp_redColor;
     
     [self setupAppearances];
     
     PraisepopKeys *keys = PraisepopKeys.new;
     
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
+    [Instabug startWithToken:keys.instaBugToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
     [Fabric with:@[[Crashlytics class]]];
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
@@ -144,6 +147,17 @@
     [[UITextView appearance] setTintColor:UIColor.pp_redColor];
     
     [[UITextField appearanceWhenContainedIn:PPComposeViewController.class, nil] setTintColor:UIColor.pp_redColor];
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:UINavigationBar.class, nil] setTintColor:UIColor.whiteColor];
+    
+    [[UIView appearanceWhenContainedIn:UIAlertController.class, nil] setTintColor:UIColor.pp_redColor];
+    
+    [Instabug setButtonsColor:[UIColor colorWithRed:0.84 green:0.25 blue:0.11 alpha:1]];
+    [Instabug setButtonsFontColor:[UIColor whiteColor]];
+    [Instabug setHeaderColor:[UIColor pp_redColor]];
+    [Instabug setHeaderFontColor:[UIColor whiteColor]];
+    [Instabug setTextBackgroundColor:[UIColor lightGrayColor]];
+    [Instabug setTextFontColor:[UIColor whiteColor]];
 }
 
 #pragma mark - SWRevealViewDelegate
