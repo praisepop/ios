@@ -23,7 +23,7 @@ NSString * const kPPPostCellIdentifier = @"PPPostCellIdentifier";
 NSString * const kPPLoadingCellIdentifier = @"PPLoadingCellIdentifier";
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
-@interface PPTimelineViewController () <PPPostDelegate, PPComposerDelegate>
+@interface PPTimelineViewController () <PPPostDelegate, PPComposerDelegate, PP3DGlassesRefreshDelegate>
 
 @property (strong, nonatomic) NSMutableArray *posts;
 
@@ -61,26 +61,24 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     
     [[PPMenuControllerCache sharedCache] addControllerToCache:self withKey:kPPTimelineCacheKey];
     
+    super.refreshDelegate = self;
+    [super refresh];
+    
     [self checkNetwork];
-    [self refresh];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkNetwork) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(checkNetwork) userInfo:nil repeats:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self checkNetwork];
-    self.revealViewController.panGestureRecognizer.enabled = YES;
 }
 
 - (void)checkNetwork {
     BOOL reachable = PraisePopAPI.isReachable;
     [PraisePopAPI showActivityIndicator];
     
-    self.navigationItem.leftBarButtonItem.enabled = reachable;
-    self.navigationItem.rightBarButtonItem.enabled = reachable;
-    
-    self.revealViewController.panGestureRecognizer.enabled = reachable;
+    [self toggleReachability:reachable];
     
     /**
      *  For now leave this out because we don't want to displace the feed that often.
@@ -93,18 +91,26 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     [PraisePopAPI hideActivityIndicator];
 }
 
-#pragma mark - BEGIN PP3DGlassesRefreshableController REQUIRED METHODS
+- (void)toggleReachability:(BOOL)reachable {
+    self.navigationItem.leftBarButtonItem.enabled = reachable;
+    self.navigationItem.rightBarButtonItem.enabled = reachable;
+    
+    self.revealViewController.panGestureRecognizer.enabled = reachable;
+}
+
+#pragma mark - PP3dGlassesRefreshController
 
 - (void)willBeginRefreshing {
-    // TODO: Add stuff that needs to happen before refreshing here...
+    [self.tableView reloadData];
 }
 
 /**
- *  Reset the entire posts array.
+ *  Resets the entire posts array.
  */
-- (void)refresh {
+- (void)didBeginRefreshing {
     [[PraisePopAPI sharedClient] posts:1 success:^(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems) {
         self.posts = posts.mutableCopy;
+        [self toggleReachability:result];
         
         self.currentPage = currentPage;
         self.totalPages  = totalPages;
@@ -117,18 +123,16 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 - (void)loadPosts:(NSUInteger)page {
     [[PraisePopAPI sharedClient] posts:page success:^(BOOL result, NSArray *posts, NSUInteger currentPage, NSUInteger totalPages, NSUInteger totalItems) {
+        [self toggleReachability:result];
         [self.posts addObjectsFromArray:posts];
         
         self.currentPage = currentPage;
         self.totalPages  = totalPages;
         self.totalItems  = totalItems;
         self.showsPaging = currentPage != totalPages;
-        
         [self.tableView reloadData];
     } failure:nil];
 }
-
-#pragma mark - END REQUIRED METHODS
 
 - (void)initiateButtons {
     UIBarButtonItem *composeButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"compose-nav-button"]
@@ -213,7 +217,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         placeholder.name = PraisePopAPI.isReachable ? @"You" : @"Internet Connection";
         
         empty.addressee = placeholder;
-        empty.body = PraisePopAPI.isReachable ? self.lonelyMessage : self.unreachableMessage;
+        
+        empty.body = self.state == PP3DGlassesRefreshControlStateRefreshing ? self.loadingMessage : (PraisePopAPI.isReachable ? self.lonelyMessage : self.unreachableMessage);
         empty.upvoted = YES;
         empty.createdAt = NSDate.date;
         
@@ -326,7 +331,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 #pragma mark - PPComposerDelegate
 
 - (void)didPost {
-    [self refresh];
+    [super refresh];
 }
 
 
@@ -357,6 +362,10 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:nil];
     
     return rect.size.height;
+}
+
+- (NSString *)loadingMessage {
+    return @"Popping some fresh popcorn for you right now!  Please sit tight!";
 }
 
 - (NSString *)unreachableMessage {
