@@ -41,3 +41,13 @@ xcuserdata
 # Carthage/Checkouts
 
 Carthage/Build
+
+*.pem
+
+*.p12
+
+*.pkey
+
+*.mobileprovision
+
+*.cer
