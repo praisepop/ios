@@ -33,10 +33,6 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
     [self.tableView setContentOffset:CGPointZero animated:NO];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -104,17 +100,14 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
             
         }
         else if (indexPath.row == 1) {
-            [self openURL:nil actual:@"https://www.facebook.com/praisepopbywoco"];
+            [self openURL:@"fb://place/397273957141400" actual:@"https://www.facebook.com/praisepopbywoco"];
         }
         else if (indexPath.row == 2) {
-            [self openURL:nil actual:@"https://twitter.com/trypraisepop"];
+            [self openURL:@"twitter://user?screen_name=trypraisepop" actual:@"https://twitter.com/trypraisepop"];
         }
         else {
             [self openURL:nil actual:nil];
         }
-    }
-    else if (indexPath.section == PPMenuViewControllerSectionHelpUs) {
-        // TODO: How to handle feedback?
     }
     else if (indexPath.section == PPMenuViewControllerSectionImportant) {
         if (indexPath.row == 0) {
@@ -124,9 +117,6 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
         }
         else if (indexPath.row == 1) {
             [self openURL:nil actual:@"http://praisepop.tumblr.com/privacy-policy"];
-        }
-        else if (indexPath.row == 2) {
-            // TODO: What is our contact method?
         }
         else {
             NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-Acknowledgements" ofType:@"plist"];
@@ -143,10 +133,9 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
             self.revealViewController.frontViewController = (UINavigationController *)[UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingNavigationController"];
             self.revealViewController.frontViewController.childViewControllers[0].view.userInteractionEnabled = YES;
         }
-//        else {
-//            
-//        }
     }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)openURL:(NSString *)try actual:(NSString *)actual {
@@ -171,7 +160,6 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
              @"Important Stuff": @[
                      @"Rules",
                      @"Privacy Policy",
-                     @"Contact Us",
                      @"Third Party Licenses"
                      ],
              @"Account Actions": @[
