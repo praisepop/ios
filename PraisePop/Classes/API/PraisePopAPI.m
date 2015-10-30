@@ -26,8 +26,6 @@ static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
 @interface PraisePopAPI ()
 
-@property (nonatomic) NSUInteger currentPage;
-
 @end
 
 @implementation PraisePopAPI
@@ -110,7 +108,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
             [PraisePop saveOrganizations:authentication.user.organizations];
             [PraisePop saveUserAccount:authentication.user];
             
-            if (PraisePop.userToken == nil) {
+            if ([PraisePop shared].userToken == nil) {
                 [PraisePop destorySession];
                 success(NO);
             }
@@ -148,7 +146,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
     
     NSDictionary *paramters = @{
-                                @"token" : PraisePop.userToken,
+                                @"token" : [PraisePop shared].userToken,
                                 @"limit" : @(PRAISE_POP_FEED_LIMIT),
                                 @"page" : @(page)
                                 };
@@ -186,7 +184,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"posts/%@/upvote", post._id];
     
     NSDictionary *parameters = @{
-                                 @"token" : PraisePop.userToken
+                                 @"token" : [PraisePop shared].userToken
                                  };
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -208,7 +206,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts/new", PraisePop.parentOrganization._id];
     
     NSDictionary *parameters = @{
-                                 @"token" : PraisePop.userToken,
+                                 @"token" : [PraisePop shared].userToken,
                                  @"hashtags" : hashtags,
                                  @"to" : @{
                                      @"name" : recipient
@@ -238,7 +236,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
 
     NSDictionary *parameters = @{
-                                 @"token" : PraisePop.userToken
+                                 @"token" : [PraisePop shared].userToken
                                  };
     
     [self GET:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -263,7 +261,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"posts/%@/flag", post._id];
     
     NSDictionary *parameters = @{
-                                 @"token" : PraisePop.userToken
+                                 @"token" : [PraisePop shared].userToken
                                  };
     
     [self POST:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -287,7 +285,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     NSString *path = [NSString stringWithFormat:@"posts/%@", post._id];
     
     NSDictionary *parameters = @{
-                                 @"token" : PraisePop.userToken
+                                 @"token" : [PraisePop shared].userToken
                                  };
     
     [self DELETE:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

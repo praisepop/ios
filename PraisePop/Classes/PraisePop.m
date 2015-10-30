@@ -14,12 +14,28 @@
 
 #import "PraisePop.h"
 
+@interface PraisePop ()
+
+@property (strong, nonatomic) NSString *token;
+
+@end
+
 @implementation PraisePop
 
 static NSString * const kPraisePopTokenKey = @"PRAISE_POP_TOKEN_KEY";
 static NSString * const kPraisePopAccountKey = @"PRAISE_POP_ACCOUNT_KEY";
 static NSString * const kPraisePopOrganizationsKey = @"PRAISE_POP_ORGANIZATIONS_KEY";
 static NSString * const kPraisePopService = @"PraisePop";
+
++ (instancetype)shared {
+    static PraisePop *_shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shared = PraisePop.new;
+    });
+    
+    return _shared;
+}
 
 + (NSDateFormatter *)dateFormatter {
     static NSDateFormatter *_sharedDateFormatter = nil;
@@ -36,8 +52,12 @@ static NSString * const kPraisePopService = @"PraisePop";
     [SSKeychain setPassword:token forService:kPraisePopService account:email];
 }
 
-+ (NSString *)userToken {
-    return [SSKeychain passwordForService:kPraisePopService account:PraisePop.currentUser.email];
+- (NSString *)userToken {
+    if (self.token.length == 0) {
+        self.token = [SSKeychain passwordForService:kPraisePopService account:PraisePop.currentUser.email];
+    }
+    
+    return self.token;
 }
 
 + (void)destorySession {

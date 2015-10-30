@@ -15,6 +15,13 @@
 @interface PraisePop : NSObject
 
 /**
+ *  PraisePop singleton.
+ *
+ *  @return A new PraisePop instance.
+ */
++ (instancetype)shared;
+
+/**
  *  A shared date formatter (they are expensive to create).
  *
  *  @return The formatter.
@@ -46,7 +53,7 @@
  *
  *  @return The token of the current user.
  */
-+ (NSString *)userToken;
+- (NSString *)userToken;
 
 /**
  *  Decodes the current user from defaults.
