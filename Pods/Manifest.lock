@@ -30,18 +30,6 @@ PODS:
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
-  - Overcoat (3.2.0):
-    - Overcoat/NSURLConnection (= 3.2.0)
-    - Overcoat/NSURLSession (= 3.2.0)
-  - Overcoat/Core (3.2.0):
-    - AFNetworking/Serialization
-    - Mantle
-  - Overcoat/NSURLConnection (3.2.0):
-    - AFNetworking/NSURLConnection
-    - Overcoat/Core
-  - Overcoat/NSURLSession (3.2.0):
-    - AFNetworking/NSURLSession
-    - Overcoat/Core
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - SSKeychain (1.2.3)
@@ -57,7 +45,6 @@ DEPENDENCIES:
   - Fabric
   - Keys (from `Pods/CocoaPodsKeys`)
   - Mantle (~> 2.0)
-  - Overcoat (~> 3.0)
   - Parse (~> 1.9)
   - SSKeychain (~> 1.2)
   - SVWebViewController (~> 1.0)
@@ -77,7 +64,6 @@ SPEC CHECKSUMS:
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
-  Overcoat: 16f4a7b17c5189bc270466eef03a7b1c01ebfbd4
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
