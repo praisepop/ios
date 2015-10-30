@@ -76,4 +76,8 @@
            PraisePop.currentUser.admin;
 }
 
+- (BOOL)isReportable {
+    return ![PraisePop.currentUser._id isEqualToString:self.from_id];
+}
+
 @end

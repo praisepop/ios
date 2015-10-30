@@ -96,10 +96,19 @@ typedef NS_ENUM(NSUInteger, PPPostType) {
 /**
  *  Tells us whether or not the post can be deleted...  If you are an
  *  admin, then you can delete any post (though not yet supported).
- *  Otherwise, you can only hide a post (so you shouldn't see delete option).
+ *  Otherwise, you can only report a post (so you shouldn't see delete option).
  *
  *  @return Whether or not the post can be deleted.
  */
 - (BOOL)isDeletable;
+
+/**
+ *  Tells us whether or not the post can be deleted...  If you are an
+ *  admin, then you can delete any post (though not yet supported).
+ *  Otherwise, you can only report a post (so you shouldn't see delete option).
+ *
+ *  @return Whether or not the post should be reported.
+ */
+- (BOOL)isReportable;
 
 @end
