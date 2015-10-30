@@ -61,11 +61,6 @@ typedef NS_ENUM(NSUInteger, PP3DGlassesRefreshControlState) {
 @property (weak, nonatomic) id<PP3DGlassesRefreshDelegate> refreshDelegate;
 
 /**
- *  The current state of the refresh control.
- */
-@property (readonly, nonatomic) PP3DGlassesRefreshControlState state;
-
-/**
  *  Allows you to call the refresh method from a subclass (without scrolling).
  */
 - (void)refresh;

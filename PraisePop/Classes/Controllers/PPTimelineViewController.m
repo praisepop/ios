@@ -21,19 +21,47 @@
 
 NSString * const kPPPostCellIdentifier = @"PPPostCellIdentifier";
 NSString * const kPPLoadingCellIdentifier = @"PPLoadingCellIdentifier";
+
 CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 
 @interface PPTimelineViewController () <PPPostDelegate, PPComposerDelegate, PP3DGlassesRefreshDelegate>
 
+/**
+ *  A mutable array of post objects.
+ */
 @property (strong, nonatomic) NSMutableArray *posts;
 
+/**
+ *  A timer used to check reachability status.
+ */
 @property (strong, nonatomic) NSTimer *timer;
 
+/**
+ *  The current page for pagination.
+ */
 @property (nonatomic, assign) NSInteger currentPage;
+/**
+ *  The total pages for pagination.
+ */
 @property (nonatomic, assign) NSInteger totalPages;
+/**
+ *  The total items for pagination.
+ */
 @property (nonatomic, assign) NSInteger totalItems;
+/**
+ *  The maximum number of pages for pagination.
+ */
 @property (nonatomic, assign) NSInteger maxPages;
+
+/**
+ *  Whether or not the activity indicator should show.
+ */
 @property (nonatomic, assign) BOOL showsPaging;
+
+/**
+ *  The current state of the refresh control.
+ */
+@property (nonatomic) PP3DGlassesRefreshControlState state;
 
 @end
 
@@ -99,6 +127,10 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 }
 
 #pragma mark - PP3dGlassesRefreshController
+
+- (void)didChangeState:(PP3DGlassesRefreshControlState)state {
+    self.state = state;
+}
 
 - (void)willBeginRefreshing {
     [self.tableView reloadData];
