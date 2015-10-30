@@ -16,7 +16,6 @@
 
 typedef NS_ENUM(NSUInteger, PPMenuViewControllerSections) {
     PPMenuViewControllerSectionLoveUs = 0,
-    PPMenuViewControllerSectionHelpUs = 1,
     PPMenuViewControllerSectionImportant = 2,
     PPMenuViewControllerSectionActions = 3
 };

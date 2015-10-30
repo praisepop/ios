@@ -168,9 +168,6 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
                      @"Follow us on Twitter",
                      @"View on the App Store"
                      ],
-             @"Help Us": @[
-                     @"Provide Feedback"
-                     ],
              @"Important Stuff": @[
                      @"Rules",
                      @"Privacy Policy",
