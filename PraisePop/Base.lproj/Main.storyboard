@@ -215,25 +215,63 @@
                                     <action selector="buttonTouch:" destination="YO1-6J-oxe" eventType="touchUpInside" id="2tr-nH-LIz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-XI-6z0">
+                                <rect key="frame" x="16" y="447" width="133" height="37"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <state key="normal" title="Send Feedback">
+                                    <color key="titleColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTouch:" destination="YO1-6J-oxe" eventType="touchUpInside" id="OSw-ez-Mru"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWw-uT-gf0">
+                                <rect key="frame" x="16" y="492" width="114" height="37"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <state key="normal" title="Report a Bug">
+                                    <color key="titleColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTouch:" destination="YO1-6J-oxe" eventType="touchUpInside" id="WMO-jH-njc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Jah-XI-6z0" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" constant="16" id="1CL-ed-Jlg"/>
                             <constraint firstItem="DDk-uZ-cme" firstAttribute="top" secondItem="DFN-So-Lja" secondAttribute="bottom" id="4WR-nz-jHT"/>
                             <constraint firstItem="tgU-yO-9jc" firstAttribute="leading" secondItem="p1y-0C-SH8" secondAttribute="leading" id="7S7-L8-sD4"/>
                             <constraint firstAttribute="trailing" secondItem="DFN-So-Lja" secondAttribute="trailing" id="899-q5-zic"/>
                             <constraint firstItem="p1y-0C-SH8" firstAttribute="top" secondItem="KSq-uN-Tjf" secondAttribute="bottom" constant="40" id="GBm-nK-P49"/>
                             <constraint firstItem="KSq-uN-Tjf" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" constant="13" id="LD8-zd-AOQ"/>
                             <constraint firstItem="KSq-uN-Tjf" firstAttribute="leading" secondItem="p1y-0C-SH8" secondAttribute="leading" constant="-3" id="LO7-RY-zBp"/>
+                            <constraint firstItem="Jah-XI-6z0" firstAttribute="top" secondItem="tgU-yO-9jc" secondAttribute="bottom" constant="8" id="OEz-MP-6b8"/>
+                            <constraint firstItem="p1y-0C-SH8" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" constant="16" id="UL6-yu-hW8"/>
+                            <constraint firstItem="sWw-uT-gf0" firstAttribute="top" secondItem="Jah-XI-6z0" secondAttribute="bottom" constant="8" id="ZVd-5S-JLt"/>
                             <constraint firstItem="DFN-So-Lja" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" id="cIE-DJ-sUH"/>
                             <constraint firstAttribute="centerY" secondItem="p1y-0C-SH8" secondAttribute="centerY" constant="-42" id="dj1-mk-bjL"/>
                             <constraint firstItem="KSq-uN-Tjf" firstAttribute="leading" secondItem="w2I-mq-Yh2" secondAttribute="leading" id="fhJ-Qi-RaQ"/>
                             <constraint firstAttribute="trailing" secondItem="KSq-uN-Tjf" secondAttribute="trailing" constant="13" id="lK1-B8-0bJ"/>
                             <constraint firstItem="w2I-mq-Yh2" firstAttribute="top" secondItem="sac-5r-tHh" secondAttribute="top" constant="-5" id="lMu-HW-0If"/>
+                            <constraint firstItem="sWw-uT-gf0" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" constant="16" id="lV0-RW-oau"/>
                             <constraint firstItem="KSq-uN-Tjf" firstAttribute="top" secondItem="w2I-mq-Yh2" secondAttribute="bottom" constant="8" id="pbF-TU-sTI"/>
                             <constraint firstItem="KSq-uN-Tjf" firstAttribute="trailing" secondItem="sac-5r-tHh" secondAttribute="trailing" id="q6y-nR-Q6W"/>
                             <constraint firstItem="tgU-yO-9jc" firstAttribute="top" secondItem="p1y-0C-SH8" secondAttribute="bottom" constant="8" id="sFC-7v-2YP"/>
+                            <constraint firstItem="Jah-XI-6z0" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leadingMargin" constant="-4" id="xrJ-1V-Lsg"/>
+                            <constraint firstItem="tgU-yO-9jc" firstAttribute="leading" secondItem="5Sv-B3-b4q" secondAttribute="leading" constant="16" id="ySx-aH-vm0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LO7-RY-zBp"/>
+                                <exclude reference="7S7-L8-sD4"/>
+                                <exclude reference="xrJ-1V-Lsg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="276" height="667"/>
