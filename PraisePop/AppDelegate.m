@@ -34,7 +34,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [UIWindow.alloc initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = UIColor.whiteColor;
-    self.window.tintColor = UIColor.pp_redColor;
     
     [self setupAppearances];
     
@@ -128,7 +127,7 @@
 }
 
 - (void)setupAppearances {
-    self.window.tintColor = UIColor.whiteColor;
+    self.window.tintColor = UIColor.pp_redColor;
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName : UIColor.whiteColor,
