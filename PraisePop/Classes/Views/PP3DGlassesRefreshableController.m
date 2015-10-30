@@ -48,20 +48,20 @@
     
     self.state = PP3DGlassesRefreshControlStateIdle;
     
-    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)refresh:(id)sender {
-    #pragma GCC diagnostic ignored "-Wundeclared-selector"
-    if ([self respondsToSelector:@selector(willBeginRefreshing)]) {
-        [self performSelector:@selector(willBeginRefreshing)];
+- (void)refresh {
+    self.state = PP3DGlassesRefreshControlStateRefreshing;
+    if (self.refreshDelegate && [self.refreshDelegate respondsToSelector:@selector(willBeginRefreshing)]) {
+        [self.refreshDelegate willBeginRefreshing];
     }
+    
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        self.state = PP3DGlassesRefreshControlStateRefreshing;
-        if ([self respondsToSelector:@selector(refresh)]) {
-            [self performSelector:@selector(refresh)];
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+        if (self.refreshDelegate && [self.refreshDelegate respondsToSelector:@selector(didBeginRefreshing)]) {
+            [self.refreshDelegate didBeginRefreshing];
         }
         self.state = PP3DGlassesRefreshControlStateResetting;
         [self.refreshControl endRefreshing];
@@ -110,6 +110,12 @@
 
 - (void)resetAnimation {
     self.state = PP3DGlassesRefreshControlStateIdle;
+}
+
+- (void)setState:(PP3DGlassesRefreshControlState)state {
+    if (self.refreshDelegate && [self.refreshDelegate respondsToSelector:@selector(didChangeState:)]) {
+        [self.refreshDelegate didChangeState:state];
+    }
 }
 
 @end
