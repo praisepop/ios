@@ -135,8 +135,6 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
                 if (result) {
                     [self pp_dismiss];
                     
-                    
-                    
                     if (self.delegate && [self.delegate respondsToSelector:@selector(didPost)]) {
                         [self.delegate didPost];
                     }
