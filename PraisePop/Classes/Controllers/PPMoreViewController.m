@@ -97,16 +97,31 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == PPMenuViewControllerSectionLoveUs) {
         if (indexPath.row == 0) {
+            NSString *shareText = @"Post anonymous shoutouts to anyone in your community with PraisePop. What's poppin? http://praisepop.us/";
+            NSArray *share = @[shareText];
             
+            UIActivityViewController *activityViewController =
+            [[UIActivityViewController alloc] initWithActivityItems:share
+                                              applicationActivities:nil];
+            
+            activityViewController.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeAssignToContact, UIActivityTypePostToTencentWeibo, UIActivityTypePostToVimeo, UIActivityTypePostToFlickr, UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeSaveToCameraRoll];
+            
+            [self.navigationController presentViewController:activityViewController
+                                               animated:YES
+                                                  completion:^{
+                                                      [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+                                                  }];
         }
         else if (indexPath.row == 1) {
-            [self openURL:@"fb://place/397273957141400" actual:@"https://www.facebook.com/praisepopbywoco"];
+            // @"fb://profile/397273957141400" should work, but since we changed the facebook name, I think it's
+            // throwing it off.
+            [self openURL:@"https://www.facebook.com/trypraisepop" actual:@"https://www.facebook.com/trypraisepop"];
         }
         else if (indexPath.row == 2) {
             [self openURL:@"twitter://user?screen_name=trypraisepop" actual:@"https://twitter.com/trypraisepop"];
         }
         else {
-            [self openURL:nil actual:nil];
+            [self openURL:@"http://itunes.apple.com/app/1053365584" actual:@"http://itunes.apple.com/app/1053365584"];
         }
     }
     else if (indexPath.section == PPMenuViewControllerSectionImportant) {
@@ -164,7 +179,7 @@ CGFloat const kPPMoreViewControllerSectionFooterHeight = 10;
                      ],
              @"Account Actions": @[
                      @"Logout",
-//                     @"Change Password"
+                     // @"Change Password"
                      ]
              };
 }
