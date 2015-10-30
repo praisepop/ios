@@ -43,11 +43,9 @@ xcuserdata
 Carthage/Build
 
 *.pem
-
 *.p12
-
 *.pkey
-
 *.mobileprovision
-
 *.cer
+*.ipa
+*.dSYM.zip
