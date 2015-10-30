@@ -15,6 +15,7 @@
 		F106F1CC1BDE04230025B1CE /* TwitterText.m in Sources */ = {isa = PBXBuildFile; fileRef = F106F1C91BDE04230025B1CE /* TwitterText.m */; };
 		F106F1CD1BDE04230025B1CE /* TwitterTextEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F106F1CB1BDE04230025B1CE /* TwitterTextEntity.m */; };
 		F10AD00A1BDE7F6B002A45DE /* NSError+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F10AD0091BDE7F6B002A45DE /* NSError+PPExtensions.m */; };
+		F121549C1BE32E210016CFB7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F121549B1BE32E210016CFB7 /* AudioToolbox.framework */; };
 		F133D6CE1BC557D800E86958 /* PPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6CD1BC557D800E86958 /* PPMoreViewController.m */; };
 		F133D6D11BC55D5E00E86958 /* PPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D01BC55D5E00E86958 /* PPMenuViewController.m */; };
 		F133D6D81BC564E200E86958 /* UITableViewController+PPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133D6D71BC564E200E86958 /* UITableViewController+PPExtensions.m */; };
@@ -70,6 +71,7 @@
 		F106F1CB1BDE04230025B1CE /* TwitterTextEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTextEntity.m; sourceTree = "<group>"; };
 		F10AD0081BDE7F6B002A45DE /* NSError+PPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+PPExtensions.h"; path = "Classes/Categories/NSError+PPExtensions.h"; sourceTree = "<group>"; };
 		F10AD0091BDE7F6B002A45DE /* NSError+PPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+PPExtensions.m"; path = "Classes/Categories/NSError+PPExtensions.m"; sourceTree = "<group>"; };
+		F121549B1BE32E210016CFB7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F133D6CC1BC557D800E86958 /* PPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMoreViewController.h; path = Classes/Controllers/PPMoreViewController.h; sourceTree = "<group>"; };
 		F133D6CD1BC557D800E86958 /* PPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMoreViewController.m; path = Classes/Controllers/PPMoreViewController.m; sourceTree = "<group>"; };
 		F133D6CF1BC55D5E00E86958 /* PPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMenuViewController.h; path = Classes/Controllers/PPMenuViewController.h; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F121549C1BE32E210016CFB7 /* AudioToolbox.framework in Frameworks */,
 				C242D3DCBED8A966C1A71FBD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +161,7 @@
 		F10012FD6ECEF5063EA9A7C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F121549B1BE32E210016CFB7 /* AudioToolbox.framework */,
 				96EE6B8620AE9FC6CD0E8F2B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -685,7 +689,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.praisepop.PraisePop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -703,7 +707,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PraisePop/PrefixHeader.pch;
 				INFOPLIST_FILE = PraisePop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.praisepop.PraisePop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

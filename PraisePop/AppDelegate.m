@@ -6,6 +6,8 @@
 //  Copyright © 2015 PraisePop. All rights reserved.
 //
 
+#import <AudioToolbox/AudioServices.h>
+
 #import <Parse/Parse.h>
 #import <SWRevealViewController/SWRevealViewController.h>
 #import <SSKeychain/SSKeychain.h>
@@ -38,6 +40,7 @@
     
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
     [Fabric with:@[[Crashlytics class]]];
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -116,6 +119,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     if (application.applicationState == UIApplicationStateActive) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         application.applicationIconBadgeNumber = 0;
     }
 }
