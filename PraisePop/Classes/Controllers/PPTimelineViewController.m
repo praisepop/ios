@@ -213,7 +213,6 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         if (indexPath.row != self.posts.count) {
             if ([self.posts[indexPath.row] upvoted]) {
                 [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
-                [postCell.upvoteButton setUserInteractionEnabled:NO];
             }
             else {
                 [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
