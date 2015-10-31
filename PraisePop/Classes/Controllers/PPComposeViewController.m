@@ -93,10 +93,10 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 
 - (NSDictionary *)types {
     return @{
-             @"Announcement" : @"ANNOUNCEMENT",
-             @"Invite" : @"INVITE",
+             @"Uncategorized" : @"UNCATEGORIZED",
              @"Shoutout" : @"SHOUTOUT",
-             @"Uncategorized" : @"UNCATEGORIZED"
+             @"Invite" : @"INVITE",
+             @"Announcement" : @"ANNOUNCEMENT"
              };
 }
 
@@ -117,11 +117,20 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 - (void)didSendPost {
     if (self.postBody.text.length != 0 && self.postBody.text.length != 0) {
         NSArray *nameParts = [self.recipientField.text componentsSeparatedByString:@" "];
-        if (nameParts.count >= 2) {
-            NSDictionary *name = @{
+        
+        NSString *recipient = [self.recipientField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if ([recipient.lowercaseString isEqualToString:@"everyone"] || nameParts.count >= 2) {
+            NSMutableDictionary *name = [@{
                                    @"first" : nameParts[0],
                                    @"last" : [self.recipientField.text stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ ",nameParts[0]] withString:@""]
-                                   };
+                                   } mutableCopy];
+            
+            if ([recipient.lowercaseString isEqualToString:@"everyone"]) {
+                name[@"last"] = @"";
+            }
+            
+            NSLog(@"name");
             
             NSArray *hashtags = [TwitterText hashtagsInText:self.postBody.text checkingURLOverlap:NO];
             

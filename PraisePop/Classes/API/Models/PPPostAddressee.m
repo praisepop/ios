@@ -25,10 +25,10 @@
 
 - (NSString *)displayName {
     if (self.name.length == 0) {
-        return self.user.fullName;
+        return [self.user.fullName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     }
     
-    return self.name;
+    return [self.name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 @end
