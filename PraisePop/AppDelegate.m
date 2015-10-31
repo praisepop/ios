@@ -145,6 +145,7 @@
     
     [[UITextView appearance] setTintColor:UIColor.pp_redColor];
     
+    [[UITextField appearance] setTintColor:UIColor.whiteColor];
     [[UITextField appearanceWhenContainedIn:PPComposeViewController.class, nil] setTintColor:UIColor.pp_redColor];
     
     [[UIBarButtonItem appearanceWhenContainedIn:UINavigationBar.class, nil] setTintColor:UIColor.whiteColor];
