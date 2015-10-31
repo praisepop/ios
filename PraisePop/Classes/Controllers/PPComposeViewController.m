@@ -103,6 +103,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
+        self.postTypePicker.hidden = YES;
         [textView resignFirstResponder];
         
         return NO;
