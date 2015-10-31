@@ -17,7 +17,9 @@
 
 @interface PraisePop ()
 
-@property (strong, nonatomic) NSString *token;
+@property (nonatomic) NSArray *animationImages;
+
+@property (nonatomic) NSString *userToken;
 
 @end
 
@@ -35,6 +37,7 @@ static NSString * const kPraisePopService = @"PraisePop";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = PraisePop.new;
+        [_shared animationImages];
     });
     
     return _shared;
@@ -49,6 +52,18 @@ static NSString * const kPraisePopService = @"PraisePop";
     });
     
     return _sharedDateFormatter;
+}
+
+- (NSArray *)animationImages {
+    return !_animationImages ? _animationImages = ({
+        NSMutableArray *images = NSMutableArray.array;
+        
+        for (int i = 0; i < 44; i ++) {
+            [images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"pop-%d", i]]];
+        }
+        
+        images;
+    }) : _animationImages;
 }
 
 + (void)save:(PPAuthentication *)authentication {
@@ -71,11 +86,9 @@ static NSString * const kPraisePopService = @"PraisePop";
 }
 
 - (NSString *)userToken {
-    if (self.token.length == 0) {
-        self.token = [Lockbox stringForKey:kPraisePopTokenKey];
-    }
-    
-    return self.token;
+    return !_userToken  ? _userToken = ({
+        [Lockbox stringForKey:kPraisePopTokenKey];
+    }) : _userToken;
 }
 
 + (void)destorySession {

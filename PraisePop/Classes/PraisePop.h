@@ -30,6 +30,8 @@
  */
 + (NSDateFormatter *)dateFormatter;
 
+- (NSArray *)animationImages;
+
 /**
  *  Saves all information required for sessions.
  *
