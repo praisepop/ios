@@ -170,6 +170,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (void)didCancelPost {
+    [self.view endEditing:YES];
     [self pp_dismiss];
 }
 
