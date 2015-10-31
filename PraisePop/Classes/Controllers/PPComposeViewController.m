@@ -130,8 +130,6 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
                 name[@"last"] = @"";
             }
             
-            NSLog(@"name");
-            
             NSArray *hashtags = [TwitterText hashtagsInText:self.postBody.text checkingURLOverlap:NO];
             
             NSMutableArray *rawHashtags = [@[] mutableCopy];
