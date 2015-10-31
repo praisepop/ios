@@ -8,7 +8,6 @@
 
 #import <SystemConfiguration/SCNetworkReachability.h>
 #import <Parse/Parse.h>
-#import <SSKeychain/SSKeychain.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Instabug/Instabug.h>
@@ -105,13 +104,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
         }
         else {
             PPAuthentication *authentication = [MTLJSONAdapter modelOfClass:PPAuthentication.class fromJSONDictionary:response error:nil];
-            [PraisePop saveToken:authentication.token email:authentication.user.email];
-            [PraisePop saveOrganizations:authentication.user.organizations];
-            [PraisePop saveUserAccount:authentication.user];
-            
-            [Instabug setDefaultEmail:authentication.user.email];
-            [Instabug setWillShowEmailField:NO];
-            [Instabug setUserData:authentication.user._id];
+            [PraisePop save:authentication];
             
             if ([PraisePop shared].userToken == nil) {
                 [PraisePop destorySession];

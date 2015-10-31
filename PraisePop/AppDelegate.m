@@ -10,7 +10,6 @@
 
 #import <Parse/Parse.h>
 #import <SWRevealViewController/SWRevealViewController.h>
-#import <SSKeychain/SSKeychain.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Instabug/Instabug.h>
@@ -42,7 +41,6 @@
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
     [Instabug startWithToken:keys.instaBugToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
     [Fabric with:@[[Crashlytics class]]];
-    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -61,6 +59,7 @@
         frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     }
     else {
+        [PraisePop destorySession];
         frontViewController = (UINavigationController *)[UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingNavigationController"];
     }
     

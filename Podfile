@@ -14,7 +14,6 @@ plugin 'cocoapods-keys', {
 
 pod 'AFNetworking', '~> 2.6'
 pod 'SWRevealViewController', '~> 2.3'
-pod 'SSKeychain', '~> 1.2'
 pod 'SVWebViewController', '~> 1.0'
 pod 'Mantle', '~> 2.0'
 pod 'Parse', '~> 1.9'
@@ -24,6 +23,7 @@ pod 'VTAcknowledgementsViewController'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'Instabug', '~> 4.1'
+pod 'Lockbox', '~> 2.1'
 
 post_install do | installer |
     require 'fileutils'

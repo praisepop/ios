@@ -8,9 +8,11 @@
 
 @class PPOrganization;
 @class PPUser;
+@class PPAuthentication;
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Lockbox/Lockbox.h>
 
 @interface PraisePop : NSObject
 
@@ -29,6 +31,13 @@
 + (NSDateFormatter *)dateFormatter;
 
 /**
+ *  Saves all information required for sessions.
+ *
+ *  @param authentication The authentication result.
+ */
++ (void)save:(PPAuthentication *)authentication;
+
+/**
  *  Saves a user account in defaults.
  *
  *  @param user The user to save.
@@ -41,12 +50,18 @@
  */
 + (void)saveOrganizations:(NSArray *)organizations;
 /**
- *  Saves the user's email and token to the keychain.
+ *  Saves the user's token to the keychain.
  *
  *  @param token The token of the user.
- *  @param email The user's email.
  */
-+ (void)saveToken:(NSString *)token email:(NSString *)email;
++ (void)saveToken:(NSString *)token;
+/**
+ *  Saves the user's email and password to the keychain.
+ *
+ *  @param password The password of the user.
+ *  @param email    The user's email.
+ */
++ (void)savePassword:(NSString *)password email:(NSString *)email;
 
 /**
  *  Retrieves the current token from the keychain.
