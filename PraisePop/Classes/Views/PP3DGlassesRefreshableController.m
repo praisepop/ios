@@ -89,7 +89,7 @@
     refreshBounds.size.height = pullDistance;
     self.refreshLoadingView.frame = refreshBounds;
     
-    if (self.refreshControl.isRefreshing && self.state != PP3DGlassesRefreshControlStateRefreshing) {
+    if (self.refreshControl.isRefreshing || self.state == PP3DGlassesRefreshControlStateRefreshing) {
         [self animateRefreshView];
     }
 }
