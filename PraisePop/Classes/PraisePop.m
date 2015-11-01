@@ -88,7 +88,6 @@ static NSString * const kPraisePopService = @"PraisePop";
     BOOL result = [SSKeychain setPassword:token forService:kPraisePopService account:kPraisePopTokenKey];
     
     if (result) {
-        NSLog(@"YES!");
         _userToken = token;
     }
     
