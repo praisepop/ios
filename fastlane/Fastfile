@@ -10,7 +10,7 @@ platform :ios do
     ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
     cocoapods
 
-    # increment_build_number
+    increment_build_number
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
