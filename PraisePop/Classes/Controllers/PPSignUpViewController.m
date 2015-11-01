@@ -27,6 +27,12 @@
 
 @implementation PPSignUpViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.revealViewController.panGestureRecognizer.enabled = NO;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.emailField) {
         [self.passwordField becomeFirstResponder];
