@@ -3,47 +3,47 @@
   <testsuite name="run">
     
       
-      <testcase name="0: clear_derived_data" time="0.026402">
+      <testcase name="0: clear_derived_data" time="0.032325">
         
       </testcase>
     
       
-      <testcase name="1: Verifying required fastlane version" time="0.000175">
+      <testcase name="1: Verifying required fastlane version" time="0.000163">
         
       </testcase>
     
       
-      <testcase name="2: default_platform" time="0.000112">
+      <testcase name="2: default_platform" time="0.000178">
         
       </testcase>
     
       
-      <testcase name="3: cocoapods" time="10.596101">
+      <testcase name="3: cocoapods" time="7.765865">
         
       </testcase>
     
       
-      <testcase name="4: sigh" time="4.659864">
+      <testcase name="4: increment_build_number" time="0.840993">
         
       </testcase>
     
       
-      <testcase name="5: gym" time="58.741063">
+      <testcase name="5: sigh" time="4.854289">
         
       </testcase>
     
       
-      <testcase name="6: deliver download_screenshots" time="23.901562">
+      <testcase name="6: gym" time="51.338535">
         
       </testcase>
     
       
-      <testcase name="7: deliver --submit_for_review" time="17.891833">
+      <testcase name="7: pilot" time="564.230484">
         
       </testcase>
     
       
-      <testcase name="8: slack" time="0.360526">
+      <testcase name="8: slack" time="0.750509">
         
       </testcase>
     
