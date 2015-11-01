@@ -40,6 +40,11 @@
  */
 @property (strong, nonatomic) PPComposeBar *composeBar;
 
+/**
+ *  Whether or not a post is currently being sent.
+ */
+@property (nonatomic, getter=isSending) BOOL sending;
+
 @end
 
 @implementation PPComposeViewController
@@ -116,6 +121,11 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (void)didSendPost {
+    if (self.isSending) {
+        return;
+    }
+    
+    self.sending = YES;
     if (self.postBody.text.length != 0 && self.postBody.text.length != 0) {
         NSArray *nameParts = [self.recipientField.text componentsSeparatedByString:@" "];
         
@@ -140,6 +150,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
             }
             
             [[PraisePopAPI sharedClient] send:self.postBody.text type:NSStringFromPPPostType(self.postType) recepient:name hashtags:rawHashtags success:^(BOOL result) {
+                self.sending = NO;
                 if (result) {
                     [self pp_dismiss];
                     
@@ -150,17 +161,20 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
                 else {
                     UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"We were unable to post your post... please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     [alert show];
+                    return;
                 }
             } failure:nil];
         }
         else {
             UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please enter a valid name!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
+            return;
         }
     }
     else {
         UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please fill out all of the fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
+        return;
     }
 }
 
