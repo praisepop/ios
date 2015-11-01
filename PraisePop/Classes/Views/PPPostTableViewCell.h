@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class PPPostTableViewCell;
+@class PPUpvoteButton;
 
 @protocol PPPostDelegate <NSObject>
 
@@ -38,7 +39,7 @@
 /**
  *  The upvote button of the cell.
  */
-@property (strong, nonatomic) IBOutlet UIButton *upvoteButton;
+@property (weak, nonatomic) IBOutlet PPUpvoteButton *upvoteButton;
 
 /**
  *  The lable which shows how long ago a post was posted.
@@ -63,5 +64,21 @@
  *  The post attached to the cell.
  */
 @property (strong, nonatomic) PPPost *post;
+
+/**
+ *  Returns a new cell.
+ *
+ *  @param reuseIdentifier The identifier.
+ *
+ *  @return The cell.
+ */
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier;
+
+/**
+ *  Tells the cell whether the cell should be upvoted or not.
+ *
+ *  @param upvoted Whether it should be upvoted.
+ */
+- (void)setUpvoted:(BOOL)upvoted;
 
 @end

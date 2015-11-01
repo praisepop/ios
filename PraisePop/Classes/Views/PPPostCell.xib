@@ -55,36 +55,39 @@
                         <fontDescription key="fontDescription" name="Futura-Book" family="Futura-Book" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-C9-Fzf">
-                        <rect key="frame" x="320" y="20" width="38" height="37"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pop-kernel" translatesAutoresizingMaskIntoConstraints="NO" id="X9w-iQ-I7P" customClass="PPUpvoteButton">
+                        <rect key="frame" x="320" y="20" width="38" height="39"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="38" id="mwr-pj-cf4"/>
+                            <constraint firstAttribute="height" constant="39" id="SEg-pH-jE8"/>
+                            <constraint firstAttribute="width" constant="38" id="VaE-Ix-ceI"/>
                         </constraints>
-                        <state key="normal" image="pop-kernel">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="upvoteTapped:" destination="UF0-bA-Wa4" eventType="touchUpInside" id="eJb-LK-nnb"/>
-                        </connections>
-                    </button>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstItem="9w4-dv-H7z" firstAttribute="top" secondItem="GAS-km-9g5" secondAttribute="bottom" constant="15" id="0tK-Lj-0yb"/>
-                    <constraint firstItem="XFi-sM-U3u" firstAttribute="centerX" secondItem="ikW-C9-Fzf" secondAttribute="centerX" id="3Yf-pK-6eh"/>
+                    <constraint firstAttribute="trailing" secondItem="X9w-iQ-I7P" secondAttribute="trailing" constant="17" id="5Ip-d4-xgh"/>
+                    <constraint firstItem="X9w-iQ-I7P" firstAttribute="leading" secondItem="9w4-dv-H7z" secondAttribute="trailing" constant="13" id="7Bo-9I-WiG"/>
                     <constraint firstItem="9w4-dv-H7z" firstAttribute="leading" secondItem="GAS-km-9g5" secondAttribute="leading" id="9uK-ZX-PeU"/>
+                    <constraint firstItem="X9w-iQ-I7P" firstAttribute="centerX" secondItem="XFi-sM-U3u" secondAttribute="centerX" id="BUr-UQ-bsU"/>
                     <constraint firstItem="KLC-ST-Lv0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9w4-dv-H7z" secondAttribute="bottom" constant="4" id="Bc8-Zt-GmI"/>
                     <constraint firstItem="GAS-km-9g5" firstAttribute="leading" secondItem="8Sr-UH-bUg" secondAttribute="leading" constant="17" id="Eqb-Pk-Yba"/>
                     <constraint firstAttribute="bottomMargin" secondItem="KLC-ST-Lv0" secondAttribute="bottom" constant="1.5" id="Foj-Yr-c0G"/>
+                    <constraint firstItem="X9w-iQ-I7P" firstAttribute="top" secondItem="GAS-km-9g5" secondAttribute="top" id="O5a-P6-3T5"/>
                     <constraint firstItem="KLC-ST-Lv0" firstAttribute="bottom" secondItem="XFi-sM-U3u" secondAttribute="bottom" id="REJ-0K-rDM"/>
-                    <constraint firstItem="ikW-C9-Fzf" firstAttribute="leading" secondItem="9w4-dv-H7z" secondAttribute="trailing" constant="13" id="ZYB-Cl-FWH"/>
+                    <constraint firstItem="X9w-iQ-I7P" firstAttribute="trailing" secondItem="9w4-dv-H7z" secondAttribute="trailing" id="Rhb-Rg-thy"/>
                     <constraint firstAttribute="trailing" secondItem="XFi-sM-U3u" secondAttribute="trailing" constant="24" id="eOB-yb-wbx"/>
-                    <constraint firstItem="ikW-C9-Fzf" firstAttribute="top" secondItem="GAS-km-9g5" secondAttribute="top" id="fpr-np-tMy"/>
                     <constraint firstItem="GAS-km-9g5" firstAttribute="top" secondItem="8Sr-UH-bUg" secondAttribute="top" constant="20" id="moI-6p-j7O"/>
-                    <constraint firstAttribute="trailing" secondItem="ikW-C9-Fzf" secondAttribute="trailing" constant="17" id="oyl-sG-HKS"/>
                     <constraint firstItem="KLC-ST-Lv0" firstAttribute="leading" secondItem="GAS-km-9g5" secondAttribute="leading" id="suS-lS-ulb"/>
+                    <constraint firstItem="9w4-dv-H7z" firstAttribute="trailing" secondItem="X9w-iQ-I7P" secondAttribute="trailing" id="xfE-aJ-0g8"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="xfE-aJ-0g8"/>
+                        <exclude reference="Rhb-Rg-thy"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -92,7 +95,7 @@
                 <outlet property="addresseeLabel" destination="GAS-km-9g5" id="mxO-xJ-mXb"/>
                 <outlet property="textView" destination="9w4-dv-H7z" id="6ar-wT-l3f"/>
                 <outlet property="timeAgoLabel" destination="KLC-ST-Lv0" id="u4S-UV-Ull"/>
-                <outlet property="upvoteButton" destination="ikW-C9-Fzf" id="H3k-Zb-nZf"/>
+                <outlet property="upvoteButton" destination="X9w-iQ-I7P" id="A2S-sw-MzS"/>
             </connections>
             <point key="canvasLocation" x="138.5" y="248"/>
         </tableViewCell>

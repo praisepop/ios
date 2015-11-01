@@ -207,17 +207,6 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         if (self.showsPaging && (self.currentPage != self.maxPages && indexPath.row == self.posts.count - 1)) {
             [self loadPosts:++self.currentPage];
         }
-        
-        PPPostTableViewCell *postCell = (PPPostTableViewCell *)cell;
-        
-        if (indexPath.row != self.posts.count) {
-            if ([self.posts[indexPath.row] upvoted]) {
-                [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-popcorn"] forState:UIControlStateNormal];
-            }
-            else {
-                [postCell.upvoteButton setImage:[UIImage imageNamed:@"pop-kernel"] forState:UIControlStateNormal];
-            }
-        }
     }
 }
 
@@ -238,8 +227,8 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
     }
     
     PPPostTableViewCell *cell = (PPPostTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kPPPostCellIdentifier];
-    if (cell == nil) {
-        cell = [[PPPostTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kPPPostCellIdentifier];
+    if (!cell) {
+        cell = [PPPostTableViewCell cellWithReuseIdentifier:kPPPostCellIdentifier];
     }
     
     if (self.posts.count == 0) {
@@ -251,7 +240,7 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
         empty.addressee = placeholder;
         
         empty.body = self.state == PP3DGlassesRefreshControlStateRefreshing ? self.loadingMessage : (PraisePopAPI.isReachable ? self.lonelyMessage : self.unreachableMessage);
-        empty.upvoted = YES;
+        empty.upvoted = self.state == PP3DGlassesRefreshControlStateRefreshing ? NO : YES;
         empty.createdAt = NSDate.date;
         
         cell.post = empty;
@@ -272,10 +261,10 @@ CGFloat const kPPPopCellTextViewRatio = 0.7733f;
 #pragma mark - PPPostDelegate
 
 - (void)didUpvotePost:(PPPost *)post atIndexPath:(NSIndexPath *)indexPath {
-    if (![self.posts[indexPath.row] upvoted]) {
-        [[PraisePopAPI sharedClient] upvote:self.posts[indexPath.row] success:^(BOOL result) {
+    if (!post.upvoted) {
+        [[PraisePopAPI sharedClient] upvote:post success:^(BOOL result) {
             [self.posts[indexPath.row] setUpvoted:result];
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            ((PPPostTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath]).upvoted = result;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self.posts[indexPath.row] setUpvoted:NO];
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
