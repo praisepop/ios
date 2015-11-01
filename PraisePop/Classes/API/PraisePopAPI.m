@@ -20,7 +20,11 @@
 
 #import "PraisePopAPI.h"
 
+#ifdef DEBUG
+static NSString * const PraisePopAPIBaseURLString = @"http://localhost:8080/v1/";
+#else
 static NSString * const PraisePopAPIBaseURLString = @"https://api.trypraisepop.com/v1/";
+#endif
 
 static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
