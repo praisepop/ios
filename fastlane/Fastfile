@@ -16,7 +16,6 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # snapshot
     sigh
     gym(scheme: "PraisePop", workspace: "PraisePop.xcworkspace")
     pilot
@@ -24,7 +23,6 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :deploy do
-    # snapshot
     sigh
     gym(scheme: "PraisePop", workspace: "PraisePop.xcworkspace")
     sh "deliver download_screenshots"
