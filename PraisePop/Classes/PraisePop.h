@@ -12,7 +12,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Lockbox/Lockbox.h>
 
 @interface PraisePop : NSObject
 
@@ -37,7 +36,7 @@
  *
  *  @param authentication The authentication result.
  */
-+ (void)save:(PPAuthentication *)authentication;
++ (BOOL)save:(PPAuthentication *)authentication;
 
 /**
  *  Saves a user account in defaults.
@@ -51,12 +50,6 @@
  *  @param organizations The organizations to save.
  */
 + (void)saveOrganizations:(NSArray *)organizations;
-/**
- *  Saves the user's token to the keychain.
- *
- *  @param token The token of the user.
- */
-+ (void)saveToken:(NSString *)token;
 /**
  *  Saves the user's email and password to the keychain.
  *

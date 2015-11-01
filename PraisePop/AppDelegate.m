@@ -13,6 +13,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Instabug/Instabug.h>
+#import <SSKeychain/SSKeychain.h>
 
 #import "PraisePopAPI.h"
 
@@ -41,6 +42,7 @@
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
     [Instabug startWithToken:keys.instaBugToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
     [Fabric with:@[[Crashlytics class]]];
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |

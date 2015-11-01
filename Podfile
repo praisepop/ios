@@ -23,7 +23,7 @@ pod 'VTAcknowledgementsViewController'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'Instabug', '~> 4.1'
-pod 'Lockbox', '~> 2.1'
+pod 'SSKeychain'
 
 post_install do | installer |
     require 'fileutils'

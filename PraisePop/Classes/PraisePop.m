@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import <Instabug/Instabug.h>
+#import <SSKeychain/SSKeychain.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
@@ -66,28 +67,46 @@ static NSString * const kPraisePopService = @"PraisePop";
     }) : _animationImages;
 }
 
-+ (void)save:(PPAuthentication *)authentication {
-    [PraisePop saveToken:authentication.token];
++ (BOOL)save:(PPAuthentication *)authentication {
+    BOOL saveToken = [[PraisePop shared] saveToken:authentication.token email:authentication.user.email];
+    
+    if (!saveToken) {
+        return NO;
+    }
+    
     [PraisePop saveOrganizations:authentication.user.organizations];
     [PraisePop saveUserAccount:authentication.user];
     
     [Instabug setDefaultEmail:authentication.user.email];
     [Instabug setWillShowEmailField:NO];
     [Instabug setUserData:authentication.user._id];
+    
+    return YES;
 }
 
-+ (void)saveToken:(NSString *)token {
-    [Lockbox setString:token forKey:kPraisePopTokenKey];
+- (BOOL)saveToken:(NSString *)token email:(NSString *)email {
+    BOOL result = [SSKeychain setPassword:token forService:kPraisePopService account:kPraisePopTokenKey];
+    
+    if (result) {
+        NSLog(@"YES!");
+        _userToken = token;
+    }
+    
+    return result;
 }
 
 + (void)savePassword:(NSString *)password email:(NSString *)email {
-    [Lockbox setString:password forKey:kPraisePopPasswordKey];
-    [Lockbox setString:email forKey:kPraisePopEmailKey];
+    [SSKeychain setPassword:password forService:kPraisePopService account:email];
 }
 
 - (NSString *)userToken {
     return !_userToken  ? _userToken = ({
-        [Lockbox stringForKey:kPraisePopTokenKey];
+        NSString *result = [SSKeychain passwordForService:kPraisePopService account:kPraisePopTokenKey];
+        if (result.length == 0) {
+            result = @"";
+        }
+        
+        result;
     }) : _userToken;
 }
 
@@ -96,9 +115,8 @@ static NSString * const kPraisePopService = @"PraisePop";
     [Instabug setWillShowEmailField:YES];
     [Instabug setUserData:nil];
     
-    [Lockbox setString:nil forKey:kPraisePopTokenKey];
-    [Lockbox setString:nil forKey:kPraisePopPasswordKey];
-    [Lockbox setString:nil forKey:kPraisePopEmailKey];
+    [SSKeychain deletePasswordForService:kPraisePopService account:kPraisePopTokenKey];
+    [SSKeychain deletePasswordForService:kPraisePopService account:PraisePop.currentUser.email];
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     currentInstallation.channels = [NSArray array];

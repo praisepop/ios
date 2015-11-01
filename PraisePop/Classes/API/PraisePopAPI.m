@@ -104,11 +104,12 @@ NSString * NSStringFromObjectID(NSString *objectID) {
         }
         else {
             PPAuthentication *authentication = [MTLJSONAdapter modelOfClass:PPAuthentication.class fromJSONDictionary:response error:nil];
-            [PraisePop save:authentication];
+            BOOL save = [PraisePop save:authentication];
             
-            if ([PraisePop shared].userToken == nil) {
+            if (!save) {
                 [PraisePop destorySession];
                 success(NO);
+                return;
             }
             
             [PFPush subscribeToChannelInBackground:NSStringFromObjectID(authentication.user._id) block:nil];
@@ -142,6 +143,13 @@ NSString * NSStringFromObjectID(NSString *objectID) {
 - (void)posts:(NSUInteger)page success:(void (^)(BOOL, NSArray *, NSUInteger, NSUInteger, NSUInteger))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
+    
+    for (int i = 0; [PraisePop shared].userToken.length == 0; i++) {
+        if (i >= 10) {
+            success(NO, nil, 0, 0, 0);
+            break;
+        }
+    }
     
     NSDictionary *paramters = @{
                                 @"token" : [PraisePop shared].userToken,

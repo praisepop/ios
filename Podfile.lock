@@ -28,12 +28,12 @@ PODS:
   - Fabric/Base (1.5.5)
   - Instabug (4.1.7)
   - Keys (1.0.0)
-  - Lockbox (2.1.0)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
+  - SSKeychain (1.2.3)
   - SVWebViewController (1.0)
   - SWRevealViewController (2.3.0)
   - UIActionSheet+Blocks (0.9)
@@ -46,9 +46,9 @@ DEPENDENCIES:
   - Fabric
   - Instabug (~> 4.1)
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Lockbox (~> 2.1)
   - Mantle (~> 2.0)
   - Parse (~> 1.9)
+  - SSKeychain
   - SVWebViewController (~> 1.0)
   - SWRevealViewController (~> 2.3)
   - UIActionSheet+Blocks
@@ -66,9 +66,9 @@ SPEC CHECKSUMS:
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   Instabug: 58f773fcefe0dec9b1bd3fcf09c6e46560353f5d
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
-  Lockbox: 16442da35d9d4286966936763be728a931d589c3
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
