@@ -20,7 +20,7 @@
 
 #import "PraisePopAPI.h"
 
-static NSString * const PraisePopAPIBaseURLString = @"https://praisepop.herokuapp.com/api/v1/";
+static NSString * const PraisePopAPIBaseURLString = @"https://praisepop.herokuapp.com/v1/";
 
 static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
