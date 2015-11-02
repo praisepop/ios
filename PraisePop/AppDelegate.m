@@ -42,7 +42,7 @@
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
     [Instabug startWithToken:keys.instaBugToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
     [Fabric with:@[[Crashlytics class]]];
-    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleAfterFirstUnlock];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
