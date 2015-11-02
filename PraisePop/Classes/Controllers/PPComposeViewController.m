@@ -163,7 +163,9 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
                     [alert show];
                     return;
                 }
-            } failure:nil];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                self.sending = NO;
+            }];
         }
         else {
             UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please enter a valid name!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

@@ -238,6 +238,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
         [PraisePopAPI hideActivityIndicator];
+        failure(operation, error);
     }];
 }
 
