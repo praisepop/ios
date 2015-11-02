@@ -11,6 +11,8 @@
 @implementation UITableViewController (PPExtensions)
 
 - (void)pp_setTitle:(NSString *)title {
+    self.tableView.showsVerticalScrollIndicator = NO;
+    
     title = [title uppercaseString];
     
     UILabel *label = [UILabel.alloc initWithFrame:self.navigationItem.titleView.frame];

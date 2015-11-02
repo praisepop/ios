@@ -8,7 +8,6 @@
 
 #import <SystemConfiguration/SCNetworkReachability.h>
 #import <Parse/Parse.h>
-#import <SSKeychain/SSKeychain.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Instabug/Instabug.h>
@@ -21,7 +20,11 @@
 
 #import "PraisePopAPI.h"
 
-static NSString * const PraisePopAPIBaseURLString = @"https://praisepop.herokuapp.com/api/v1/";
+#ifdef DEBUG
+static NSString * const PraisePopAPIBaseURLString = @"http://localhost:8080/v1/";
+#else
+static NSString * const PraisePopAPIBaseURLString = @"https://api.trypraisepop.com/v1/";
+#endif
 
 static CGFloat const PRAISE_POP_FEED_LIMIT = 25;
 
@@ -105,17 +108,12 @@ NSString * NSStringFromObjectID(NSString *objectID) {
         }
         else {
             PPAuthentication *authentication = [MTLJSONAdapter modelOfClass:PPAuthentication.class fromJSONDictionary:response error:nil];
-            [PraisePop saveToken:authentication.token email:authentication.user.email];
-            [PraisePop saveOrganizations:authentication.user.organizations];
-            [PraisePop saveUserAccount:authentication.user];
+            BOOL save = [PraisePop save:authentication];
             
-            [Instabug setDefaultEmail:authentication.user.email];
-            [Instabug setWillShowEmailField:NO];
-            [Instabug setUserData:authentication.user._id];
-            
-            if ([PraisePop shared].userToken == nil) {
+            if (!save) {
                 [PraisePop destorySession];
                 success(NO);
+                return;
             }
             
             [PFPush subscribeToChannelInBackground:NSStringFromObjectID(authentication.user._id) block:nil];
@@ -149,6 +147,13 @@ NSString * NSStringFromObjectID(NSString *objectID) {
 - (void)posts:(NSUInteger)page success:(void (^)(BOOL, NSArray *, NSUInteger, NSUInteger, NSUInteger))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     [PraisePopAPI showActivityIndicator];
     NSString *path = [NSString stringWithFormat:@"orgs/%@/posts", PraisePop.parentOrganization._id];
+    
+    for (int i = 0; [PraisePop shared].userToken.length == 0; i++) {
+        if (i >= 10) {
+            success(NO, nil, 0, 0, 0);
+            break;
+        }
+    }
     
     NSDictionary *paramters = @{
                                 @"token" : [PraisePop shared].userToken,
@@ -233,6 +238,7 @@ NSString * NSStringFromObjectID(NSString *objectID) {
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [error pp_showError];
         [PraisePopAPI hideActivityIndicator];
+        failure(operation, error);
     }];
 }
 

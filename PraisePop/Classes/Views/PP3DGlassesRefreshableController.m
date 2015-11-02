@@ -89,13 +89,13 @@
     refreshBounds.size.height = pullDistance;
     self.refreshLoadingView.frame = refreshBounds;
     
-    if (self.refreshControl.isRefreshing && self.state != PP3DGlassesRefreshControlStateRefreshing) {
+    if (self.refreshControl.isRefreshing || self.state == PP3DGlassesRefreshControlStateRefreshing) {
         [self animateRefreshView];
     }
 }
 
 - (void)animateRefreshView {
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:3.0f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.sparkle_spin_right.transform = CGAffineTransformRotate(self.sparkle_spin_right.transform, M_PI_2);
         self.sparkle_spin_left.transform = CGAffineTransformRotate(self.sparkle_spin_left.transform, -M_PI_2);
     } completion:^(BOOL finished) {

@@ -48,7 +48,7 @@ DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - Mantle (~> 2.0)
   - Parse (~> 1.9)
-  - SSKeychain (~> 1.2)
+  - SSKeychain
   - SVWebViewController (~> 1.0)
   - SWRevealViewController (~> 2.3)
   - UIActionSheet+Blocks

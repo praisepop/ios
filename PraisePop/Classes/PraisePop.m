@@ -7,24 +7,29 @@
 //
 
 #import <Parse/Parse.h>
-#import <SSKeychain/SSKeychain.h>
 #import <Instabug/Instabug.h>
+#import <SSKeychain/SSKeychain.h>
 
 #import "PPUser.h"
 #import "PPOrganization.h"
+#import "PPAuthentication.h"
 
 #import "PraisePop.h"
 
 @interface PraisePop ()
 
-@property (strong, nonatomic) NSString *token;
+@property (nonatomic) NSArray *animationImages;
+
+@property (nonatomic) NSString *userToken;
 
 @end
 
 @implementation PraisePop
 
-static NSString * const kPraisePopTokenKey = @"PRAISE_POP_TOKEN_KEY";
-static NSString * const kPraisePopAccountKey = @"PRAISE_POP_ACCOUNT_KEY";
+static NSString * const kPraisePopTokenKey = @"PRAISE_POP_TOKEN";
+static NSString * const kPraisePopAccountKey = @"PRAISE_POP_ACCOUNT";
+static NSString * const kPraisePopPasswordKey = @"PRAISE_POP_ACCOUNT_PASSWORD";
+static NSString * const kPraisePopEmailKey = @"PRAISE_POP_ACCOUNT_EMAIL";
 static NSString * const kPraisePopOrganizationsKey = @"PRAISE_POP_ORGANIZATIONS_KEY";
 static NSString * const kPraisePopService = @"PraisePop";
 
@@ -33,6 +38,7 @@ static NSString * const kPraisePopService = @"PraisePop";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = PraisePop.new;
+        [_shared animationImages];
     });
     
     return _shared;
@@ -49,16 +55,58 @@ static NSString * const kPraisePopService = @"PraisePop";
     return _sharedDateFormatter;
 }
 
-+ (void)saveToken:(NSString *)token email:(NSString *)email {
-    [SSKeychain setPassword:token forService:kPraisePopService account:email];
+- (NSArray *)animationImages {
+    return !_animationImages ? _animationImages = ({
+        NSMutableArray *images = NSMutableArray.array;
+        
+        for (int i = 0; i < 44; i ++) {
+            [images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"pop-%d", i]]];
+        }
+        
+        images;
+    }) : _animationImages;
+}
+
++ (BOOL)save:(PPAuthentication *)authentication {
+    BOOL saveToken = [[PraisePop shared] saveToken:authentication.token email:authentication.user.email];
+    
+    if (!saveToken) {
+        return NO;
+    }
+    
+    [PraisePop saveOrganizations:authentication.user.organizations];
+    [PraisePop saveUserAccount:authentication.user];
+    
+    [Instabug setDefaultEmail:authentication.user.email];
+    [Instabug setWillShowEmailField:NO];
+    [Instabug setUserData:authentication.user._id];
+    
+    return YES;
+}
+
+- (BOOL)saveToken:(NSString *)token email:(NSString *)email {
+    BOOL result = [SSKeychain setPassword:token forService:kPraisePopService account:kPraisePopTokenKey];
+    
+    if (result) {
+        _userToken = token;
+    }
+    
+    return result;
+}
+
++ (void)savePassword:(NSString *)password email:(NSString *)email {
+    [SSKeychain setPassword:password forService:kPraisePopService account:email];
 }
 
 - (NSString *)userToken {
-    if (self.token.length == 0) {
-        self.token = [SSKeychain passwordForService:kPraisePopService account:PraisePop.currentUser.email];
-    }
-    
-    return self.token;
+    return !_userToken  ? _userToken = ({
+        NSString *result = [SSKeychain passwordForService:kPraisePopService account:kPraisePopTokenKey];
+        if (result.length == 0) {
+            result = @"";
+        }
+        
+        result;
+    }) : _userToken;
 }
 
 + (void)destorySession {
@@ -66,6 +114,7 @@ static NSString * const kPraisePopService = @"PraisePop";
     [Instabug setWillShowEmailField:YES];
     [Instabug setUserData:nil];
     
+    [SSKeychain deletePasswordForService:kPraisePopService account:kPraisePopTokenKey];
     [SSKeychain deletePasswordForService:kPraisePopService account:PraisePop.currentUser.email];
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];

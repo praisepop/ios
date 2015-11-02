@@ -8,6 +8,7 @@
 
 @class PPOrganization;
 @class PPUser;
+@class PPAuthentication;
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -28,6 +29,15 @@
  */
 + (NSDateFormatter *)dateFormatter;
 
+- (NSArray *)animationImages;
+
+/**
+ *  Saves all information required for sessions.
+ *
+ *  @param authentication The authentication result.
+ */
++ (BOOL)save:(PPAuthentication *)authentication;
+
 /**
  *  Saves a user account in defaults.
  *
@@ -41,12 +51,12 @@
  */
 + (void)saveOrganizations:(NSArray *)organizations;
 /**
- *  Saves the user's email and token to the keychain.
+ *  Saves the user's email and password to the keychain.
  *
- *  @param token The token of the user.
- *  @param email The user's email.
+ *  @param password The password of the user.
+ *  @param email    The user's email.
  */
-+ (void)saveToken:(NSString *)token email:(NSString *)email;
++ (void)savePassword:(NSString *)password email:(NSString *)email;
 
 /**
  *  Retrieves the current token from the keychain.

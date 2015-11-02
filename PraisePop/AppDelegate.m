@@ -10,10 +10,10 @@
 
 #import <Parse/Parse.h>
 #import <SWRevealViewController/SWRevealViewController.h>
-#import <SSKeychain/SSKeychain.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Instabug/Instabug.h>
+#import <SSKeychain/SSKeychain.h>
 
 #import "PraisePopAPI.h"
 
@@ -42,7 +42,7 @@
     [Parse setApplicationId:keys.parseAppID clientKey:keys.parseClientKey];
     [Instabug startWithToken:keys.instaBugToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
     [Fabric with:@[[Crashlytics class]]];
-    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleAfterFirstUnlock];
     
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -61,6 +61,7 @@
         frontViewController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     }
     else {
+        [PraisePop destorySession];
         frontViewController = (UINavigationController *)[UIStoryboard pp_controllerWithIdentifier:@"PPOnboardingNavigationController"];
     }
     
@@ -72,8 +73,8 @@
     [self.window makeKeyAndVisible];
     
     self.splashImageView = [UIImageView.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    self.splashImageView.y -= 50;
-    self.splashImageView.height += 50;
+//    self.splashImageView.y -= 50;
+//    self.splashImageView.height += 50;
     self.splashImageView.layer.zPosition = 0;
     self.splashImageView.userInteractionEnabled = NO;
     self.splashImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -94,7 +95,7 @@
     
     [self.splashImageView startAnimating];
     
-    [UIView animateWithDuration:.5 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.splashImageView.alpha = 0;
         self.splashImageView.center = CGPointMake(self.splashImageView.center.x, -revealController.view.bounds.size.height);
     } completion:nil];
@@ -109,7 +110,11 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    application.applicationIconBadgeNumber = 0;
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation.badge != 0) {
+        currentInstallation.badge = 0;
+        [currentInstallation saveEventually];
+    }
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -122,7 +127,12 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     if (application.applicationState == UIApplicationStateActive) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        application.applicationIconBadgeNumber = 0;
+        
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        if (currentInstallation.badge != 0) {
+            currentInstallation.badge = 0;
+            [currentInstallation saveEventually];
+        }
     }
 }
 
@@ -145,6 +155,7 @@
     
     [[UITextView appearance] setTintColor:UIColor.pp_redColor];
     
+    [[UITextField appearance] setTintColor:UIColor.whiteColor];
     [[UITextField appearanceWhenContainedIn:PPComposeViewController.class, nil] setTintColor:UIColor.pp_redColor];
     
     [[UIBarButtonItem appearanceWhenContainedIn:UINavigationBar.class, nil] setTintColor:UIColor.whiteColor];

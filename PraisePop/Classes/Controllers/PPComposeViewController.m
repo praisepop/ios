@@ -40,6 +40,11 @@
  */
 @property (strong, nonatomic) PPComposeBar *composeBar;
 
+/**
+ *  Whether or not a post is currently being sent.
+ */
+@property (nonatomic, getter=isSending) BOOL sending;
+
 @end
 
 @implementation PPComposeViewController
@@ -93,16 +98,17 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 
 - (NSDictionary *)types {
     return @{
-             @"Announcement" : @"ANNOUNCEMENT",
-             @"Invite" : @"INVITE",
+             @"Uncategorized" : @"UNCATEGORIZED",
              @"Shoutout" : @"SHOUTOUT",
-             @"Uncategorized" : @"UNCATEGORIZED"
+             @"Invite" : @"INVITE",
+             @"Announcement" : @"ANNOUNCEMENT"
              };
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
+        self.postTypePicker.hidden = YES;
         [textView resignFirstResponder];
         
         return NO;
@@ -115,13 +121,25 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (void)didSendPost {
+    if (self.isSending) {
+        return;
+    }
+    
+    self.sending = YES;
     if (self.postBody.text.length != 0 && self.postBody.text.length != 0) {
         NSArray *nameParts = [self.recipientField.text componentsSeparatedByString:@" "];
-        if (nameParts.count >= 2) {
-            NSDictionary *name = @{
+        
+        NSString *recipient = [self.recipientField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if ([recipient.lowercaseString isEqualToString:@"everyone"] || nameParts.count >= 2) {
+            NSMutableDictionary *name = [@{
                                    @"first" : nameParts[0],
                                    @"last" : [self.recipientField.text stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@ ",nameParts[0]] withString:@""]
-                                   };
+                                   } mutableCopy];
+            
+            if ([recipient.lowercaseString isEqualToString:@"everyone"]) {
+                name[@"last"] = @"";
+            }
             
             NSArray *hashtags = [TwitterText hashtagsInText:self.postBody.text checkingURLOverlap:NO];
             
@@ -132,6 +150,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
             }
             
             [[PraisePopAPI sharedClient] send:self.postBody.text type:NSStringFromPPPostType(self.postType) recepient:name hashtags:rawHashtags success:^(BOOL result) {
+                self.sending = NO;
                 if (result) {
                     [self pp_dismiss];
                     
@@ -142,17 +161,22 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
                 else {
                     UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"We were unable to post your post... please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     [alert show];
+                    return;
                 }
-            } failure:nil];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                self.sending = NO;
+            }];
         }
         else {
             UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please enter a valid name!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
+            return;
         }
     }
     else {
         UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Oops!" message:@"Please fill out all of the fields!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
+        return;
     }
 }
 
@@ -162,6 +186,7 @@ NSString * NSStringFromPPPostType(PPPostType postType) {
 }
 
 - (void)didCancelPost {
+    [self.view endEditing:YES];
     [self pp_dismiss];
 }
 
