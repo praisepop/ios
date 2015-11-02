@@ -73,8 +73,8 @@
     [self.window makeKeyAndVisible];
     
     self.splashImageView = [UIImageView.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    self.splashImageView.y -= 50;
-    self.splashImageView.height += 50;
+//    self.splashImageView.y -= 50;
+//    self.splashImageView.height += 50;
     self.splashImageView.layer.zPosition = 0;
     self.splashImageView.userInteractionEnabled = NO;
     self.splashImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -95,7 +95,7 @@
     
     [self.splashImageView startAnimating];
     
-    [UIView animateWithDuration:.5 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.splashImageView.alpha = 0;
         self.splashImageView.center = CGPointMake(self.splashImageView.center.x, -revealController.view.bounds.size.height);
     } completion:nil];

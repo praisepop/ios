@@ -35,7 +35,6 @@
 		F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AC2F501BDD77DA00E43843 /* PPPostCell.xib */; };
 		F1BB6BF51BC1FB3000D96FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6BF41BC1FB3000D96FA6 /* main.m */; };
 		F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */; };
-		F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */; };
 		F1BB6C201BC20EB300D96FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */; };
 		F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */; };
 		F1BB6C301BC2222A00D96FA6 /* PPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6C2F1BC2222A00D96FA6 /* PPTimelineViewController.m */; };
@@ -107,7 +106,6 @@
 		F1BB6BF01BC1FB3000D96FA6 /* PraisePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PraisePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BB6BF41BC1FB3000D96FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1BB6C021BC1FB3000D96FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1BB6C041BC1FB3000D96FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1BB6C1E1BC20EB300D96FA6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PraisePop/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		F1BB6C1F1BC20EB300D96FA6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PraisePop/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -259,7 +257,6 @@
 			children = (
 				F1E9B6781BC301B5008DD309 /* Fonts */,
 				F1BB6BFF1BC1FB3000D96FA6 /* Assets.xcassets */,
-				F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */,
 				F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */,
 				F1BB6C041BC1FB3000D96FA6 /* Info.plist */,
 				F1EC0A231BDF4AEC005D54B9 /* Resources */,
@@ -473,7 +470,6 @@
 				F1AC2F511BDD77DA00E43843 /* PPPostCell.xib in Resources */,
 				F1BB6C2D1BC2214100D96FA6 /* Main.storyboard in Resources */,
 				F164C0621BDDCE3D0029F85C /* email-blacklist.json in Resources */,
-				F1BB6C031BC1FB3000D96FA6 /* LaunchScreen.storyboard in Resources */,
 				F15417451BE061B900A5F071 /* Pods-Acknowledgements.plist in Resources */,
 				F1BB6C001BC1FB3000D96FA6 /* Assets.xcassets in Resources */,
 				F1E9B67B1BC301B5008DD309 /* Futura-Bold.ttf in Resources */,
@@ -590,14 +586,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1BB6C011BC1FB3000D96FA6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1BB6C021BC1FB3000D96FA6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		F1BB6C2B1BC2214100D96FA6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
