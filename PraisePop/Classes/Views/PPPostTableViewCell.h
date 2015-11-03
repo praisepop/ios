@@ -58,7 +58,7 @@
 /**
  *  The indexPath of the cell.
  */
-@property (assign, nonatomic) NSIndexPath *indexPath;
+@property (retain, nonatomic) NSIndexPath *indexPath;
 
 /**
  *  The post attached to the cell.
